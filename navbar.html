@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Premium Navbar with AOS</title>
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <!-- AOS CSS -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
+
+  <style>
+    :root {
+      --brand: #007bff;
+      --brand-dark: #0056b3;
+      --ink: #333;
+      --card: #fff;
+      --shadow: 0 6px 18px rgba(0,0,0,0.15);
+    }
+
+    body {
+      font-family: 'Arial', sans-serif;
+      margin: 0; padding: 0;
+    }
+
+    /* Navbar Styles */
+    .navbar {
+      box-shadow: var(--shadow);
+      transition: all 0.3s ease;
+      background: #fff;
+      z-index: 1000;
+    }
+
+    .navbar-brand {
+      display: flex;
+      flex-direction: column;
+      font-weight: 800;
+      letter-spacing: 0.5px;
+      color: var(--brand) !important;
+    }
+
+    .navbar-brand img {
+      max-height: 50px;
+      object-fit: contain;
+      margin-bottom: 2px;
+    }
+
+    .brand-subtitle {
+      font-size: 0.75rem;
+      color: var(--ink);
+      opacity: 0.7;
+    }
+
+    .nav-link {
+      font-weight: 500;
+      color: var(--ink) !important;
+      opacity: 0.85;
+      transition: all 0.3s ease;
+    }
+
+    .nav-link:hover,
+    .nav-link.active {
+      color: var(--brand) !important;
+      opacity: 1;
+    }
+
+    .btn-brand {
+      background: var(--brand);
+      color: var(--card);
+      border: none;
+      font-weight: 600;
+      transition: background 0.3s ease;
+    }
+
+    .btn-brand:hover {
+      background: var(--brand-dark);
+    }
+
+    /* Dropdown Animation */
+    .dropdown-menu {
+      border-radius: 8px;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.15);
+      transform: translateY(10px);
+      opacity: 0;
+      transition: all 0.3s ease;
+      display: block;
+      visibility: hidden;
+    }
+
+    .dropdown:hover > .dropdown-menu {
+      transform: translateY(0);
+      opacity: 1;
+      visibility: visible;
+    }
+
+    /* Responsive */
+    @media (max-width: 991px) {
+      .navbar-brand {
+        align-items: center;
+        text-align: center;
+      }
+      .brand-subtitle {
+        font-size: 0.7rem;
+      }
+    }
+
+    /* Smooth Scroll */
+    html {
+      scroll-behavior: smooth;
+    }
+  </style>
+</head>
+<body>
+
+<!-- Navbar Start -->
+<nav class="navbar navbar-expand-lg sticky-top" data-aos="fade-down">
+  <div class="container py-2">
+    <a class="navbar-brand" href="#home">
+      <img src="https://theschool-management.com/wp-content/uploads/2020/07/cropped-school-logo.png" alt="Logo">
+      <span>The School Management</span>
+      <small class="brand-subtitle">Excellence in Education</small>
+    </a>
+
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#nav"
+      aria-controls="nav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse justify-content-end" id="nav">
+      <ul class="navbar-nav align-items-lg-center gap-lg-3">
+        <li class="nav-item"><a class="nav-link active" href="#home" data-scroll>Home</a></li>
+
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">About</a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="#mission" data-scroll>Our Mission</a></li>
+            <li><a class="dropdown-item" href="#team" data-scroll>Our Team</a></li>
+            <li><a class="dropdown-item" href="#story" data-scroll>Our Story</a></li>
+          </ul>
+        </li>
+
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Products</a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="#software" data-scroll>Software</a></li>
+            <li><a class="dropdown-item" href="#courses" data-scroll>Courses</a></li>
+            <li><a class="dropdown-item" href="#ebooks" data-scroll>E-books</a></li>
+          </ul>
+        </li>
+
+        <li class="nav-item"><a class="nav-link" href="#pricing" data-scroll>Packages</a></li>
+        <li class="nav-item"><a class="nav-link" href="#contact" data-scroll>Contact</a></li>
+      </ul>
+      <div class="ms-lg-3 mt-3 mt-lg-0">
+        <a href="#contact" class="btn btn-brand px-3"><i class="fa fa-phone me-1"></i> Call Us</a>
+      </div>
+    </div>
+  </div>
+</nav>
+<!-- Navbar End -->
+
+<!-- Placeholder Sections for Scroll -->
+<section id="home" style="height:600px; background:#f4f4f4;"></section>
+<section id="mission" style="height:600px; background:#e3f2fd;"></section>
+<section id="team" style="height:600px; background:#fce4ec;"></section>
+<section id="story" style="height:600px; background:#fff3e0;"></section>
+<section id="software" style="height:600px; background:#e8f5e9;"></section>
+<section id="courses" style="height:600px; background:#f3e5f5;"></section>
+<section id="ebooks" style="height:600px; background:#fffde7;"></section>
+<section id="pricing" style="height:600px; background:#e0f7fa;"></section>
+<section id="contact" style="height:600px; background:#fce4ec;"></section>
+
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<!-- AOS JS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+<script>
+  AOS.init({
+    duration: 800,
+    once: true
+  });
+
+  // Scroll-active links
+  const sections = document.querySelectorAll('[data-scroll]');
+  const navLinks = document.querySelectorAll('.nav-link');
+
+  window.addEventListener('scroll', () => {
+    let current = '';
+    sections.forEach(section => {
+      const sectionTop = section.offsetTop - 80;
+      if (pageYOffset >= sectionTop) current = section.getAttribute('href');
+    });
+
+    navLinks.forEach(link => {
+      link.classList.remove('active');
+      if (link.getAttribute('href') === current) link.classList.add('active');
+    });
+  });
+</script>
+</body>
+</html>

@@ -132,3 +132,23 @@ toggle.addEventListener('change', function() {
   count++;
   document.getElementById("visitorCount").innerText = count;
   localStorage.setItem("visitorCount", count);
+
+  
+  // navbar
+ 
+  // Scroll-active links
+  const sections = document.querySelectorAll('[data-scroll]');
+  const navLinks = document.querySelectorAll('.nav-link');
+
+  window.addEventListener('scroll', () => {
+    let current = '';
+    sections.forEach(section => {
+      const sectionTop = section.offsetTop - 80;
+      if (pageYOffset >= sectionTop) current = section.getAttribute('href');
+    });
+
+    navLinks.forEach(link => {
+      link.classList.remove('active');
+      if (link.getAttribute('href') === current) link.classList.add('active');
+    });
+  });
