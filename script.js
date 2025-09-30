@@ -109,3 +109,26 @@ toggle.addEventListener('change', function() {
     }
   });
 });
+
+
+// JS for Visitor Counter (Demo)
+
+  // let count = 1250; // Example starting count
+  // const counter = document.getElementById("visitorCount");
+  
+  // function updateCounter() {
+  //   count++;
+  //   counter.textContent = count.toLocaleString();
+  // }
+
+  // // Increment every 5 seconds (demo)
+  // setInterval(updateCounter, 5000);
+  
+  // // Initial display
+  // counter.textContent = count.toLocaleString();
+
+
+    let count = parseInt(localStorage.getItem("visitorCount")) || 1000;
+  count++;
+  document.getElementById("visitorCount").innerText = count;
+  localStorage.setItem("visitorCount", count);
