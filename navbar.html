@@ -111,6 +111,29 @@
     html {
       scroll-behavior: smooth;
     }
+
+  
+  .hover-scale:hover {
+    transform: scale(1.05);
+    box-shadow: 0 12px 30px rgba(0,0,0,0.3);
+  }
+
+  .youtube-carousel-container {
+    position: relative;
+    margin-top: 40px;
+  }
+
+  .youtube-carousel {
+    scroll-behavior: smooth;
+  }
+
+  .youtube-card iframe {
+    border-radius: 12px;
+  }
+
+  .carousel-btn {
+    z-index: 10;
+  }
   </style>
 </head>
 <body>
@@ -162,6 +185,73 @@
 </nav>
 <!-- Navbar End -->
 
+<!-- HERO SECTION -->
+<section id="hero" class="py-5 position-relative" style="background: linear-gradient(135deg, #6a11cb, #2575fc); color: #fff;">
+  <div class="container">
+
+    <!-- Heading -->
+    <div class="text-center mb-5">
+      <h1 class="display-5 fw-bold">School Management System</h1>
+      <p class="lead">All-in-one platform for students, teachers, parents, and admin</p>
+      <a href="#features" class="btn btn-light btn-lg mt-3">Explore Features</a>
+    </div>
+
+    <!-- Interactive Cards -->
+    <div class="row g-4 mb-5 justify-content-center">
+      <div class="col-12 col-md-4 col-lg-3">
+        <div class="card feature-card text-center p-4 rounded-4 shadow-lg hover-scale" style="background: linear-gradient(135deg,#ff7eb3,#ff758c); transition: all 0.3s ease;">
+          <img src="https://cdn-icons-png.flaticon.com/512/147/147144.png" alt="Super Admin" width="60" class="mb-3">
+          <h5 class="fw-bold">Super Admin</h5>
+          <p class="text-white-50">Full control with all features.</p>
+        </div>
+      </div>
+      <div class="col-12 col-md-4 col-lg-3">
+        <div class="card feature-card text-center p-4 rounded-4 shadow-lg hover-scale" style="background: linear-gradient(135deg,#42e695,#3bb2b8);">
+          <img src="https://cdn-icons-png.flaticon.com/512/1995/1995523.png" alt="Admin" width="60" class="mb-3">
+          <h5 class="fw-bold">Admin</h5>
+          <p class="text-white-50">Manage activities & users easily.</p>
+        </div>
+      </div>
+      <div class="col-12 col-md-4 col-lg-3">
+        <div class="card feature-card text-center p-4 rounded-4 shadow-lg hover-scale" style="background: linear-gradient(135deg,#f7971e,#ffd200);">
+          <img src="https://cdn-icons-png.flaticon.com/512/1995/1995505.png" alt="Teacher" width="60" class="mb-3">
+          <h5 class="fw-bold">Teacher</h5>
+          <p class="text-white-50">Manage students and activities.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- YouTube Auto-Scroll Section -->
+    <div class="youtube-carousel-container position-relative">
+      <div class="youtube-carousel d-flex gap-3 overflow-hidden">
+        <!-- Single YouTube Card -->
+        <div class="youtube-card">
+          <iframe width="300" height="170" src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="YouTube video" frameborder="0" allowfullscreen></iframe>
+        </div>
+        <div class="youtube-card">
+          <iframe width="300" height="170" src="https://www.youtube.com/embed/9bZkp7q19f0" title="YouTube video" frameborder="0" allowfullscreen></iframe>
+        </div>
+        <div class="youtube-card">
+          <iframe width="300" height="170" src="https://www.youtube.com/embed/3JZ_D3ELwOQ" title="YouTube video" frameborder="0" allowfullscreen></iframe>
+        </div>
+        <div class="youtube-card">
+          <iframe width="300" height="170" src="https://www.youtube.com/embed/L_jWHffIx5E" title="YouTube video" frameborder="0" allowfullscreen></iframe>
+        </div>
+      </div>
+
+      <!-- Buttons -->
+      <button id="prevBtn" class="carousel-btn position-absolute top-50 start-0 translate-middle-y btn btn-primary">❮</button>
+      <button id="nextBtn" class="carousel-btn position-absolute top-50 end-0 translate-middle-y btn btn-primary">❯</button>
+    </div>
+  </div>
+</section>
+
+<!-- CSS -->
+
+
+<!-- JS: Auto Scroll YouTube -->
+
+
 <!-- Placeholder Sections for Scroll -->
 <section id="home" style="height:600px; background:#f4f4f4;"></section>
 <section id="mission" style="height:600px; background:#e3f2fd;"></section>
@@ -198,6 +288,41 @@
       link.classList.remove('active');
       if (link.getAttribute('href') === current) link.classList.add('active');
     });
+  });
+</script>
+
+<script>
+  const carousel = document.querySelector('.youtube-carousel');
+  const nextBtn = document.getElementById('nextBtn');
+  const prevBtn = document.getElementById('prevBtn');
+  const cardWidth = 310; // iframe + gap
+
+  // Auto scroll every 3 seconds
+  let scrollInterval = setInterval(() => {
+    carousel.scrollBy({ left: cardWidth, behavior: 'smooth' });
+    if(carousel.scrollLeft + carousel.offsetWidth >= carousel.scrollWidth) {
+      carousel.scrollLeft = 0;
+    }
+  }, 3000);
+
+  // Buttons
+  nextBtn.addEventListener('click', () => {
+    carousel.scrollBy({ left: cardWidth, behavior: 'smooth' });
+  });
+
+  prevBtn.addEventListener('click', () => {
+    carousel.scrollBy({ left: -cardWidth, behavior: 'smooth' });
+  });
+
+  // Pause auto scroll on hover
+  carousel.addEventListener('mouseenter', () => clearInterval(scrollInterval));
+  carousel.addEventListener('mouseleave', () => {
+    scrollInterval = setInterval(() => {
+      carousel.scrollBy({ left: cardWidth, behavior: 'smooth' });
+      if(carousel.scrollLeft + carousel.offsetWidth >= carousel.scrollWidth) {
+        carousel.scrollLeft = 0;
+      }
+    }, 3000);
   });
 </script>
 </body>

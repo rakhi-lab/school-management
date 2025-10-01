@@ -69,19 +69,6 @@ const blogSwiper = new Swiper(".blog-swiper", {
   },
 });
 
-// SMS Notication
-  function showLottie(id) {
-    const container = document.getElementById(id);
-    container.style.display = "block";
-
-    lottie.loadAnimation({
-      container: container,
-      renderer: 'svg',
-      loop: false,
-      autoplay: true,
-      path: 'https://assets10.lottiefiles.com/packages/lf20_touohxv0.json' 
-    });
-  }
 
  
 document.querySelectorAll(".feature-categories ul li").forEach(tab => {
@@ -127,7 +114,6 @@ toggle.addEventListener('change', function() {
   // // Initial display
   // counter.textContent = count.toLocaleString();
 
-
     let count = parseInt(localStorage.getItem("visitorCount")) || 1000;
   count++;
   document.getElementById("visitorCount").innerText = count;
@@ -152,3 +138,61 @@ toggle.addEventListener('change', function() {
       if (link.getAttribute('href') === current) link.classList.add('active');
     });
   });
+
+  // youtube section
+  const carousel = document.querySelector('.youtube-carousel');
+const cards = document.querySelectorAll('.youtube-card');
+const nextBtn = document.getElementById('nextBtn');
+const prevBtn = document.getElementById('prevBtn');
+let scrollPos = 0;
+let cardWidth = cards[0].offsetWidth + 20; // width + gap
+
+// Infinite auto-scroll using requestAnimationFrame
+function animateCarousel() {
+  scrollPos += 1; // pixels per frame
+  if(scrollPos >= carousel.scrollWidth / 2) scrollPos = 0;
+  carousel.scrollLeft = scrollPos;
+  requestAnimationFrame(animateCarousel);
+}
+requestAnimationFrame(animateCarousel);
+
+// Buttons
+nextBtn.addEventListener('click', () => { scrollPos += cardWidth; });
+prevBtn.addEventListener('click', () => { scrollPos -= cardWidth; if(scrollPos<0) scrollPos=0; });
+
+// Click-to-select highlight
+cards.forEach(card => {
+  card.addEventListener('click', () => {
+    cards.forEach(c => c.classList.remove('selected'));
+    card.classList.add('selected');
+  });
+});
+
+// tesimonial
+document.addEventListener("DOMContentLoaded", function () {
+  const swiper = new Swiper(".swiper-container", {
+    loop: true,
+    autoplay: {
+      delay: 4000,
+      disableOnInteraction: false,
+    },
+    navigation: {
+      nextEl: ".swiper-button-next",
+      prevEl: ".swiper-button-prev",
+    },
+
+    // 👇 important configs
+    slidesPerView: 1,
+    spaceBetween: 30,
+    grabCursor: true,     // cursor hand banega
+    simulateTouch: true,  // mouse/touch drag enable
+    touchRatio: 1,        // default drag sensitivity
+    keyboard: {
+      enabled: true,
+      onlyInViewport: true,
+    },
+  });
+});
+
+
+

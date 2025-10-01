@@ -19,6 +19,7 @@
   <!-- Animate.css -->
   <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" rel="stylesheet" />
 
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css"/>
   <!-- AOS (Animate on scroll) -->
   <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet" />
 
@@ -211,100 +212,160 @@
 
   <div class="divider"></div>
 
-  <!-- CORE FEATURE CARDS -->
-  <section class="py-5 position-relative" id="features">
-    <!-- Floating Shapes -->
-    <div class="bg-shape shape1"></div>
-    <div class="bg-shape shape2"></div>
+<!-- CORE FEATURE CARDS -->
+<section class="py-5 position-relative" id="features">
+  <!-- Floating Shapes -->
+  <div class="bg-shape shape1"></div>
+  <div class="bg-shape shape2"></div>
 
-    <div class="container position-relative">
+  <div class="container position-relative">
 
-      <div class="section-heading-container" data-aos="fade-up">
-        <div class="section-heading-wrapper">
-          <i class="fa-solid fa-laptop-code section-heading-bg-icon"></i>
-          <h2 class="section-title mb-1">Core Modules</h2>
+    <div class="section-heading-container" data-aos="fade-up">
+      <div class="section-heading-wrapper">
+        <i class="fa-solid fa-laptop-code section-heading-bg-icon"></i>
+        <h2 class="section-title mb-1">We Have Exclusive Features</h2>
+      </div>
+    </div>
+
+    <p class="section-sub text-center mb-5" data-aos="fade-up" data-aos-delay="100">
+      School Management is all in one solution for educational institutes with different types of Users.
+    </p>
+
+    <div class="row g-4">
+      <!-- Card 1 -->
+      <div class="col-12 col-md-6 col-lg-3" data-aos="zoom-in">
+        <div class="feature-card h-100">
+          <div class="icon-circle gradient-1 mb-3">
+            <img src="https://cdn-icons-png.flaticon.com/512/147/147144.png" alt="Super Admin" width="40" height="40">
+          </div>
+          <h5 class="fw-bold">Super Admin</h5>
+          <p class="text-muted">Take Full Control With All Features.</p>
         </div>
       </div>
 
-      <p class="section-sub text-center mb-5" data-aos="fade-up" data-aos-delay="100">
-        All essentials to run a smart school smoothly.
-      </p>
-
-      <div class="row g-4">
-        <!-- Card 1 -->
-        <div class="col-12 col-md-6 col-lg-3" data-aos="zoom-in">
-          <div class="feature-card h-100">
-            <div class="icon-circle gradient-1 mb-3"><i class="fa-solid fa-user-plus"></i></div>
-            <h5 class="fw-bold">Registration & Admissions</h5>
-            <p class="text-muted">Inquiries, follow-ups, email/SMS integration and swift admissions.</p>
+      <!-- Card 2 -->
+      <div class="col-12 col-md-6 col-lg-3" data-aos="zoom-in" data-aos-delay="100">
+        <div class="feature-card h-100">
+          <div class="icon-circle gradient-2 mb-3">
+            <img src="https://cdn-icons-png.flaticon.com/512/1995/1995523.png" alt="Admin" width="40" height="40">
           </div>
+          <h5 class="fw-bold">Admin</h5>
+          <p class="text-muted">Manage All Activities Almost All Features.</p>
         </div>
+      </div>
 
-        <!-- Card 2 -->
-        <div class="col-12 col-md-6 col-lg-3" data-aos="zoom-in" data-aos-delay="100">
-          <div class="feature-card h-100">
-            <div class="icon-circle gradient-2 mb-3"><i class="fa-solid fa-school-flag"></i></div>
-            <h5 class="fw-bold">Operations</h5>
-            <p class="text-muted">Classrooms, course tracker, transport & attendance management.</p>
+      <!-- Card 3 -->
+      <div class="col-12 col-md-6 col-lg-3" data-aos="zoom-in" data-aos-delay="200">
+        <div class="feature-card h-100">
+          <div class="icon-circle gradient-3 mb-3">
+            <img src="https://cdn-icons-png.flaticon.com/512/1995/1995505.png" alt="Teacher" width="40" height="40">
           </div>
+          <h5 class="fw-bold">Teacher</h5>
+          <p class="text-muted">Manage Students And Academy Activities.</p>
         </div>
+      </div>
 
-        <!-- Card 3 -->
-        <div class="col-12 col-md-6 col-lg-3" data-aos="zoom-in" data-aos-delay="200">
-          <div class="feature-card h-100">
-            <div class="icon-circle gradient-3 mb-3"><i class="fa-solid fa-sack-dollar"></i></div>
-            <h5 class="fw-bold">Finance</h5>
-            <p class="text-muted">Fee management, reminders, employee salaries and financial reports.</p>
+      <!-- Card 4 -->
+      <div class="col-12 col-md-6 col-lg-3" data-aos="zoom-in" data-aos-delay="300">
+        <div class="feature-card h-100">
+          <div class="icon-circle gradient-4 mb-3">
+            <img src="https://cdn-icons-png.flaticon.com/512/2331/2331949.png" alt="Accountant" width="40" height="40">
           </div>
+          <h5 class="fw-bold">Accountant</h5>
+          <p class="text-muted">Trace Students Fees, Expenses all in one place.</p>
         </div>
+      </div>
 
-        <!-- Card 4 -->
-        <div class="col-12 col-md-6 col-lg-3" data-aos="zoom-in" data-aos-delay="300">
-          <div class="feature-card h-100">
-            <div class="icon-circle gradient-4 mb-3"><i class="fa-solid fa-bolt"></i></div>
-            <h5 class="fw-bold">Automation</h5>
-            <p class="text-muted">Email/SMS panel, auto lead assignment, scheduled reports & more.</p>
+      <!-- Card 5 -->
+      <div class="col-12 col-md-6 col-lg-3" data-aos="zoom-in" data-aos-delay="400">
+        <div class="feature-card h-100">
+          <div class="icon-circle gradient-5 mb-3">
+            <img src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png" alt="Receptionist" width="40" height="40">
           </div>
+          <h5 class="fw-bold">Receptionist</h5>
+          <p class="text-muted">Manage all Front Office related Activities.</p>
         </div>
+      </div>
 
-        <!-- Card 5 -->
-        <div class="col-12 col-md-6 col-lg-3" data-aos="zoom-in" data-aos-delay="400">
-          <div class="feature-card h-100">
-            <div class="icon-circle gradient-5 mb-3"><i class="fa-solid fa-users"></i></div>
-            <h5 class="fw-bold">Student & Parents</h5>
-            <p class="text-muted">Dedicated panel for students and parents to track academics.</p>
+      <!-- Card 6 -->
+      <div class="col-12 col-md-6 col-lg-3" data-aos="zoom-in" data-aos-delay="500">
+        <div class="feature-card h-100">
+          <div class="icon-circle gradient-6 mb-3">
+            <img src="https://cdn-icons-png.flaticon.com/512/3135/3135755.png" alt="Student" width="40" height="40">
           </div>
+          <h5 class="fw-bold">Student</h5>
+          <p class="text-muted">Collaborate with Teachers, Join Activities.</p>
         </div>
+      </div>
 
-        <!-- Card 6 -->
-        <div class="col-12 col-md-6 col-lg-3" data-aos="zoom-in" data-aos-delay="500">
-          <div class="feature-card h-100">
-            <div class="icon-circle gradient-6 mb-3"><i class="fa-solid fa-book-open-reader"></i></div>
-            <h5 class="fw-bold">Library</h5>
-            <p class="text-muted">Manage books, issue/return, generate library cards & more.</p>
+      <!-- Card 7 -->
+      <div class="col-12 col-md-6 col-lg-3" data-aos="zoom-in" data-aos-delay="600">
+        <div class="feature-card h-100">
+          <div class="icon-circle gradient-7 mb-3">
+            <img src="https://cdn-icons-png.flaticon.com/512/2922/2922561.png" alt="Parents" width="40" height="40">
           </div>
+          <h5 class="fw-bold">Parents</h5>
+          <p class="text-muted">Panel for Parents to Monitor Students' Performance.</p>
         </div>
+      </div>
 
-        <!-- Card 7 -->
-        <div class="col-12 col-md-6 col-lg-3" data-aos="zoom-in" data-aos-delay="600">
-          <div class="feature-card h-100">
-            <div class="icon-circle gradient-7 mb-3"><i class="fa-solid fa-chalkboard-user"></i></div>
-            <h5 class="fw-bold">Teachers</h5>
-            <p class="text-muted">Manage attendance, assignments, grading and academic reports.</p>
+      <!-- Card 8 -->
+      <div class="col-12 col-md-6 col-lg-3" data-aos="zoom-in" data-aos-delay="700">
+        <div class="feature-card h-100">
+          <div class="icon-circle gradient-8 mb-3">
+            <img src="https://cdn-icons-png.flaticon.com/512/1995/1995525.png" alt="Librarian" width="40" height="40">
           </div>
+          <h5 class="fw-bold">Librarian</h5>
+          <p class="text-muted">Manage library books, cards, and issue records.</p>
         </div>
+      </div>
 
-        <!-- Card 8 -->
-        <div class="col-12 col-md-6 col-lg-3" data-aos="zoom-in" data-aos-delay="700">
-          <div class="feature-card h-100">
-            <div class="icon-circle gradient-8 mb-3"><i class="fa-solid fa-headset"></i></div>
-            <h5 class="fw-bold">Support</h5>
-            <p class="text-muted">Help desk, ticket system and communication with school staff.</p>
+      <!-- Card 9 -->
+      <div class="col-12 col-md-6 col-lg-3" data-aos="zoom-in" data-aos-delay="800">
+        <div class="feature-card h-100">
+          <div class="icon-circle gradient-1 mb-3">
+            <img src="https://cdn-icons-png.flaticon.com/512/3135/3135768.png" alt="Transport" width="40" height="40">
           </div>
+          <h5 class="fw-bold">Transport</h5>
+          <p class="text-muted">Manage School Buses, Routes and Attendance.</p>
+        </div>
+      </div>
+
+      <!-- Card 10 -->
+      <div class="col-12 col-md-6 col-lg-3" data-aos="zoom-in" data-aos-delay="900">
+        <div class="feature-card h-100">
+          <div class="icon-circle gradient-2 mb-3">
+            <img src="https://cdn-icons-png.flaticon.com/512/1995/1995530.png" alt="Exam Controller" width="40" height="40">
+          </div>
+          <h5 class="fw-bold">Exam Controller</h5>
+          <p class="text-muted">Schedule Exams, Manage Results and Reports.</p>
+        </div>
+      </div>
+
+      <!-- Card 11 -->
+<div class="col-12 col-md-6 col-lg-3" data-aos="zoom-in" data-aos-delay="1000">
+  <div class="feature-card h-100">
+    <div class="icon-circle gradient-3 mb-3">
+      <img src="https://cdn-icons-png.flaticon.com/512/906/906349.png" alt="Online Classes" width="40" height="40">
+    </div>
+    <h5 class="fw-bold">Online Classes</h5>
+    <p class="text-muted">Conduct virtual classes via Zoom/online platform for remote learning.</p>
+  </div>
+</div>
+
+      <!-- Card 12 -->
+      <div class="col-12 col-md-6 col-lg-3" data-aos="zoom-in" data-aos-delay="1100">
+        <div class="feature-card h-100">
+          <div class="icon-circle gradient-4 mb-3">
+            <img src="https://cdn-icons-png.flaticon.com/512/1048/1048949.png" alt="IT Support" width="40" height="40">
+          </div>
+          <h5 class="fw-bold">IT Support</h5>
+          <p class="text-muted">Maintain Technical Support for School Systems.</p>
         </div>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
 
   <div class="divider"></div>
@@ -569,313 +630,183 @@
   </div>
 </section>
 
-<!-- YOUTUBE SECTION -->
 
+ <section class="youtube-section py-5" id="youtube">
+  <!-- Floating shapes -->
+  <div class="yt-shape shape1"></div>
+  <div class="yt-shape shape2"></div>
+  <div class="yt-shape shape3"></div>
 
-  <section class="youtube-section py-5" id="youtube">
-    <!-- Floating shapes -->
-    <div class="yt-shape shape1"></div>
-    <div class="yt-shape shape2"></div>
-    <div class="yt-shape shape3"></div>
-
-    <div class="container position-relative">
-      <div class="text-center mb-5 section-heading-wrapper">
-        <i class="fa-solid fa-laptop-code section-heading-bg-icon"></i>
-        <h2 class="section-title" data-aos="fade-up">
-          🎬 Explore Our <span class="highlight">YouTube Channel</span>
-        </h2>
-        <p class="section-sub" data-aos="fade-up" data-aos-delay="100">
-          Learn more with our video tutorials, features, and client stories
-        </p>
-      </div>
-
-
-      <div class="row g-4">
-        <!-- Video Card -->
-        <div class="col-md-4 col-sm-6" data-aos="zoom-in">
-          <div class="youtube-card">
-            <div class="video-thumb">
-              <iframe src="https://www.youtube.com/embed/YOUR_VIDEO_ID1" title="YouTube video" allowfullscreen></iframe>
-              <div class="overlay"><span class="play-icon">▶</span></div>
-            </div>
-            <div class="card-body text-center">
-              <h5 class="card-title ">Introduction to Our Platform</h5>
-              <a href="https://youtu.be/YOUR_VIDEO_ID1" target="_blank" class="btn btn-brand btn-animated">
-                Watch on YouTube
-              </a>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-md-4 col-sm-6" data-aos="zoom-in">
-          <div class="youtube-card">
-            <div class="video-thumb">
-              <iframe src="https://www.youtube.com/embed/YOUR_VIDEO_ID1" title="YouTube video" allowfullscreen></iframe>
-              <div class="overlay"><span class="play-icon">▶</span></div>
-            </div>
-            <div class="card-body text-center">
-              <h5 class="card-title">Introduction to Our Platform</h5>
-              <a href="https://youtu.be/YOUR_VIDEO_ID1" target="_blank" class="btn btn-brand btn-animated">
-                Watch on YouTube
-              </a>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-md-4 col-sm-6" data-aos="zoom-in">
-          <div class="youtube-card">
-            <div class="video-thumb">
-              <iframe src="https://www.youtube.com/embed/YOUR_VIDEO_ID1" title="YouTube video" allowfullscreen></iframe>
-              <div class="overlay"><span class="play-icon">▶</span></div>
-            </div>
-            <div class="card-body text-center">
-              <h5 class="card-title">Introduction to Our Platform</h5>
-              <a href="https://youtu.be/YOUR_VIDEO_ID1" target="_blank" class="btn btn-brand btn-animated">
-                Watch on YouTube
-              </a>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-4 col-sm-6" data-aos="zoom-in">
-          <div class="youtube-card">
-            <div class="video-thumb">
-              <iframe src="https://www.youtube.com/embed/YOUR_VIDEO_ID1" title="YouTube video" allowfullscreen></iframe>
-              <div class="overlay"><span class="play-icon">▶</span></div>
-            </div>
-            <div class="card-body text-center">
-              <h5 class="card-title">Introduction to Our Platform</h5>
-              <a href="https://youtu.be/YOUR_VIDEO_ID1" target="_blank" class="btn btn-brand btn-animated">
-                Watch on YouTube
-              </a>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-4 col-sm-6" data-aos="zoom-in">
-          <div class="youtube-card">
-            <div class="video-thumb">
-              <iframe src="https://www.youtube.com/embed/YOUR_VIDEO_ID1" title="YouTube video" allowfullscreen></iframe>
-              <div class="overlay"><span class="play-icon">▶</span></div>
-            </div>
-            <div class="card-body text-center">
-              <h5 class="card-title">Introduction to Our Platform</h5>
-              <a href="https://youtu.be/YOUR_VIDEO_ID1" target="_blank" class="btn btn-brand btn-animated">
-                Watch on YouTube
-              </a>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-4 col-sm-6" data-aos="zoom-in">
-          <div class="youtube-card">
-            <div class="video-thumb">
-              <iframe src="https://www.youtube.com/embed/YOUR_VIDEO_ID1" title="YouTube video" allowfullscreen></iframe>
-              <div class="overlay"><span class="play-icon">▶</span></div>
-            </div>
-            <div class="card-body text-center">
-              <h5 class="card-title">Introduction to Our Platform</h5>
-              <a href="https://youtu.be/YOUR_VIDEO_ID1" target="_blank" class="btn btn-brand btn-animated">
-                Watch on YouTube
-              </a>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-4 col-sm-6" data-aos="zoom-in">
-          <div class="youtube-card">
-            <div class="video-thumb">
-              <iframe src="https://www.youtube.com/embed/YOUR_VIDEO_ID1" title="YouTube video" allowfullscreen></iframe>
-              <div class="overlay"><span class="play-icon">▶</span></div>
-            </div>
-            <div class="card-body text-center">
-              <h5 class="card-title">Introduction to Our Platform</h5>
-              <a href="https://youtu.be/YOUR_VIDEO_ID1" target="_blank" class="btn btn-brand btn-animated">
-                Watch on YouTube
-              </a>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-4 col-sm-6" data-aos="zoom-in">
-          <div class="youtube-card">
-            <div class="video-thumb">
-              <iframe src="https://www.youtube.com/embed/YOUR_VIDEO_ID1" title="YouTube video" allowfullscreen></iframe>
-              <div class="overlay"><span class="play-icon">▶</span></div>
-            </div>
-            <div class="card-body text-center">
-              <h5 class="card-title">Introduction to Our Platform</h5>
-              <a href="https://youtu.be/YOUR_VIDEO_ID1" target="_blank" class="btn btn-brand btn-animated">
-                Watch on YouTube
-              </a>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-md-4 col-sm-6" data-aos="zoom-in">
-          <div class="youtube-card">
-            <div class="video-thumb">
-              <iframe src="https://www.youtube.com/embed/YOUR_VIDEO_ID1" title="YouTube video" allowfullscreen></iframe>
-              <div class="overlay"><span class="play-icon">▶</span></div>
-            </div>
-            <div class="card-body text-center">
-              <h5 class="card-title">Introduction to Our Platform</h5>
-              <a href="https://youtu.be/YOUR_VIDEO_ID1" target="_blank" class="btn btn-brand btn-animated">
-                Watch on YouTube
-              </a>
-            </div>
-          </div>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- Testimonial Section -->
-  <section id="client-testimonials" class="py-5">
-    <div class="container position-relative">
-
-      <!-- Floating Shapes -->
-      <div class="shape shape-1"></div>
-      <div class="shape shape-2"></div>
-      <div class="shape shape-3"></div>
-
-      <h2 class="text-center fw-bold mb-5 ">
-        What Our <span style="color: #a93de7;">Clients Say</span>
+  <div class="container position-relative">
+    <!-- Section Heading -->
+    <div class="text-center mb-5">
+      <i class="fa-solid fa-laptop-code section-heading-bg-icon"></i>
+      <h2 class="section-title" data-aos="fade-up">
+        🎬 Explore Our <span class="highlight">YouTube Channel</span>
       </h2>
-
-      <div class="row g-4">
-
-        <!-- Client 1 -->
-        <div class="col-12 col-md-6 col-lg-4">
-          <div class="testimonial-card p-4 text-center">
-            <img
-              src="https://play-lh.googleusercontent.com/87WTyd9bl7itDTCJiqk_Cak-8FPxf7wF77UqaiYC7TDUKS85vpM-QnvSK_-TS-eKGDs=w240-h480-rw"
-              class="rounded-circle mx-auto mb-3 shadow-lg" width="90" alt="Client">
-            <h6 class="fw-bold mb-0 ">Principal Sharma</h6>
-            <small class="text-secondary">CRM and Shiromani Coaching</small>
-            <div class="text-warning my-2">
-              <i class="fas fa-star"></i><i class="fas fa-star"></i>
-              <i class="fas fa-star"></i><i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-            </div>
-
-            <p class="text-secondarysmall mb-0">
-              “<span class="highlight">Digital attendance</span> and
-              <span class="highlight">exam management</span> has saved me hours of manual work.
-              Excellent product for teachers.”
-            </p>
-
-          </div>
-        </div>
-
-        <!-- Client 2 -->
-        <div class="col-12 col-md-6 col-lg-4">
-          <div class="testimonial-card p-4 text-center">
-            <img
-              src="https://play-lh.googleusercontent.com/87WTyd9bl7itDTCJiqk_Cak-8FPxf7wF77UqaiYC7TDUKS85vpM-QnvSK_-TS-eKGDs=w240-h480-rw"
-              class="rounded-circle mx-auto mb-3 shadow-lg" width="90" alt="Client">
-            <h6 class="fw-bold mb-0 text-white">Principal Sharma</h6>
-            <small class="text-secondary">CRM and Shiromani Coaching</small>
-            <div class="text-warning my-2">
-              <i class="fas fa-star"></i><i class="fas fa-star"></i>
-              <i class="fas fa-star"></i><i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-            </div>
-
-            <p class="text-secondary small mb-0">
-              “<span class="highlight">Digital attendance</span> and
-              <span class="highlight">exam management</span> has saved me hours of manual work.
-              Excellent product for teachers.”
-            </p>
-
-          </div>
-        </div>
-        <!-- Client 3 -->
-        <div class="col-12 col-md-6 col-lg-4">
-          <div class="testimonial-card p-4 text-center">
-            <img
-              src="https://play-lh.googleusercontent.com/6dRT4ytdKWVLxqxeB6RdHBtbYVrfneIH4FKudDW70EvDs6Th17xI5oFo-451gCmz04Y=w240-h480-rw"
-              class="rounded-circle mx-auto mb-3 shadow-lg" width="90" alt="Client">
-            <h6 class="fw-bold mb-0 text-white">Rajesh Singh</h6>
-            <small class="text-secondary">Damale Schools Katsina</small>
-            <div class="text-warning my-2">
-              <i class="fas fa-star"></i><i class="fas fa-star"></i>
-              <i class="fas fa-star"></i><i class="fas fa-star"></i>
-              <i class="far fa-star"></i>
-            </div>
-            <p class="text-light small mb-0">
-              “<span class="highlight">Digital attendance</span> and
-              <span class="highlight">exam management</span> has saved me hours of manual work.
-              Excellent product for teachers.”
-            </p>
-
-          </div>
-        </div>
-
-<div class="col-12 col-md-6 col-lg-4">
-          <div class="testimonial-card p-4 text-center">
-            <img
-              src="https://play-lh.googleusercontent.com/6dRT4ytdKWVLxqxeB6RdHBtbYVrfneIH4FKudDW70EvDs6Th17xI5oFo-451gCmz04Y=w240-h480-rw"
-              class="rounded-circle mx-auto mb-3 shadow-lg" width="90" alt="Client">
-            <h6 class="fw-bold mb-0 text-white">Rajesh Singh</h6>
-            <small class="text-secondary">Damale Schools Katsina</small>
-            <div class="text-warning my-2">
-              <i class="fas fa-star"></i><i class="fas fa-star"></i>
-              <i class="fas fa-star"></i><i class="fas fa-star"></i>
-              <i class="far fa-star"></i>
-            </div>
-            <p class="text-secondary small mb-0">
-              “<span class="highlight">Digital attendance</span> and
-              <span class="highlight">exam management</span> has saved me hours of manual work.
-              Excellent product for teachers.”
-            </p>
-
-          </div>
-        </div>
-
-<div class="col-12 col-md-6 col-lg-4">
-          <div class="testimonial-card p-4 text-center">
-            <img
-              src="https://play-lh.googleusercontent.com/6dRT4ytdKWVLxqxeB6RdHBtbYVrfneIH4FKudDW70EvDs6Th17xI5oFo-451gCmz04Y=w240-h480-rw"
-              class="rounded-circle mx-auto mb-3 shadow-lg" width="90" alt="Client">
-            <h6 class="fw-bold mb-0 text-white">Rajesh Singh</h6>
-            <small class="text-secondary">Damale Schools Katsina</small>
-            <div class="text-warning my-2">
-              <i class="fas fa-star"></i><i class="fas fa-star"></i>
-              <i class="fas fa-star"></i><i class="fas fa-star"></i>
-              <i class="far fa-star"></i>
-            </div>
-            <p class="text-light small mb-0">
-              “<span class="highlight">Digital attendance</span> and
-              <span class="highlight">exam management</span> has saved me hours of manual work.
-              Excellent product for teachers.”
-            </p>
-
-          </div>
-        </div>
-              
-        <div class="col-12 col-md-6 col-lg-4">
-          <div class="testimonial-card p-4 text-center">
-            <img
-              src="https://play-lh.googleusercontent.com/6dRT4ytdKWVLxqxeB6RdHBtbYVrfneIH4FKudDW70EvDs6Th17xI5oFo-451gCmz04Y=w240-h480-rw"
-              class="rounded-circle mx-auto mb-3 shadow-lg" width="90" alt="Client">
-            <h6 class="fw-bold mb-0 text-white">Rajesh Singh</h6>
-            <small class="text-secondary">Damale Schools Katsina</small>
-            <div class="text-warning my-2">
-              <i class="fas fa-star"></i><i class="fas fa-star"></i>
-              <i class="fas fa-star"></i><i class="fas fa-star"></i>
-              <i class="far fa-star"></i>
-            </div>
-            <p class="text-light small mb-0">
-              “<span class="highlight">Digital attendance</span> and
-              <span class="highlight">exam management</span> has saved me hours of manual work.
-              Excellent product for teachers.”
-            </p>
-
-          </div>
-        </div>
-
-      </div>
+      <p class="section-sub" data-aos="fade-up" data-aos-delay="100">
+        Learn more with our video tutorials, features, and client stories
+      </p>
     </div>
-  </section>
+
+    <!-- Carousel -->
+    <div class="position-relative">
+      <div class="d-flex overflow-hidden youtube-carousel" id="youtubeCarousel">
+        <!-- YouTube Cards -->
+        <div class="flex-shrink-0 col-12 col-sm-6 col-md-4 col-lg-3 p-2">
+          <div class="youtube-card">
+            <iframe src="https://www.youtube.com/embed/VkvOxr5DQ5Q" allowfullscreen></iframe>
+          </div>
+        </div>
+        <div class="flex-shrink-0 col-12 col-sm-6 col-md-4 col-lg-3 p-2">
+          <div class="youtube-card">
+            <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" allowfullscreen></iframe>
+          </div>
+        </div>
+        <div class="flex-shrink-0 col-12 col-sm-6 col-md-4 col-lg-3 p-2">
+          <div class="youtube-card">
+            <iframe src="https://www.youtube.com/embed/9bZkp7q19f0" allowfullscreen></iframe>
+          </div>
+        </div>
+        <div class="flex-shrink-0 col-12 col-sm-6 col-md-4 col-lg-3 p-2">
+          <div class="youtube-card">
+            <iframe src="https://www.youtube.com/embed/3JZ_D3ELwOQ" allowfullscreen></iframe>
+          </div>
+        </div>
+        <div class="flex-shrink-0 col-12 col-sm-6 col-md-4 col-lg-3 p-2">
+          <div class="youtube-card">
+            <iframe src="https://www.youtube.com/embed/L_jWHffIx5E" allowfullscreen></iframe>
+          </div>
+        </div>
+      </div>
+
+      <!-- Buttons -->
+      <button id="prevBtn" class="btn btn-primary position-absolute top-50 start-0 translate-middle-y">❮</button>
+      <button id="nextBtn" class="btn btn-primary position-absolute top-50 end-0 translate-middle-y">❯</button>
+    </div>
+
+    <!-- Explore Features Button -->
+    <div class="text-center mt-4">
+      <a href="#features" class="btn btn-light btn-lg">Explore Features</a>
+    </div>
+
+    <!-- Description -->
+    <div class="yt-title">
+      <h3>Watch Video Tutorial</h3>
+      <h4>Complete video tutorials to demonstrate school management features.</h4>
+      <p>
+        School Management is a WordPress plugin to manage multiple schools and their entities such as
+        classes, sections, students, exams, ID cards, admit cards, teachers, staff, fees, invoices,
+        income, expense, noticeboard, study materials and much more. You can take live classes with Zoom.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- Testimonial Section-->
+<section class="creative-testimonial--slider">
+  <div class="testimonial-inner" style="background-image: url(https://i.ibb.co/99Kc53w7/demo-corporate-bg-02.png);">
+    <div class="testimonial-row">
+      <h2 class="testimonial-heading">Trusted by the world's fastest growing companies</h2>
+      
+      <div class="testimonial-wrap">
+        <div class="swiper-container">
+          <div class="swiper-wrapper">
+
+            <!-- Slide 1 -->
+            <div class="swiper-slide">
+              <div class="swiper-slide--inner">
+                <div class="slide-avatar">
+                  <img src="https://weblizar.com/wp-content/uploads/2018/10/photo.jpeg" alt="">
+                  <div class="quote"><i class="fa fa-quote-left"></i></div>
+                </div>
+                <div class="testimonial-detail">
+                  <h1>Jake Foster</h1>
+                  <p>I've purchased several plugins from Weblizar over the past few years for a number of key features that we've implemented and we've been very impressed with the quality and overall support.</p>
+                  <span>Herman miller, Monday</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Slide 2 -->
+            <div class="swiper-slide">
+              <div class="swiper-slide--inner">
+                <div class="slide-avatar">
+                  <img src="https://weblizar.com/wp-content/uploads/2018/06/foto-200x200.jpg" alt="">
+                  <div class="quote"><i class="fa fa-quote-left"></i></div>
+                </div>
+                <div class="testimonial-detail">
+                  <h1>Rogério Teixeira Martins</h1>
+                  <p>Serious company is unusual in the business world. I needed help and was promptly assisted by partner Vebhor Purandare. I wish all success in the world to those warriors willing to collaborate with the success of even couples. Big hug to the whole team!</p>
+                  <span>Owner</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Slide 3 -->
+            <div class="swiper-slide">
+              <div class="swiper-slide--inner">
+                <div class="slide-avatar">
+                  <img src="https://weblizar.com/wp-content/uploads/2018/06/team_pic_248x322px-200x200.jpg" alt="">
+                  <div class="quote"><i class="fa fa-quote-left"></i></div>
+                </div>
+                <div class="testimonial-detail">
+                  <h1>Wolfgang Kasulke</h1>
+                  <p>Weblizar's support - unbelievably fast, highly available and always customer-focused. A special thanks to Mr. Shobhit and Ms. Surbhi. We really appreciate the way you are doing your job.</p>
+                  <span>Head of Dept.</span>
+                </div>
+              </div>
+            </div>
+
+          </div>
+          <!-- Swiper Navigation -->
+          <div class="swiper-button-next slide-btns"></div>
+          <div class="swiper-button-prev slide-btns"></div>
+        </div>
+      </div>
+
+      <!-- Company details -->
+      <div class="company-details--row">
+        <div class="company-box">
+          <div class="company-box-inner">
+            <div class="company-box-top">
+              <img src="https://play-lh.googleusercontent.com/kofhCUVsE9IJkh1WIcjBJrvnXyagVzVJLW5HpaJZUS7HU7d9XaRMS8SOELupluA_xKSj=w240-h480-rw" alt="Company Name">
+            </div>
+            <div class="company-box-bottom">
+              <span>Deeksha Model School - <strong>13 Jul 2025</strong></span>
+            </div>
+          </div>
+        </div>
+        
+        <div class="company-box">
+          <div class="company-box-inner">
+            <div class="company-box-top">
+              <img src="https://play-lh.googleusercontent.com/87WTyd9bl7itDTCJiqk_Cak-8FPxf7wF77UqaiYC7TDUKS85vpM-QnvSK_-TS-eKGDs=w240-h480-rw" alt="Company Name">
+            </div>
+            <div class="company-box-bottom">
+              <span>CRM and Shiromani Coaching - <strong>100% Growth</strong></span>
+            </div>
+          </div>
+        </div>
+        
+        <div class="company-box">
+          <div class="company-box-inner">
+            <div class="company-box-top">
+              <img src="https://play-lh.googleusercontent.com/W03awut0QsKXtJ44q8wtkPOXf4hndiv_5Lu_0zfY8GZ7zeaAQkzQ5VkKkIgoPPYKL6c22jU9sLJufg7RecJADBE=w240-h480-rw" alt="Company Name">
+            </div>
+            <div class="company-box-bottom">
+              <span>Nandini Public School - <strong>25 Sept 2025</strong></span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
 
 
+  <!-- Testimonial Section end-->
 
   
   <section class="purchase-pro">
@@ -913,7 +844,6 @@
           </svg>
         </div>
 
-        <button class="enable-btn" onclick="showLottie('email-lottie')">📧 Enable</button>
         <div class="lottie-confirmation" id="email-lottie"></div>
       </div>
 
@@ -932,7 +862,7 @@
           </svg>
         </div>
 
-        <button class="enable-btn" onclick="showLottie('sms-lottie')">📲 Enable</button>
+        
         <div class="lottie-confirmation" id="sms-lottie"></div>
       </div>
 
@@ -997,8 +927,6 @@
       <!-- Contact Info -->
       <div class="contact-info">
         <h5 class="section-subtitle">KNOW ABOUT US</h5>
-        <h2 class="section-title">Get in Touch</h2>
-
         <div class="info-item">
           <i class="fa fa-map-marker"></i>
           <div>
@@ -1025,7 +953,8 @@
         </div>
 
         <div class="info-item">
-          <i class="fa fa-skype"></i>
+          <i class="fa-brands fa-skype"></i>
+          
           <div>
             <h4>SKYPE ADDRESS</h4>
             <p>weblizar</p>
@@ -1035,7 +964,7 @@
 
       <!-- Contact Image -->
       <div class="contact-image">
-        <img src="https://cdni.iconscout.com/illustration/premium/thumb/contact-us-illustration-svg-download-png-4849052.png" alt="contact illustration">
+        <img src="./assets/Contact-us-amico.png" alt="Contact Us">
       </div>
 
     </div>
@@ -1054,7 +983,7 @@
           phone, or the contact form. We’re eager to assist you.  
           <strong>Nice hearing from you!</strong>
         </p>
-        <img src="https://cdn-icons-png.flaticon.com/512/3062/3062634.png" 
+        <img src="./assets/Contact-us-pana.png" 
              alt="Contact Illustration" class="contact-img">
       </div>
 
@@ -1066,6 +995,9 @@
 
           <label>Email:</label>
           <input type="email" placeholder="Your Email">
+
+          <label>Contect Number:</label>
+          <input type="tel" placeholder="Your Phone Number">
 
           <label>Message:</label>
           <textarea placeholder="Write your message..."></textarea>
@@ -1156,7 +1088,6 @@
   <!-- <p>Visitors</p> -->
     </div> 
 
-
     <div class="footer-bottom">
       <p>&copy; 2025 Weblizar.com | All Rights Reserved</p>
     </div>
@@ -1177,6 +1108,7 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/lottie-web/5.7.6/lottie.min.js"></script>
   
+<script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
   <script>
     AOS.init({
       once: true,
