@@ -3,7 +3,6 @@
   padding:0;
   box-sizing:border-box;
   scroll-behavior:smooth;
-width: 100%;
 }
 
 ::selection {
@@ -26,6 +25,7 @@ width: 100%;
 --shadow:0 10px 30px rgba(11,34,57,.08);
 --radius:18px;
 }
+
 
 html,body{scroll-behavior:smooth;}
 body{
@@ -127,7 +127,11 @@ h1,h2,h3,h4,.brand-font{
       }
     }
 
-  
+    /* Smooth Scroll */
+    html {
+      scroll-behavior: smooth;
+    }
+
 /* HERO */
 
 /* Hero Container */

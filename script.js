@@ -70,6 +70,7 @@ const blogSwiper = new Swiper(".blog-swiper", {
 });
 
 
+
  
 document.querySelectorAll(".feature-categories ul li").forEach(tab => {
   tab.addEventListener("click", function() {
