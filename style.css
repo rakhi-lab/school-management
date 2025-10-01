@@ -3,7 +3,7 @@
   padding:0;
   box-sizing:border-box;
   scroll-behavior:smooth;
-width: 100%;
+/* width: 100%; */
 }
 
 ::selection {
@@ -35,18 +35,7 @@ h1,h2,h3,h4,.brand-font{
     font-family:'Raleway',Segoe UI,Arial,sans-serif;
 }
 
-
-/* NAVBAR */
-/* .navbar{
-    box-shadow:var(--shadow);
-}
-.navbar-brand{font-weight:800;letter-spacing:.5px;color:var(--brand)!important}
-.nav-link{font-weight:500;color:var(--ink)!important;opacity:.85}
-.nav-link:hover{opacity:1}
-.btn-brand{background:var(--brand); color:var(--card); border:none}
-.btn-brand:hover{background:var(--brand-dark)} */
-
- /* Navbar Styles */
+ /* Navbar */
     .navbar {
       box-shadow: var(--shadow);
       transition: all 0.3s ease;
