@@ -20,19 +20,19 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 // fixed button
-const toTop = document.getElementById("toTop");
+// const toTop = document.getElementById("toTop");
 
-window.addEventListener("scroll", () => {
-  if (window.scrollY > 300) {
-    toTop.style.display = "flex";
-  } else {
-    toTop.style.display = "none";
-  }
-});
+// window.addEventListener("scroll", () => {
+//   if (window.scrollY > 300) {
+//     toTop.style.display = "flex";
+//   } else {
+//     toTop.style.display = "none";
+//   }
+// });
 
-toTop.addEventListener("click", () => {
-  window.scrollTo({ top: 0, behavior: "smooth" });
-});
+// toTop.addEventListener("click", () => {
+//   window.scrollTo({ top: 0, behavior: "smooth" });
+// });
 
 
 // testimonial swiper
@@ -144,45 +144,133 @@ toggle.addEventListener('change', function() {
   // });
 
 
-// navbar shrink on scroll
-  $(window).on("scroll", function() {
-    if ($(this).scrollTop() > 50) {
-      $(".navbar").addClass("shrink");
+document.addEventListener("DOMContentLoaded", function () {
+  // Shrink Navbar on Scroll
+  const navbar = document.getElementById("mainNav");
+  window.addEventListener("scroll", function () {
+    if (window.scrollY > 50) {
+      navbar.classList.add("shrink");
     } else {
-      $(".navbar").removeClass("shrink");
+      navbar.classList.remove("shrink");
     }
   });
+
+  // Mobile Dropdown Toggle on Click
+  if (window.innerWidth < 992) {
+    document.querySelectorAll(".dropdown-toggle").forEach(function(el){
+      el.addEventListener("click", function(e){
+        e.preventDefault();
+        let nextEl = this.nextElementSibling;
+        if(nextEl && nextEl.classList.contains("dropdown-menu")){
+          nextEl.classList.toggle("show");
+        }
+      });
+    });
+  }
+});
+
 
 
 
   // youtube section
+/*
+  Auto X-axis scroll script:
+  - Clones track children so combined width >= 2x viewport making seamless loop possible.
+  - Uses requestAnimationFrame for smooth continuous scroll.
+  - Pauses on hover/focus or when 'paused' toggled.
+  - Adjust SPEED_PX_PER_SEC with range input.
+*/
 
-  const carousel = document.getElementById('youtubeCarousel');
-  let scrollAmount = 0;
-  const scrollStep = 300; // pixels to scroll each time
-  const scrollInterval = 3000; // time in ms between scrolls
+const viewport = document.getElementById('viewport');
+const track = document.getElementById('track');
+const toggleBtn = document.getElementById('toggleBtn');
+const speedRange = document.getElementById('speedRange');
+const scrollLeftBtn = document.getElementById('scrollLeft');
+const scrollRightBtn = document.getElementById('scrollRight');
 
-  setInterval(() => {
-    if (scrollAmount >= carousel.scrollWidth - carousel.clientWidth) {
-      scrollAmount = 0; // reset to start
-    } else {
-      scrollAmount += scrollStep;
-    }
-    carousel.scrollTo({
-      left: scrollAmount,
-      behavior: 'smooth'
+let paused = false;
+let SPEED_PX_PER_SEC = parseFloat(speedRange.value); // px per second
+let lastTimestamp = null;
+
+// make initial clones to ensure track width >= viewport width * 2
+function ensureClones() {
+  // remove previously cloned marker if any
+  const originalChildren = Array.from(track.children);
+  // simple approach: duplicate all original children once
+  // but avoid repeating too many times
+  const currentWidth = track.scrollWidth;
+  const viewportW = viewport.clientWidth;
+  if (currentWidth < viewportW * 2) {
+    // clone original children once
+    originalChildren.forEach(node => {
+      const clone = node.cloneNode(true);
+      clone.classList.add('cloned');
+      track.appendChild(clone);
     });
-  }, scrollInterval);
+  }
+}
+ensureClones();
 
-
-
-// Click-to-select highlight
-cards.forEach(card => {
-  card.addEventListener('click', () => {
-    cards.forEach(c => c.classList.remove('selected'));
-    card.classList.add('selected');
-  });
+// If window resizes, ensure clones still cover
+window.addEventListener('resize', () => {
+  ensureClones();
 });
+
+function step(timestamp){
+  if (lastTimestamp === null) lastTimestamp = timestamp;
+  const delta = (timestamp - lastTimestamp) / 1000; // seconds
+  lastTimestamp = timestamp;
+
+  if (!paused) {
+    const movePx = SPEED_PX_PER_SEC * delta;
+    viewport.scrollLeft += movePx;
+
+    // When we've scrolled past half of the track (original set), wrap back
+    // Find the width of the first set of items (we assume original items set is the first N children until clones)
+    // Simpler: when scrollLeft >= track.scrollWidth / 2 -> subtract track.scrollWidth / 2
+    const half = track.scrollWidth / 2;
+    if (viewport.scrollLeft >= half) {
+      viewport.scrollLeft -= half;
+    }
+  }
+
+  requestAnimationFrame(step);
+}
+requestAnimationFrame(step);
+
+// Hover/focus to pause
+viewport.addEventListener('mouseenter', ()=> paused = true);
+viewport.addEventListener('mouseleave', ()=> paused = false);
+viewport.addEventListener('focusin', ()=> paused = true);
+viewport.addEventListener('focusout', ()=> paused = false);
+
+// Toggle button
+toggleBtn.addEventListener('click', () => {
+  paused = !paused;
+  toggleBtn.textContent = paused ? 'Play' : 'Pause';
+});
+
+// Speed control
+speedRange.addEventListener('input', e => {
+  SPEED_PX_PER_SEC = parseFloat(e.target.value);
+});
+
+// small manual scroll buttons
+scrollLeftBtn.addEventListener('click', () => {
+  viewport.scrollLeft = Math.max(0, viewport.scrollLeft - 300);
+});
+scrollRightBtn.addEventListener('click', () => {
+  viewport.scrollLeft = viewport.scrollLeft + 300;
+});
+
+// Accessibility: pause on keyboard interactions (space/enter on buttons handled by default)
+document.addEventListener('visibilitychange', () => {
+  // pause when tab not visible to reduce CPU
+  paused = document.hidden;
+  toggleBtn.textContent = paused ? 'Play' : 'Pause';
+});
+
+
 
 // tesimonial
 document.addEventListener("DOMContentLoaded", function () {

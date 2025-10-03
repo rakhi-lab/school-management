@@ -31,24 +31,23 @@ body{
     overflow-x: hidden;
     position: relative;
     width: 100%;
+      align-items: center;
+  justify-content: center;
+
 }
 h1,h2,h3,h4,.brand-font{
     font-family:'Raleway',Segoe UI,Arial,sans-serif;
 }
 
-/* NAVBAR */
-
+/* ==============================
+   Navbar Default Styling
+============================== */
 .navbar {
-  box-shadow: var(--shadow);
-  transition: all 0.3s ease;
   background: #fff;
+  padding: 18px 0;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
   z-index: 1000;
-  padding: 18px 0; /* default padding */
-}
-
-/* Shrink Navbar when scrolled */
-.navbar.shrink {
-  padding: 6px 0; 
 }
 
 .navbar-brand img {
@@ -56,53 +55,72 @@ h1,h2,h3,h4,.brand-font{
   transition: max-height 0.3s ease;
 }
 
-.navbar.shrink .navbar-brand img {
-  max-height: 55px; /* logo small after scroll */
+.brand-subtitle {
+  font-size: 0.85rem;
 }
 
-/* Dropdown Animation */
+/* ==============================
+   Shrink Navbar on Scroll
+============================== */
+.navbar.shrink {
+  padding: 6px 0;
+}
+
+.navbar.shrink .navbar-brand img {
+  max-height: 55px;
+}
+
+/* ==============================
+   Dropdown Menu Styling
+============================== */
 .dropdown-menu {
   border-radius: 8px;
-  box-shadow: 0 6px 18px rgba(0,0,0,0.15);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
   transform: translateY(10px);
   opacity: 0;
+  visibility: hidden;
   transition: all 0.3s ease;
   display: block;
-  visibility: hidden;
-}
-.dropdown:hover > .dropdown-menu {
-  transform: translateY(0);
-  opacity: 1;
-  visibility: visible;
 }
 
-/* Responsive Fix */
+/* Desktop Hover Effect */
+@media (min-width: 992px) {
+  .dropdown:hover > .dropdown-menu {
+    transform: translateY(0);
+    opacity: 1;
+    visibility: visible;
+  }
+}
+
+/* ==============================
+   Responsive Mobile Styling
+============================== */
 @media (max-width: 991px) {
   .navbar {
     padding: 10px 15px;
   }
+
   .navbar.shrink {
     padding: 5px 15px;
   }
-  .navbar-brand {
-    align-items: center;
-    text-align: center;
-  }
+
   .navbar-brand img {
     max-height: 65px;
   }
+
   .navbar.shrink .navbar-brand img {
     max-height: 50px;
   }
+
   .brand-subtitle {
     font-size: 0.7rem;
   }
 }
 
-/* Smooth Scroll */
-html {
-  scroll-behavior: smooth;
-}
+/* ==============================
+   Smooth Scroll
+============================== */
+
 
 /* HERO */
 
@@ -1132,7 +1150,7 @@ section{scroll-margin-top:90px}
   background: linear-gradient(135deg, #f5f8fb, #ffffff);
   overflow: hidden;
 }
-
+/* 
 .youtube-card {
   background: #fff;
   border-radius: var(--radius);
@@ -1143,11 +1161,8 @@ section{scroll-margin-top:90px}
 }
 
 .youtube-card:hover {
-  /* transform: scale(1.0); */
   box-shadow: 0 20px 45px rgba(11,34,57,.15);
 }
-
-
 
 .video-thumb iframe {
   width: 100%;
@@ -1163,7 +1178,6 @@ aspect-ratio: 16/10;
   scroll-behavior: smooth;
   white-space: nowrap;
 
-  /* Hide scrollbar for Webkit (Chrome, Safari) */
   -ms-overflow-style: none; 
   scrollbar-width: none;     
 }
@@ -1184,8 +1198,70 @@ aspect-ratio: 16/10;
   width: 100%;
   height: 160px;
   border: none;
-}
+} */
 
+
+
+  /* Visible window */
+  .viewport{
+    overflow: hidden;
+    border-radius:12px;
+    background:var(--card);
+    padding:12px;
+    /* box-shadow: 0 6px 30px rgba(0,0,0,.6); */
+  }
+
+  /* Horizontal track */
+  .track{
+    display:flex;
+    gap:var(--gap);
+    align-items:center;
+    will-change: transform;
+    /* don't allow wrapping */
+    flex-wrap: nowrap;
+  }
+
+  .video-item{
+    flex: 0 0 320px; /* width of each item; adjust responsive below */
+    height: 180px;
+    border-radius:8px;
+    overflow: hidden;
+    background: #ffffff;
+    /* box-shadow: 0 4px 18px rgba(0,0,0,.6); */
+  }
+
+  .video-item iframe{
+    width:100%;
+    height:100%;
+    border:0;
+    display:block;
+  }
+
+  /* Responsive sizes */
+  @media (max-width: 900px){
+    .video-item{ flex-basis: 280px; height:158px; }
+  }
+  @media (max-width: 600px){
+    .video-item{ flex-basis: 220px; height:124px; }
+  }
+
+  /* Small control UI */
+  .controls{
+    margin-top:12px;
+    display:flex;
+    gap:8px;
+    align-items:center;
+  }
+  .controls button{
+    background:#111827;
+    color:#fff;
+    border:1px solid #2b3944;
+    padding:8px 12px;
+    border-radius:8px;
+    cursor:pointer;
+  }
+  .controls input[type="range"]{ width:160px; }
+  .note{ margin-top:10px; font-size:13px; color:#9aa7b2; }
 
 /* Floating shapes */
 .yt-shape {
