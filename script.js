@@ -19,10 +19,11 @@ document.addEventListener('DOMContentLoaded', () => {
   gsap.from('#hero p', { opacity: 0, y: 50, duration: 1, delay: 0.5 });
 });
 
-// fixed button
-// const toTop = document.getElementById("toTop");
 
-// window.addEventListener("scroll", () => {
+// Scroll Up Button fixed button
+// const toTop = document.getElementById('toTop');
+
+// window.addEventListener('scroll', () => {
 //   if (window.scrollY > 300) {
 //     toTop.style.display = "flex";
 //   } else {
@@ -30,8 +31,8 @@ document.addEventListener('DOMContentLoaded', () => {
 //   }
 // });
 
-// toTop.addEventListener("click", () => {
-//   window.scrollTo({ top: 0, behavior: "smooth" });
+// toTop.addEventListener('click', () => {
+//   window.scrollTo({ top: 0, behavior: 'smooth' });
 // });
 
 

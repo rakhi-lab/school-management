@@ -30,7 +30,7 @@ body{
     font-family:'Roboto',system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;color:var(--ink);
     overflow-x: hidden;
     position: relative;
-    width: 100%;
+    width: 100vw;
       align-items: center;
   justify-content: center;
 
@@ -748,57 +748,6 @@ section{scroll-margin-top:90px}
   .shape2 { bottom: -15px; right: -15px; }
 }
 
-/* FLOATERS */
-/* WhatsApp Floating Button */
-.whatsapp-float {
-  position: fixed;
-  right: 18px;
-  bottom: 18px;
-  z-index: 9999; /* top layer */
-  width: 60px;
-  height: 60px;
-  border-radius: 50%;
-  background: #25D366;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  box-shadow: 0 5px 15px rgba(0,0,0,0.3);
-  transition: transform 0.3s ease;
-}
-
-.whatsapp-float img {
-  width: 35px;
-  height: 35px;
-}
-
-.whatsapp-float:hover {
-  transform: translateY(-5px);
-}
-
-/* Scroll to Top Button */
-.to-top {
-  position: fixed;
-  right: 18px;
-  bottom: 90px; /* WhatsApp button ke upar */
-  z-index: 9999; /* top layer */
-  width: 50px;
-  height: 50px;
-  background: #9250e2;
-  color: #fff;
-  border: none;
-  border-radius: 50%;
-  font-size: 24px;
-  cursor: pointer;
-  display: none; /* Page load pe hidden */
-  justify-content: center;
-  align-items: center;
-  box-shadow: 0 5px 15px rgba(0,0,0,0.3);
-}
-
-.to-top:hover {
-  background: #6a32b7;
-}
-
 
 /* UTIL */
 .divider{height:1px;background:linear-gradient(90deg,transparent, #dfe8f3 20%, #dfe8f3 80%, transparent)}
@@ -1005,6 +954,52 @@ section{scroll-margin-top:90px}
   }
 }
 
+/* =============fixed button */
+/* WhatsApp Floating Button */
+.whatsapp-float {
+  position: fixed;
+  right: 18px;
+  bottom: 90px;
+  width: 54px;
+  height: 54px;
+  background: #25D366;
+  color: #fff;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  font-size: 24px;
+  z-index: 1050;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+  transition: transform 0.3s ease;
+}
+.whatsapp-float:hover {
+  transform: scale(1.1);
+}
+
+/* Scroll Up Button */
+.scroll-up {
+  position: fixed;
+  right: 18px;
+  bottom: 18px;
+  width: 50px;
+  height: 50px;
+  background: #9250e2;
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  display: none; /* initially hidden */
+  justify-content: center;
+  align-items: center;
+  font-size: 20px;
+  cursor: pointer;
+  z-index: 1050;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+  transition: transform 0.3s ease;
+}
+.scroll-up:hover {
+  transform: scale(1.1);
+}
+
 
 /* ------------- */
 .transition {
@@ -1016,7 +1011,6 @@ section{scroll-margin-top:90px}
   color: #00b7f1;
   transform: scale(1.05);
 }
-
 
 /* card */
 .feature-card {
@@ -1039,8 +1033,6 @@ section{scroll-margin-top:90px}
   color: #0056b3;
 }
 
-
-/* Blog Section Styling */
 .blog-card {
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   border-radius: 10px;
