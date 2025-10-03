@@ -1,12 +1,10 @@
-// Header
+// Header hero section
 window.addEventListener('scroll', () => {
   const scroll = window.scrollY;
   document.querySelectorAll('.floating-card').forEach((el, index) => {
     el.style.transform = `translateY(${scroll*0.03*(index+1)}px)`;
   });
 });
-
-
 
 // Initialize AOS
 AOS.init({
@@ -21,8 +19,23 @@ document.addEventListener('DOMContentLoaded', () => {
   gsap.from('#hero p', { opacity: 0, y: 50, duration: 1, delay: 0.5 });
 });
 
-// testimonial swiper
+// fixed button
+const toTop = document.getElementById("toTop");
 
+window.addEventListener("scroll", () => {
+  if (window.scrollY > 300) {
+    toTop.style.display = "flex";
+  } else {
+    toTop.style.display = "none";
+  }
+});
+
+toTop.addEventListener("click", () => {
+  window.scrollTo({ top: 0, behavior: "smooth" });
+});
+
+
+// testimonial swiper
   var testimonialSwiper = new Swiper(".testimonial-swiper", {
     loop: true,
     grabCursor: true,
@@ -101,65 +114,67 @@ toggle.addEventListener('change', function() {
 
 // JS for Visitor Counter (Demo)
 
-  // let count = 1250; // Example starting count
-  // const counter = document.getElementById("visitorCount");
+    let count = 0;
+  const target = 1024;
+  const flip = document.getElementById("flipCounter");
+  const interval = setInterval(() => {
+    count += 8;
+    flip.textContent = count.toString().padStart(4, '0');
+    if (count >= target) clearInterval(interval);
+  }, 40);
   
-  // function updateCounter() {
-  //   count++;
-  //   counter.textContent = count.toLocaleString();
-  // }
 
-  // // Increment every 5 seconds (demo)
-  // setInterval(updateCounter, 5000);
-  
-  // // Initial display
-  // counter.textContent = count.toLocaleString();
-
-    let count = parseInt(localStorage.getItem("visitorCount")) || 1000;
-  count++;
-  document.getElementById("visitorCount").innerText = count;
-  localStorage.setItem("visitorCount", count);
-
-  
   // navbar
  
   // Scroll-active links
-  const sections = document.querySelectorAll('[data-scroll]');
-  const navLinks = document.querySelectorAll('.nav-link');
+  // const sections = document.querySelectorAll('[data-scroll]');
+  // const navLinks = document.querySelectorAll('.nav-link');
 
-  window.addEventListener('scroll', () => {
-    let current = '';
-    sections.forEach(section => {
-      const sectionTop = section.offsetTop - 80;
-      if (pageYOffset >= sectionTop) current = section.getAttribute('href');
-    });
+  // window.addEventListener('scroll', () => {
+  //   let current = '';
+  //   sections.forEach(section => {
+  //     const sectionTop = section.offsetTop - 80;
+  //     if (pageYOffset >= sectionTop) current = section.getAttribute('href');
+  //   });
 
-    navLinks.forEach(link => {
-      link.classList.remove('active');
-      if (link.getAttribute('href') === current) link.classList.add('active');
-    });
+  //   navLinks.forEach(link => {
+  //     link.classList.remove('active');
+  //     if (link.getAttribute('href') === current) link.classList.add('active');
+  //   });
+  // });
+
+
+// navbar shrink on scroll
+  $(window).on("scroll", function() {
+    if ($(this).scrollTop() > 50) {
+      $(".navbar").addClass("shrink");
+    } else {
+      $(".navbar").removeClass("shrink");
+    }
   });
 
+
+
   // youtube section
-  const carousel = document.querySelector('.youtube-carousel');
-const cards = document.querySelectorAll('.youtube-card');
-const nextBtn = document.getElementById('nextBtn');
-const prevBtn = document.getElementById('prevBtn');
-let scrollPos = 0;
-let cardWidth = cards[0].offsetWidth + 20; // width + gap
 
-// Infinite auto-scroll using requestAnimationFrame
-function animateCarousel() {
-  scrollPos += 1; // pixels per frame
-  if(scrollPos >= carousel.scrollWidth / 2) scrollPos = 0;
-  carousel.scrollLeft = scrollPos;
-  requestAnimationFrame(animateCarousel);
-}
-requestAnimationFrame(animateCarousel);
+  const carousel = document.getElementById('youtubeCarousel');
+  let scrollAmount = 0;
+  const scrollStep = 300; // pixels to scroll each time
+  const scrollInterval = 3000; // time in ms between scrolls
 
-// Buttons
-nextBtn.addEventListener('click', () => { scrollPos += cardWidth; });
-prevBtn.addEventListener('click', () => { scrollPos -= cardWidth; if(scrollPos<0) scrollPos=0; });
+  setInterval(() => {
+    if (scrollAmount >= carousel.scrollWidth - carousel.clientWidth) {
+      scrollAmount = 0; // reset to start
+    } else {
+      scrollAmount += scrollStep;
+    }
+    carousel.scrollTo({
+      left: scrollAmount,
+      behavior: 'smooth'
+    });
+  }, scrollInterval);
+
+
 
 // Click-to-select highlight
 cards.forEach(card => {
