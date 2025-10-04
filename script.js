@@ -99,18 +99,18 @@ document.querySelectorAll(".feature-categories ul li").forEach(tab => {
   });
 });
 
-// Monthly/Yearly toggle
-const toggle = document.getElementById('togglePrice');
-toggle.addEventListener('change', function() {
-  document.querySelectorAll('.price').forEach(p => {
-    let val = parseInt(p.textContent.replace('₹',''));
-    if(toggle.checked){
-      p.textContent = '₹' + Math.round(val * 12 * 0.9); // yearly 10% discount
-    } else {
-      p.textContent = '₹' + Math.round(val / 0.9 / 12); // back to monthly
-    }
-  });
-});
+// // Monthly/Yearly toggle
+// const toggle = document.getElementById('togglePrice');
+// toggle.addEventListener('change', function() {
+//   document.querySelectorAll('.price').forEach(p => {
+//     let val = parseInt(p.textContent.replace('₹',''));
+//     if(toggle.checked){
+//       p.textContent = '₹' + Math.round(val * 12 * 0.9); // yearly 10% discount
+//     } else {
+//       p.textContent = '₹' + Math.round(val / 0.9 / 12); // back to monthly
+//     }
+//   });
+// });
 
 
 // JS for Visitor Counter (Demo)
@@ -300,4 +300,19 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 
+// Features Page
 
+gsap.registerPlugin(ScrollTrigger);
+
+gsap.from(".feature-card", {
+  scrollTrigger: {
+    trigger: ".features-grid",
+    start: "top 85%",
+    toggleActions: "play none none reset"
+  },
+  opacity: 0,
+  y: 50,
+  duration: 1.2,
+  ease: "power3.out",
+  stagger: 0.2
+});

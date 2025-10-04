@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Product Showcase</title>
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+
+  <!-- Font Awesome 6.5.0 -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(to right, #f8f9fc, #e0f7ff);
+    }
+
+    h1, h2, h5 {
+      font-weight: 600;
+    }
+
+    .card {
+      border-radius: 12px;
+      transition: transform 0.3s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    }
+
+    .btn-lg {
+      border-radius: 50px;
+      padding: 12px 30px;
+    }
+
+    .hero-section {
+      background: linear-gradient(to right, #f8f9fc, #e0f7ff);
+      overflow: hidden;
+    }
+
+    .svg-blob {
+      z-index: 1;
+      opacity: 0.6;
+      overflow: hidden;
+    }
+
+    .glass-card {
+      background: rgba(255, 255, 255, 0.15);
+      border-radius: 15px;
+      backdrop-filter: blur(10px);
+      transition: transform 0.3s ease;
+    }
+
+    .glass-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .text-gradient {
+      background: linear-gradient(to right, #6a11cb, #2575fc);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .price-highlight {
+      font-size: 1.8rem;
+    }
+
+    /* Demo Cards */
+    .demo-card {
+      background: rgba(0, 0, 0, 0.06);
+      border: 2px solid rgba(255, 255, 255, 0.1);
+      border-radius: 16px;
+      padding: 1.5rem;
+      backdrop-filter: blur(8px);
+      box-shadow: 0 12px 32px rgba(0, 0, 0, 0.3);
+      transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
+      height: 100%;
+      color: #333;
+    }
+
+    .demo-card:hover {
+      background: rgb(0, 0, 0);
+      transform: translateY(-5px);
+      color: #fdfdfd;
+    }
+
+    .demo-card h5 {
+      color: #7fd1ea;
+      margin-bottom: 1rem;
+    }
+
+    .demo-card p {
+      margin: 0.4rem 0;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.95rem;
+    }
+
+    .demo-card i {
+      color: #7fd1ea;
+    }
+
+    .copy-btn {
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+      background: #7fd1ea;
+      border: none;
+      padding: 0.45rem 0.7rem;
+      border-radius: 8px;
+      font-size: 0.75rem;
+      color: #fff7f7;
+      font-weight: 600;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 0.3rem;
+      transition: background 0.3s ease;
+    }
+
+    .copy-btn:hover {
+      background: #5db9d7;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg bg-white shadow-sm">
+    <div class="container">
+      <a class="navbar-brand fw-bold text-primary" href="#">ProductX</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navMenu">
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+          <li class="nav-item"><a class="nav-link" href="#">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">Products</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">Contact</a></li>
+        </ul>
+        <button class="btn btn-warning ms-3">Login</button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero-section position-relative d-flex align-items-center" style="height: 80vh;">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-lg-6">
+          <h1 class="display-5 fw-bold text-primary">Take your time and explore our products</h1>
+          <p class="lead mt-3 text-muted">A digital system built to simplify your workflow and elevate your experience with modern tools and responsive design.</p>
+          <a href="#" class="btn btn-info btn-lg mt-3 common-btn">Buy Now($49) ➤</a>
+        </div>
+        <div class="col-lg-6 text-center position-relative">
+          <!-- SVG Blob -->
+          <div class="svg-blob position-absolute top-0 start-50 translate-middle-x" style="width: 500px; height: 800px;">
+            <svg id="sw-js-blob-svg" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+              <defs>
+                <linearGradient id="sw-gradient" x1="0" x2="1" y1="1" y2="0">
+                  <stop stop-color="rgba(178, 214, 255, 1)" offset="0%"></stop>
+                  <stop stop-color="rgba(255, 50, 231, 1)" offset="100%"></stop>
+                </linearGradient>
+              </defs>
+              <path fill="url(#sw-gradient)" d="M18.3,-23C23.4,-17.5,27.1,-11.5,29.7,-4.1C32.4,3.2,34,11.9,30.3,16.8C26.6,21.6,17.6,22.6,8.9,26.7C0.2,30.8,-8.1,38.1,-16.5,38.1C-24.9,38.2,-33.3,31.1,-38.7,22.2C-44.2,13.2,-46.7,2.2,-44.5,-7.5C-42.4,-17.3,-35.7,-25.9,-27.5,-30.8C-19.3,-35.7,-9.7,-36.9,-1.5,-35.1C6.6,-33.3,13.2,-28.4,18.3,-23Z" transform="translate(50 50)" stroke-width="0"></path>
+            </svg>
+          </div>
+          <img src="https://theschool-management.com/wp-content/themes/theschool-2020/assets/images/box.png" alt="Product Hero" class="img-fluid rounded" style="max-width: 800px; position: relative; z-index: 2; filter: drop-shadow(5px 5px 10px rgb(70, 70, 70));" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Promo Section -->
+  <section class="promo-section py-5">
+    <div class="container">
+      <div class="row align-items-center text-center g-4">
+        <!-- Product Visual -->
+        <div class="col-md-6 text-center">
+          <div class="product-box glass-card p-4">
+            <img src="https://theschool-management.com/wp-content/themes/theschool-2020/assets/images/pul&mob.png" alt="School Plugin Box" class="img-fluid mb-3" style="max-height: 600px;" />
+          </div>
+        </div>
+
+        <!-- Text Content -->
+        <div class="col-md-6">
+          <h2 class="fw-bold text-gradient mb-3">Get The Plugin & Mobile App</h2>
+          <h3 class="price-highlight">
+            <span class="text-success">Just</span>
+            <span class="text-danger display-5 fw-bold">$89</span>
+          </h3>
+          <a href="#buy" class="btn btn-warning btn-lg mt-3 fw-semibold">Buy Now ($89)</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Features Section -->
+  <section class="why-choose-us py-5">
+    <div class="container">
+      <div class="section-title text-center mb-5">
+        <h2 class="fw-bold text-gradient">Why Choose Us</h2>
+        <p class="text-muted">Empowering institutions with smart, seamless management tools</p>
+      </div>
+      <div class="row g-4">
+        <div class="col-md-4">
+          <div class="feature-card glass-card p-4 text-center">
+            <i class="fas fa-mobile-alt fa-2x text-primary mb-3"></i>
+            <h5 class="fw-semibold">Mobile App Integration</h5>
+            <p class="text-muted">Access everything on the go with our intuitive mobile interface.</p>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="feature-card glass-card p-4 text-center">
+            <i class="fas fa-user-shield fa-2x text-success mb-3"></i>
+            <h5 class="fw-semibold">Secure & Reliable</h5>
+            <p class="text-muted">Built with top-tier security protocols to protect your data.</p>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="feature-card glass-card p-4 text-center">
+            <i class="fas fa-cogs fa-2x text-warning mb-3"></i>
+            <h5 class="fw-semibold">All-in-One Solution</h5>
+            <p class="text-muted">Manage students, staff, fees, exams, and more—effortlessly.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Demo Cards Section -->
+  <section class="demo-cards-section py-5 bg-light">
+    <div class="container">
+      <h2 class="fw-bold text-gradient mb-4 text-center">Demo Cards</h2>
+      <div class="row g-4">
+        <!-- Card 1 -->
+        <div class="col-sm-6 col-lg-3">
+          <div class="demo-card">
+            <button class="copy-btn" onclick="copyText('card1')"><i class="fas fa-copy"></i> Copy</button>
+            <h5>Dynamic Card 1</h5>
+            <p><i class="fas fa-lock"></i> Security features enabled</p>
+            <p><i class="fas fa-user-circle"></i> User-friendly interface</p>
+            <p><i class="fas fa-cogs"></i> Easy customization</p>
+          </div>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="col-sm-6 col-lg-3">
+          <div class="demo-card">
+            <button class="copy-btn" onclick="copyText('card2')"><i class="fas fa-copy"></i> Copy</button>
+            <h5>Dynamic Card 2</h5>
+            <p><i class="fas fa-lock"></i> Advanced analytics</p>
+            <p><i class="fas fa-mobile-alt"></i> Mobile optimized</p>
+            <p><i class="fas fa-headset"></i> 24/7 support</p>
+          </div>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="col-sm-6 col-lg-3">
+          <div class="demo-card">
+            <button class="copy-btn" onclick="copyText('card3')"><i class="fas fa-copy"></i> Copy</button>
+            <h5>Dynamic Card 3</h5>
+            <p><i class="fas fa-tachometer-alt"></i> Fast performance</p>
+            <p><i class="fas fa-cloud"></i> Cloud-based</p>
+            <p><i class="fas fa-lock"></i> Secure backups</p>
+          </div>
+        </div>
+
+        <!-- Card 4 -->
+        <div class="col-sm-6 col-lg-3">
+          <div class="demo-card">
+            <button class="copy-btn" onclick="copyText('card4')"><i class="fas fa-copy"></i> Copy</button>
+            <h5>Dynamic Card 4</h5>
+            <p><i class="fas fa-rocket"></i> Quick setup</p>
+            <p><i class="fas fa-tools"></i> Custom tools</p>
+            <p><i class="fas fa-users"></i> Team collaboration</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="text-center py-4 bg-white shadow-sm mt-5">
+    <div class="container">
+      <small>&copy; 2025 ProductX. All rights reserved.</small>
+    </div>
+  </footer>
+
+  <!-- Bootstrap JS Bundle -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Copy Button Script -->
+  <script>
+    function copyText(cardId) {
+      // For demo, copy the card's innerText
+      const card = document.querySelector(`.demo-card h5:contains("${cardId}")`) || event.target.closest('.demo-card');
+      if (!card) return alert('Card not found.');
+
+      // Extract text content from card (excluding button)
+      let text = card.innerText || '';
+      navigator.clipboard.writeText(text).then(() => {
+        alert('Copied!');
+      }).catch(() => alert('Failed to copy!'));
+    }
+  </script>
+
+</body>
+</html>

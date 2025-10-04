@@ -1,163 +1,392 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>About Us - Modern Page</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <style>
-    /* Hero Section */
-    #about-hero {
-      background: linear-gradient(135deg,#9250e2,#7dd8ff);
-      color: white;
-      padding: 120px 0;
-    }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - Modern Page</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
 
-    /* Timeline */
-    .timeline {
-      position: relative;
-      padding-left: 60px;
-    }
-    .timeline::before {
-      content: '';
-      position: absolute;
-      left: 20px;
-      top: 0;
-      bottom: 0;
-      width: 4px;
-      background: #ddd;
-    }
-    .timeline-item {
-      position: relative;
-      margin-bottom: 3rem;
-    }
-    .timeline-icon {
-      flex-shrink: 0;
-      width: 40px;
-      height: 40px;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: #fff;
-      font-weight: bold;
-    }
-    .timeline-content {
-      background: #f8f9fa;
-      padding: 1rem 1.5rem;
-      border-radius: 0.5rem;
-      box-shadow: 0 10px 20px rgba(0,0,0,0.05);
-    }
 
-    /* Team Cards Hover */
-    #team .card:hover {
-      transform: translateY(-10px);
-      transition: transform 0.3s ease;
-    }
-  </style>
+    <link rel="stylesheet" href="./style.css">
+
+    <style>
+   
+   
+   .hero-section {
+  background: linear-gradient(135deg, #0a0f3c, #1d2951);
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-section .fa-play {
+  font-size: 1.25rem;
+}
+
+.circle-border {
+  box-shadow: 0 15px 30px rgba(0,0,0,0.3);
+}
+
+.mini-card {
+  animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+
+
+</style>
 </head>
+
 <body>
 
-<!-- Hero Section -->
-<section id="about-hero" class="text-center">
-  <div class="container">
-    <h1 class="display-4 fw-bold">About Us</h1>
-    <p class="lead mt-3">Excellence in Education & Technology Solutions</p>
-  </div>
-</section>
+    <section id="about-hero" class="about-hero-section d-flex align-items-center justify-content-center text-center">
+        <div class="overlay"></div>
+        <div class="container position-relative text-white">
+            <h1 class="display-4 fw-bold mb-3">About Us</h1>
+            <h2 class="fw-semibold mb-3">Welcome to The School Management</h2>
+            <p class="fs-5 mb-2">
+                Streamline your school's administrative tasks, student management, and fee tracking — all in one modern
+                platform.
+            </p>
+            <p class="lead fw-medium text-light mt-3">Excellence in Education & Technology Solutions</p>
+        </div>
+    </section>
 
-<!-- Mission & Vision -->
-<section id="mission-vision" class="py-5">
-  <div class="container">
-    <div class="row g-5 align-items-center">
-      <div class="col-lg-6">
-        <img src="https://images.unsplash.com/photo-1581093588401-49c68b22a27b?w=700" class="img-fluid rounded shadow" alt="Mission">
+
+    <!-- Mission & Vision -->
+    <section id="mission-vision" class="py-5">
+        <div class="container">
+            <div class="row g-5 align-items-center">
+                <div class="col-lg-6">
+                    <!-- <img src="./assets/roket.png" class="img-fluid rounded shadow" alt="Mission"> -->
+                    <img src="./assets/vission-1024x682.jpg" class="img-fluid rounded" alt="Mission">
+                </div>
+                <div class="col-lg-6 ">
+                    <h2 class="mb-3 ">Our Mission</h2>
+                    <p>We aim to simplify education management through technology, making it easier for schools and
+                        institutions to manage data, communicate effectively, and drive growth.</p>
+                    <h2 class="mt-4 mb-3">Our Vision</h2>
+                    <p>To become the most trusted educational technology provider, enabling digital transformation in
+                        schools worldwide.</p>
+                    <a href="#"><button class="common-btn">Get Started</button></a>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Features Section -->
+    <section class="container-fluid about-shape">
+        <div class="about-bg-shape shape1"></div>
+        <div class="about-bg-shape shape2"></div>
+
+        </div>
+        <div class="container py-5 position-relative about-features .section-heading-container">
+            <h2 class="text-center mb-5 section-title">Key Features</h2>
+
+            <div class="row g-4 justify-content-center position-relative">
+                <!-- Feature 1 -->
+                <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+                    <div class="card text-center shadow-sm p-4 about-feature-card h-100">
+                        <div class="about-feature-icon mb-3">
+                            <img src="https://img.icons8.com/color/96/000000/admin-settings-male.png" alt="Super Admin">
+                        </div>
+                        <h5 class="mb-2">Super Admin</h5>
+                        <p class="text-muted">Take full control with all features and manage every aspect of the system
+                            efficiently.</p>
+                    </div>
+                </div>
+
+                <!-- Feature 2 -->
+                <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+                    <div class="card text-center shadow-sm p-4 about-feature-card h-100">
+                        <div class="about-feature-icon mb-3">
+                            <img src="https://img.icons8.com/color/96/000000/administrator-male.png" alt="Admin">
+                        </div>
+                        <h5 class="mb-2">Admin</h5>
+                        <p class="text-muted">Manage all activities almost all features and oversee smooth operations.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Feature 3 -->
+                <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+                    <div class="card text-center shadow-sm p-4 about-feature-card h-100">
+                        <div class="about-feature-icon mb-3">
+                            <img src="https://img.icons8.com/color/96/000000/teacher.png" alt="Teacher">
+                        </div>
+                        <h5 class="mb-2">Teacher</h5>
+                        <p class="text-muted">Manage students and academic activities with ease using our platform.</p>
+                    </div>
+                </div>
+
+                <!-- Feature 4 -->
+                <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+                    <div class="card text-center shadow-sm p-4 about-feature-card h-100">
+                        <div class="about-feature-icon mb-3">
+                            <img src="https://img.icons8.com/color/96/000000/accounting.png" alt="Accountant">
+                        </div>
+                        <h5 class="mb-2">Accountant</h5>
+                        <p class="text-muted">Trace student fees, expenses, and financial reports all in one place.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="py-5 bg-white ">
+        <div class="container text-center  about-features .section-heading-container">
+            <h2 class="fw-bold mb-4 section-title">Our Best Features Special For You</h2>
+            <p class="text-muted mb-5">Look into yourself, get something in return as your achievement.</p>
+            <div class="row g-4">
+                <div class="col-md-6 col-lg-4">
+                    <div class="card border-0 shadow-sm p-4">
+                        <div class="text-info fs-2"><i class="fas fa-cogs"></i></div>
+                        <h5 class="mt-3">Powerful Tools</h5>
+                        <p class="text-muted">Our products are built with the latest tech and trends.</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="card border-0 shadow-sm p-4">
+                        <div class="text-warning fs-2"><i class="fas fa-headset"></i></div>
+                        <h5 class="mt-3">24/7 Support</h5>
+                        <p class="text-muted">Reach out anytime, our team is here to help you.</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="card border-0 shadow-sm p-4">
+                        <div class="text-success fs-2"><i class="fas fa-shield-alt"></i></div>
+                        <h5 class="mt-3">Secure & Reliable</h5>
+                        <p class="text-muted">Your data is protected with enterprise-grade security.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Team Section -->
+    <section id="team" class="py-5 bg-light">
+        <div class="container">
+            <h2 class="text-center mb-5 section-title">Meet Our Team</h2>
+            <div class="row g-4 justify-content-center">
+                <div class="col-md-4">
+                    <div class="card border-0 shadow-sm text-center">
+                        <img src="https://randomuser.me/api/portraits/men/32.jpg"
+                            class="card-img-top rounded-circle mx-auto mt-3" style="width:120px;" alt="Member">
+                        <div class="card-body">
+                            <h5 class="card-title">John Doe</h5>
+                            <p class="card-text text-muted">Founder & CEO</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card border-0 shadow-sm text-center">
+                        <img src="https://randomuser.me/api/portraits/women/44.jpg"
+                            class="card-img-top rounded-circle mx-auto mt-3" style="width:120px;" alt="Member">
+                        <div class="card-body">
+                            <h5 class="card-title">Jane Smith</h5>
+                            <p class="card-text text-muted">Chief Technology Officer</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card border-0 shadow-sm text-center">
+                        <img src="https://randomuser.me/api/portraits/men/55.jpg"
+                            class="card-img-top rounded-circle mx-auto mt-3" style="width:120px;" alt="Member">
+                        <div class="card-body">
+                            <h5 class="card-title">Robert Brown</h5>
+                            <p class="card-text text-muted">Head of Operations</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Story / Timeline -->
+    <section id="story" class="py-5">
+        <div class="container  about-features .section-heading-container">
+            <h2 class="text-center mb-5 section-title">Our Journey</h2>''
+            <div class="timeline mx-auto" style="max-width:800px;">
+
+                <!-- <div class="timeline-icon bg-primary text-white d-flex align-items-center justify-content-center rounded-circle" style="width:60px; height:60px;">
+  <i class="fas fa-rocket"></i>
+</div> -->
+
+                    <div class="timeline-item d-flex" data-aos="fade-up" data-aos-delay="100">
+
+                    <div class="timeline-icon bg-primary">2019</div>
+                    <div class="timeline-content ms-3">
+                        <h5>Company Founded</h5>
+                        <p>Started with a small team of passionate developers.</p>
+                    </div>
+                </div>
+                <div class="timeline-item d-flex">
+                    <div class="timeline-icon bg-success">2020</div>
+                    <div class="timeline-content ms-3">
+                        <h5>First Product Launch</h5>
+                        <p>Launched our first school management software that transformed traditional processes.</p>
+                    </div>
+                </div>
+                <div class="timeline-item d-flex">
+                    <div class="timeline-icon bg-warning">2022</div>
+                    <div class="timeline-content ms-3">
+                        <h5>Global Expansion</h5>
+                        <p>Extended services internationally and onboarded 100+ schools worldwide.</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item d-flex">
+                    <div class="timeline-icon bg-danger">2023</div>
+                    <div class="timeline-content ms-3">
+                        <h5>Mobile App Launch</h5>
+                        <p>Released Android and iOS apps for seamless school access on the go.</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item d-flex">
+                    <div class="timeline-icon bg-info">2024</div>
+                    <div class="timeline-content ms-3">
+                        <h5>AI Integration</h5>
+                        <p>Introduced smart analytics and predictive dashboards powered by AI.</p>
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+    </section>
+
+
+<section class="hero-section text-white py-5 position-relative overflow-hidden" style="background: linear-gradient(135deg, #0a0f3c, #1d2951);">
+  <!-- Decorative SVG Shape -->
+  <svg class="position-absolute top-0 start-0 w-100" height="160" preserveAspectRatio="none" viewBox="0 0 1200 120">
+    <path d="M0,0V46.29c47.29,22,97.31,29.17,144,17.06,59.69-15.31,113.24-61.52,172-75.65C392,1.4,451,23.91,504,41.77c55,18.56,104,38.73,162,38.73s113-22.74,172-41.78c57.64-18.72,114-20.34,172,3.52,30.54,13,59,29.69,90,45.25V0Z" opacity=".05" fill="#ffffff"></path>
+  </svg>
+
+  <div class="container position-relative">
+    <div class="row align-items-center g-5">
+      
+      <!-- Left Text Content -->
+      <div class="col-lg-6 text-lg-start text-center">
+        <h1 class="fw-bold display-4 mb-3">My Journey</h1>
+        <p class="lead mb-3">I'm <strong>Hari Shankar Maliya</strong> — an IT entrepreneur, educator, and problem solver, but it wasn’t always like this.</p>
+        <p>With no business background in my family, my journey started from scratch — driven by passion and the dream to lead. After working in jobs as a software developer and business development executive, I took the leap and started my own IT company.</p>
+        <p>From <strong>custom software development</strong> to <strong>mobile apps</strong>, and <strong>digital marketing</strong> to <strong>e-commerce solutions</strong>, my team and I built solutions that impact clients globally.</p>
+
+        <!-- Skills Badges -->
+        <div class="my-4">
+          <span class="badge bg-primary me-2 mb-2">Web Development</span>
+          <span class="badge bg-success me-2 mb-2">App Development</span>
+          <span class="badge bg-warning text-dark me-2 mb-2">Digital Marketing</span>
+          <span class="badge bg-info text-dark me-2 mb-2">CRM Solutions</span>
+        </div>
+
+        <!-- Feature Highlights -->
+        <div class="row mt-4">
+          <div class="col-12 col-md-4 text-center mb-3">
+            <i class="fas fa-briefcase fa-2x mb-2 text-warning"></i>
+            <h6>15+ Years of Experience</h6>
+          </div>
+          <div class="col-12 col-md-4 text-center mb-3">
+            <i class="fas fa-globe fa-2x mb-2 text-success"></i>
+            <h6>Global Clients</h6>
+          </div>
+          <div class="col-12 col-md-4 text-center mb-3">
+            <i class="fas fa-rocket fa-2x mb-2 text-danger"></i>
+            <h6>1100+ Projects Delivered</h6>
+          </div>
+        </div>
+
+        <!-- Call to Action -->
+        <div class="mt-4">
+          <a href="#contact" class="btn btn-warning btn-lg">Connect With Me</a>
+        </div>
       </div>
-      <div class="col-lg-6">
-        <h2 class="mb-3">Our Mission</h2>
-        <p>We aim to simplify education management through technology, making it easier for schools and institutions to manage data, communicate effectively, and drive growth.</p>
-        <h2 class="mt-4 mb-3">Our Vision</h2>
-        <p>To become the most trusted educational technology provider, enabling digital transformation in schools worldwide.</p>
+
+      <!-- Right Image Content -->
+      <div class="col-lg-6 text-center position-relative">
+        <!-- Circle Border Image -->
+        <div class="position-relative d-inline-block">
+          <div class="circle-border position-relative" style="border-radius: 50%; padding: 10px; background: linear-gradient(135deg, #ff7e5f, #feb47b); display: inline-block;">
+            <img src="./assets/boss2.jpg" 
+                 alt="Hari Maliya" 
+                 class="img-fluid rounded-circle" 
+                 style="width: 500px; height: 500px; object-fit: cover;">
+            <!-- Play Icon -->
+            <div class="position-absolute top-50 start-100 translate-middle bg-white text-danger rounded-circle p-3 shadow">
+              <i class="fas fa-play fa-lg"></i>
+            </div>
+
+              <div class="circle-border circle-1"></div>
+          <div class="circle-border circle-2"></div>
+          <div class="circle-border circle-3"></div>
+
+          </div>
+
+          <!-- Mini Workshop Card -->
+          <div class="mini-card bg-white text-dark rounded shadow p-3 position-absolute" style="bottom: -20px; left: -30px; width: 180px; z-index: 2;">
+            <div class="d-flex align-items-center mb-2">
+              <img src="./assets/boss3.jpg" class="rounded-circle me-2" width="40" height="40">
+              <div>
+                <small class="text-muted">Latest Workshop</small><br>
+                <strong class="text-dark">CEO of this Company</strong>
+              </div>
+            </div>
+            <a href="#" class="btn btn-warning btn-sm w-100">Take Now</a>
+          </div>
+
+          <!-- Experience Tag -->
+          <div class="position-absolute top-0 start-0 bg-warning text-dark fw-semibold px-3 py-2 rounded shadow" style="font-size: 0.9rem;">
+            <i class="fas fa-code me-1"></i> Full Stack Leader
+          </div>
+
+        </div>
       </div>
+
     </div>
   </div>
 </section>
 
-<!-- Team Section -->
-<section id="team" class="py-5 bg-light">
-  <div class="container">
-    <h2 class="text-center mb-5">Meet Our Team</h2>
-    <div class="row g-4 justify-content-center">
-      <div class="col-md-4">
-        <div class="card border-0 shadow-sm text-center">
-          <img src="https://randomuser.me/api/portraits/men/32.jpg" class="card-img-top rounded-circle mx-auto mt-3" style="width:120px;" alt="Member">
-          <div class="card-body">
-            <h5 class="card-title">John Doe</h5>
-            <p class="card-text text-muted">Founder & CEO</p>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-4">
-        <div class="card border-0 shadow-sm text-center">
-          <img src="https://randomuser.me/api/portraits/women/44.jpg" class="card-img-top rounded-circle mx-auto mt-3" style="width:120px;" alt="Member">
-          <div class="card-body">
-            <h5 class="card-title">Jane Smith</h5>
-            <p class="card-text text-muted">Chief Technology Officer</p>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-4">
-        <div class="card border-0 shadow-sm text-center">
-          <img src="https://randomuser.me/api/portraits/men/55.jpg" class="card-img-top rounded-circle mx-auto mt-3" style="width:120px;" alt="Member">
-          <div class="card-body">
-            <h5 class="card-title">Robert Brown</h5>
-            <p class="card-text text-muted">Head of Operations</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
 
-<!-- Story / Timeline -->
-<section id="story" class="py-5">
-  <div class="container">
-    <h2 class="text-center mb-5">Our Journey</h2>
-    <div class="timeline mx-auto" style="max-width:800px;">
-      <div class="timeline-item d-flex">
-        <div class="timeline-icon bg-primary">2015</div>
-        <div class="timeline-content ms-3">
-          <h5>Company Founded</h5>
-          <p>Started with a small team of passionate educators and developers.</p>
-        </div>
-      </div>
-      <div class="timeline-item d-flex">
-        <div class="timeline-icon bg-success">2018</div>
-        <div class="timeline-content ms-3">
-          <h5>First Product Launch</h5>
-          <p>Launched our first school management software that transformed traditional processes.</p>
-        </div>
-      </div>
-      <div class="timeline-item d-flex">
-        <div class="timeline-icon bg-warning">2022</div>
-        <div class="timeline-content ms-3">
-          <h5>Global Expansion</h5>
-          <p>Extended services internationally and onboarded 100+ schools worldwide.</p>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
 
-<!-- CTA Section -->
-<section id="cta" class="py-5 text-white text-center" style="background: linear-gradient(135deg,#7dd8ff,#9250e2);">
-  <div class="container">
-    <h2 class="mb-4">Ready to Transform Your School?</h2>
-    <a href="#contact" class="btn btn-light btn-lg fw-semibold">Get in Touch</a>
-  </div>
-</section>
+    <!-- CTA Section -->
+    <section class="py-5 about-cta position-relative">
+        <div class="container">
+            <div class="row align-items-center text-center text-lg-start">
 
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+                <!-- CTA Text -->
+                <div class="col-lg-6 mb-4 mb-lg-0 CTA-text">
+                    <h2 class="display-5 fw-bold mb-3">Ready to <strong>Transform</strong> Your School?</h2>
+                    <p class="lead text-white-50 mb-4">
+                        Empower your staff, streamline administration, and enhance learning with our modern school
+                        management system.
+                    </p>
+                    <a href="#contact" class="btn btn-light btn-lg fw-semibold common-btn">Get Started</a>
+                </div>
+
+                <!-- CTA Image -->
+                <div class="col-lg-6 text-center">
+                    <img src="https://cdn-icons-png.flaticon.com/512/4149/4149670.png" alt="Modern CTA Illustration"
+                        class="img-fluid about-cta-img">
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
+
 </html>
