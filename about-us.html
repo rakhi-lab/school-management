@@ -15,39 +15,65 @@
 
     <link rel="stylesheet" href="./style.css">
 
-    <!-- <style>
-   
-   
-   .hero-section {
-  background: linear-gradient(135deg, #0a0f3c, #1d2951);
-  position: relative;
-  overflow: hidden;
-}
-
-.hero-section .fa-play {
-  font-size: 1.25rem;
-}
-
-.circle-border {
-  box-shadow: 0 15px 30px rgba(0,0,0,0.3);
-}
-
-.mini-card {
-  animation: float 3s ease-in-out infinite;
-}
-
-@keyframes float {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-8px); }
-}
-
-
-</style> -->
-
 <style> 
 
 /* Hero Section Background */
 
+#about-hero {
+      position: relative;
+      min-height: 40vh;
+      background: linear-gradient(
+          rgba(0, 0, 0, 0.6),
+          rgba(0, 0, 0, 0.6)
+        ),
+        url('./assets/men-vission.jpg') center/cover no-repeat;
+      color: #ffffff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 60px 20px;
+    }
+
+    #about-hero .container {
+      position: relative;
+      z-index: 2;
+    }
+
+    #about-hero h1 {
+      font-size: 3.5rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+    }
+
+    #about-hero h2 {
+      font-size: 1.75rem;
+      font-weight: 500;
+      margin-bottom: 1.5rem;
+    }
+
+    #about-hero p {
+      font-size: 1.125rem;
+      line-height: 1.7;
+    }
+
+    #about-hero .lead {
+      font-size: 1.2rem;
+      margin-top: 1.5rem;
+      color: #f1f1f1;
+    }
+
+    @media (max-width: 768px) {
+      #about-hero h1 {
+        font-size: 2.5rem;
+      }
+      #about-hero h2 {
+        font-size: 1.25rem;
+      }
+      #about-hero p {
+        font-size: 1rem;
+      }
+    }
 
 
 /* Profile Image Wrapper */
@@ -100,7 +126,6 @@
   }
 }
 
-/* Optional: Decorative Floating Circles */
 .circle-border {
   position: absolute;
   border-radius: 50%;
@@ -156,24 +181,27 @@
     max-width: 300px;
   }
 }
+
+
+
 </style>
 
 </head>
 
 <body>
 
-    <section id="about-hero" class="about-hero-section d-flex align-items-center justify-content-center text-center">
-        <div class="overlay"></div>
-        <div class="container position-relative text-white">
-            <h1 class="display-4 fw-bold mb-3">About Us</h1>
-            <h2 class="fw-semibold mb-3">Welcome to The School Management</h2>
-            <p class="fs-5 mb-2">
-                Streamline your school's administrative tasks, student management, and fee tracking — all in one modern
-                platform.
-            </p>
-            <p class="lead fw-medium text-light mt-3">Excellence in Education & Technology Solutions</p>
-        </div>
-    </section>
+     <section id="about-hero">
+    <div class="container">
+      <h1>About Us</h1>
+      <h2>Welcome to The School Management</h2>
+      <p>
+        Streamline your school's administrative tasks, student management, and fee tracking —
+        all in one modern platform.
+      </p>
+      <p class="lead">Excellence in Education & Technology Solutions</p>
+    </div>
+  </section>
+
 
 
     <!-- Mission & Vision -->
@@ -289,54 +317,12 @@
         </div>
     </section>
 
-    <!-- Team Section -->
-    <section id="team" class="py-5 bg-light">
-        <div class="container">
-            <h2 class="text-center mb-5 section-title">Meet Our Team</h2>
-            <div class="row g-4 justify-content-center">
-                <div class="col-md-4">
-                    <div class="card border-0 shadow-sm text-center">
-                        <img src="https://randomuser.me/api/portraits/men/32.jpg"
-                            class="card-img-top rounded-circle mx-auto mt-3" style="width:120px;" alt="Member">
-                        <div class="card-body">
-                            <h5 class="card-title">John Doe</h5>
-                            <p class="card-text text-muted">Founder & CEO</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="card border-0 shadow-sm text-center">
-                        <img src="https://randomuser.me/api/portraits/women/44.jpg"
-                            class="card-img-top rounded-circle mx-auto mt-3" style="width:120px;" alt="Member">
-                        <div class="card-body">
-                            <h5 class="card-title">Jane Smith</h5>
-                            <p class="card-text text-muted">Chief Technology Officer</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="card border-0 shadow-sm text-center">
-                        <img src="https://randomuser.me/api/portraits/men/55.jpg"
-                            class="card-img-top rounded-circle mx-auto mt-3" style="width:120px;" alt="Member">
-                        <div class="card-body">
-                            <h5 class="card-title">Robert Brown</h5>
-                            <p class="card-text text-muted">Head of Operations</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
 
     <!-- Story / Timeline -->
     <section id="story" class="py-5">
         <div class="container  about-features .section-heading-container">
             <h2 class="text-center mb-5 section-title">Our Journey</h2>''
             <div class="timeline mx-auto" style="max-width:800px;">
-
-                <!-- <div class="timeline-icon bg-primary text-white d-flex align-items-center justify-content-center rounded-circle" style="width:60px; height:60px;">
-  <i class="fas fa-rocket"></i>
-</div> -->
 
                     <div class="timeline-item d-flex" data-aos="fade-up" data-aos-delay="100">
 
@@ -362,21 +348,12 @@
                 </div>
 
                 <div class="timeline-item d-flex">
-                    <div class="timeline-icon bg-danger">2023</div>
+                    <div class="timeline-icon bg-danger">2024</div>
                     <div class="timeline-content ms-3">
                         <h5>Mobile App Launch</h5>
                         <p>Released Android and iOS apps for seamless school access on the go.</p>
                     </div>
                 </div>
-
-                <div class="timeline-item d-flex">
-                    <div class="timeline-icon bg-info">2024</div>
-                    <div class="timeline-content ms-3">
-                        <h5>AI Integration</h5>
-                        <p>Introduced smart analytics and predictive dashboards powered by AI.</p>
-                    </div>
-                </div>
-
 
             </div>
         </div>
@@ -455,7 +432,7 @@
             <div class="d-flex align-items-center mb-2">
               <img src="./assets/boss3.jpg" class="rounded-circle me-2" width="40" height="40">
               <div>
-                <small class="text-muted">Latest Workshop</small><br>
+                <small class="text-muted">Latest Position</small><br>
                 <strong class="text-dark">CEO of this Company</strong>
               </div>
             </div>
@@ -501,6 +478,14 @@
         </div>
     </section>
 
+<!-- Font Awesome -->
+<script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+
+<!-- AOS JS -->
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+  AOS.init();
+</script>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
