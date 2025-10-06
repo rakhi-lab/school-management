@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>School Blog - Student Performance Insights</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet" />
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+
+  <!-- AOS Animation CSS -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+
+  <!-- Font Awesome -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="./style.css" />
+
+  <style>
+
+    .blog-header {
+  /* background: var(--brand); */
+background: linear-gradient(45deg, var(--brand-dark), var(--brand));
+  padding: 2rem 1rem;
+  border-radius: var(--radius);
+  color: var(--text-light);
+  box-shadow: var(--shadow);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-bottom: 2rem;
+}
+
+.blog-header h2 {
+  font-weight: 600;
+  font-size: 2rem;
+  margin: 0;
+}
+
+/* === Dark Mode Toggle === */
+.dark-toggle {
+  cursor: pointer;
+  background: rgba(255, 255, 255, 0.15);
+  color: var(--text-light);
+  padding: 0.5rem 1rem;
+  border-radius: 50px;
+  display: flex;
+  align-items: center;
+  font-weight: 500;
+  transition: background 0.3s ease;
+}
+
+.dark-toggle:hover {
+  background: rgba(255, 255, 255, 0.3);
+}
+
+/* === Blog Post === */
+.blog-post {
+  background: var(--card);
+  padding: 2rem;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  margin-bottom: 2rem;
+}
+
+.blog-post img {
+  border-radius: var(--radius);
+  max-height: 400px;
+  object-fit: cover;
+  width: 100%;
+  margin-bottom: 1.5rem;
+  transition: transform 0.3s ease;
+}
+
+.blog-post img:hover {
+  transform: scale(1.03);
+}
+
+.blog-post h2 {
+  color: var(--brand-dark);
+  font-size: 1.8rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.blog-post .text-muted {
+  font-style: italic;
+  font-size: 0.9rem;
+  color: var(--muted);
+  margin-bottom: 1.5rem;
+}
+
+.blog-post p,
+.blog-post ul {
+  font-size: 1.05rem;
+  line-height: 1.6;
+  color: var(--ink);
+}
+
+body.dark-mode .blog-post {
+  background-color: #1e1e1e;
+}
+
+/* === Sidebar === */
+.sidebar {
+  background: var(--card);
+  padding: 2rem;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+
+.sidebar h5 {
+  font-weight: 600;
+  margin-bottom: 1rem;
+  color: var(--brand);
+}
+
+.category-list {
+  padding: 0;
+}
+
+.category-list li {
+  list-style: none;
+  margin-bottom: 0.7rem;
+}
+
+.category-list li a {
+  color: var(--brand);
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.category-list li a:hover {
+  color: var(--brand-dark);
+  text-decoration: underline;
+}
+
+.recent-posts p {
+  margin-bottom: 0.5rem;
+}
+
+.recent-posts p a {
+  color: var(--brand-dark);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.recent-posts p a:hover {
+  color: var(--brand-dark);
+}
+
+/* === Search Box in Sidebar === */
+.sidebar input.form-control {
+  border-radius: var(--radius);
+  font-size: 1rem;
+  box-shadow: inset 0 3px 8px rgba(0, 0, 0, 0.05);
+  border: 1px solid #ddd;
+  transition: box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.sidebar input.form-control:focus {
+  border-color: var(--brand);
+  box-shadow: 0 0 8px rgba(146, 80, 226, 0.3);
+}
+
+/* === Comments Section === */
+.comment-section {
+  background: var(--card);
+  padding: 2rem;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  margin-top: 2rem;
+}
+
+.comment-section h5 {
+  color: var(--brand);
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.comment-section .form-control {
+  border-radius: var(--radius);
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.comment-section .form-control:focus {
+  border-color: var(--brand);
+  box-shadow: 0 0 6px rgba(146, 80, 226, 0.3);
+}
+
+/* === Buttons === */
+.btn-primary {
+  background-color: var(--brand);
+  border: none;
+  border-radius: var(--radius);
+  font-weight: 600;
+  padding: 0.6rem 1.5rem;
+  transition: background-color 0.3s ease;
+  box-shadow: 0 6px 15px rgba(146, 80, 226, 0.3);
+}
+
+.btn-primary:hover {
+  background-color: var(--brand-dark);
+  box-shadow: 0 8px 18px rgba(146, 80, 226, 0.4);
+}
+
+.btn-danger {
+  background-color: var(--btn-red);
+  color: var(--text-light);
+  border: none;
+  border-radius: var(--radius);
+}
+
+/* === Pagination === */
+.pagination {
+  justify-content: center;
+  margin-top: 2rem;
+}
+
+.page-link {
+  color: var(--brand-dark);
+  border-radius: var(--radius);
+  font-weight: 500;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.page-link:hover {
+  background-color: var(--brand-dark);
+  color: var(--ink);
+}
+
+.page-item.active .page-link {
+  background-color: var(--brand);
+  color: var(--text-light);
+  box-shadow: 0 6px 15px rgba(146, 80, 226, 0.4);
+}
+
+/* === Responsive === */
+@media (max-width: 768px) {
+  .blog-header {
+    flex-direction: column;
+    gap: 1rem;
+    text-align: center;
+  }
+
+  .sidebar {
+    margin-top: 2rem;
+  }
+
+  .dark-toggle {
+    margin-top: 1rem;
+  }
+}
+
+  </style>
+</head>
+
+<body>
+  <div class="container my-5">
+    <!-- BLOG HEADER -->
+    <header class="blog-header" data-aos="fade-down">
+      <h2>School Blog</h2>
+      <span class="dark-toggle" onclick="toggleDarkMode()" aria-label="Toggle Dark Mode" role="button" tabindex="0">
+        <i class="fas fa-moon"></i> Toggle Dark Mode
+      </span>
+    </header>
+
+    <div class="row">
+      <!-- MAIN CONTENT -->
+      <main class="col-lg-8" data-aos="fade-right">
+        <article class="blog-post">
+          <img src="https://images.unsplash.com/photo-1571260899304-425eee4c7efc" alt="School Classroom" class="img-fluid" loading="lazy" />
+          <h2>How to Improve Student Performance in the Digital Age</h2>
+          <p class="text-muted">Posted on October 6, 2025 by <strong>Principal's Desk</strong></p>
+
+          <p>As education increasingly integrates digital tools and online learning, it's vital for schools to adapt and support students in new ways.</p>
+
+          <p>Here at Greenfield International School, we’ve implemented a hybrid model that combines classroom instruction with digital platforms. Our teachers use the school management system to track attendance, performance, and even parent communication in real-time.</p>
+
+          <ul>
+            <li>Daily progress tracking via dashboards</li>
+            <li>Interactive homework assignments using mobile apps</li>
+            <li>Monthly parent-teacher reviews</li>
+            <li>Wellness and counseling support integrated into the curriculum</li>
+          </ul>
+
+          <p>Technology isn’t just about convenience—it's about deeper engagement. With tools like online exams, digital ID cards, and a virtual noticeboard, students stay informed, organized, and empowered.</p>
+        </article>
+
+          <article class="blog-post">
+          <img src="https://images.unsplash.com/photo-1571260899304-425eee4c7efc" alt="School Classroom" class="img-fluid" loading="lazy" />
+          <h2>How to Improve Student Performance in the Digital Age</h2>
+          <p class="text-muted">Posted on October 6, 2025 by <strong>Principal's Desk</strong></p>
+
+          <p>As education increasingly integrates digital tools and online learning, it's vital for schools to adapt and support students in new ways.</p>
+
+          <p>Here at Greenfield International School, we’ve implemented a hybrid model that combines classroom instruction with digital platforms. Our teachers use the school management system to track attendance, performance, and even parent communication in real-time.</p>
+
+          <ul>
+            <li>Daily progress tracking via dashboards</li>
+            <li>Interactive homework assignments using mobile apps</li>
+            <li>Monthly parent-teacher reviews</li>
+            <li>Wellness and counseling support integrated into the curriculum</li>
+          </ul>
+
+          <p>Technology isn’t just about convenience—it's about deeper engagement. With tools like online exams, digital ID cards, and a virtual noticeboard, students stay informed, organized, and empowered.</p>
+        </article>
+
+          <article class="blog-post">
+          <img src="https://images.unsplash.com/photo-1571260899304-425eee4c7efc" alt="School Classroom" class="img-fluid" loading="lazy" />
+          <h2>How to Improve Student Performance in the Digital Age</h2>
+          <p class="text-muted">Posted on October 6, 2025 by <strong>Principal's Desk</strong></p>
+
+          <p>As education increasingly integrates digital tools and online learning, it's vital for schools to adapt and support students in new ways.</p>
+
+          <p>Here at Greenfield International School, we’ve implemented a hybrid model that combines classroom instruction with digital platforms. Our teachers use the school management system to track attendance, performance, and even parent communication in real-time.</p>
+
+          <ul>
+            <li>Daily progress tracking via dashboards</li>
+            <li>Interactive homework assignments using mobile apps</li>
+            <li>Monthly parent-teacher reviews</li>
+            <li>Wellness and counseling support integrated into the curriculum</li>
+          </ul>
+
+          <p>Technology isn’t just about convenience—it's about deeper engagement. With tools like online exams, digital ID cards, and a virtual noticeboard, students stay informed, organized, and empowered.</p>
+        </article>
+
+        <!-- COMMENTS -->
+        <section class="comment-section" data-aos="fade-up">
+          <h5>Leave a Comment</h5>
+          <form>
+            <div class="mb-3">
+              <input type="text" class="form-control" placeholder="Your Name" required />
+            </div>
+            <div class="mb-3">
+              <textarea class="form-control" rows="4" placeholder="Your Comment..." required></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary">Post Comment</button>
+          </form>
+        </section>
+
+        <!-- PAGINATION -->
+        <nav class="mt-4" aria-label="Page navigation" data-aos="fade-up">
+          <ul class="pagination">
+            <li class="page-item disabled"><a class="page-link" href="#">Previous</a></li>
+            <li class="page-item active"><a class="page-link" href="#">1</a></li>
+            <li class="page-item"><a class="page-link" href="#">2</a></li>
+            <li class="page-item"><a class="page-link" href="#">3</a></li>
+            <li class="page-item"><a class="page-link" href="#">Next</a></li>
+          </ul>
+        </nav>
+      </main>
+
+      <!-- SIDEBAR -->
+      <aside class="col-lg-4" data-aos="fade-left">
+        <div class="sidebar">
+          <h5>Categories</h5>
+          <ul class="category-list">
+            <li><a href="#"><i class="fas fa-calendar-day"></i> School Events</a></li>
+            <li><a href="#"><i class="fas fa-lightbulb"></i> Student Tips</a></li>
+            <li><a href="#"><i class="fas fa-chalkboard-teacher"></i> Teacher Insights</a></li>
+            <li><a href="#"><i class="fas fa-users"></i> Parent Resources</a></li>
+            <li><a href="#"><i class="fas fa-laptop-code"></i> E-Learning</a></li>
+          </ul>
+
+          <hr />
+
+          <h5>Recent Posts</h5>
+          <div class="recent-posts">
+            <p><a href="#"><i class="fas fa-angle-right"></i> Online Exam Tips for Students</a></p>
+            <p><a href="#"><i class="fas fa-angle-right"></i> How to Use School Mobile App</a></p>
+            <p><a href="#"><i class="fas fa-angle-right"></i> Parent-Teacher Meeting Highlights</a></p>
+          </div>
+
+          <hr />
+
+          <h5>Search</h5>
+          <input type="text" class="form-control" placeholder="Search blog..." />
+        </div>
+      </aside>
+    </div>
+  </div>
+
+  <!-- Bootstrap Bundle -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- AOS Animation -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init();
+
+    function toggleDarkMode() {
+      document.body.classList.toggle('dark-mode');
+      const toggle = document.querySelector('.dark-toggle i');
+      toggle.classList.toggle('fa-moon');
+      toggle.classList.toggle('fa-sun');
+    }
+  </script>
+</body>
+
+</html>

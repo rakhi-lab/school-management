@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>404 Not Found - School Blog</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="./style.css">
+
+  <style>
+    :root {
+      --brand: #9250e2;
+      --brand-dark: #6b3ab8;
+      --card: #f9f9f9;
+      --radius: 12px;
+      --ink: #222;
+      --text-light: #fff;
+      --muted: #888;
+      --shadow: rgba(0, 0, 0, 0.1);
+      --btn-red: #d9534f;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body,
+    html {
+      height: 100%;
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      /* background: linear-gradient(135deg, var(--brand-dark), var(--brand)); */
+      color: var(--text-light);
+      overflow: hidden;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      position: relative;
+    }
+
+    /* Background curved shape */
+    .bg-curve {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 150%;
+      height: 100%;
+      pointer-events: none;
+      z-index: 0;
+      overflow: visible;
+    }
+
+    .bg-curve svg {
+      width: 100%;
+      height: 100%;
+      display: block;
+      fill: url(#gradient);
+      opacity: 0.2;
+      filter: drop-shadow(0 0 15px rgba(255, 255, 255, 0.1));
+    }
+
+    .error-page{
+      position: relative;
+      z-index: 10;
+      max-width: 900px;
+      background: rgba(255, 255, 255, 0.1);
+      padding: 3rem 4rem;
+      border-radius: var(--radius);
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4);
+      backdrop-filter: blur(12px);
+      display: flex;
+      align-items: center;
+      gap: 3rem;
+      flex-wrap: wrap;
+      animation: fadeIn 1s ease forwards;
+      user-select: none;
+    }
+
+    .text-content {
+      flex: 1 1 350px;
+      min-width: 280px;
+    }
+
+    .error-code {
+      font-size: 9rem;
+      font-weight: 900;
+      letter-spacing: 0.15em;
+      margin: 0 0 0.2em;
+      position: relative;
+      color: var(--text-light);
+      text-shadow:
+        3px 3px 8px rgba(0, 0, 0, 0.5),
+        0 0 20px var(--brand);
+      animation: pulse 2.5s infinite;
+    }
+
+    .error-code::after {
+      content: '!';
+      position: absolute;
+      top: -0.4em;
+      right: -0.6em;
+      font-size: 6rem;
+      color: var(--btn-red);
+      text-shadow:
+        2px 2px 8px rgba(0, 0, 0, 0.5),
+        0 0 15px var(--btn-red);
+      animation: shake 1.5s infinite;
+    }
+
+    .message {
+      font-size: 1.8rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: #f5f5f5;
+      text-shadow: 0 0 8px var(--brand);
+    }
+
+    .description {
+      font-size: 1rem;
+      color: rgba(255, 255, 255, 0.85);
+      margin-bottom: 2.5rem;
+      line-height: 1.4;
+      font-weight: 400;
+    }
+
+    .btn-home {
+      display: inline-block;
+      padding: 0.9rem 2.5rem;
+      font-weight: 700;
+      font-size: 1.1rem;
+      text-decoration: none;
+      border-radius: var(--radius);
+      color: var(--brand-dark);
+      background: var(--text-light);
+      box-shadow: 0 6px 20px rgba(146, 80, 226, 0.4);
+      transition: all 0.3s ease;
+      user-select: none;
+      cursor: pointer;
+      letter-spacing: 0.05em;
+    }
+
+    .btn-home:hover {
+      background: var(--brand);
+      color: var(--text-light);
+      box-shadow: 0 8px 25px rgba(146, 80, 226, 0.7);
+      transform: translateY(-3px);
+    }
+
+    /* Illustration */
+    .illustration {
+      flex: 1 1 300px;
+      min-width: 250px;
+      user-select: none;
+      filter: drop-shadow(0 5px 10px rgba(0, 0, 0, 0.3));
+      max-height: 400px;
+      width: 100%;
+      object-fit: contain;
+      border-radius: var(--radius);
+      transition: transform 0.3s ease;
+    }
+
+    .illustration:hover {
+     transform: scale(1.05) ;
+     /* rotatey(180deg);  */
+
+      
+    }
+
+    /* Animations */
+    @keyframes pulse {
+      0%,
+      100% {
+        text-shadow:
+          3px 3px 8px rgba(0, 0, 0, 0.5),
+          0 0 20px var(--brand);
+      }
+      50% {
+        text-shadow:
+          3px 3px 12px rgba(0, 0, 0, 0.7),
+          0 0 30px var(--brand);
+      }
+    }
+
+    @keyframes shake {
+      0%,
+      100% {
+        transform: rotate(0deg);
+      }
+      25% {
+        transform: rotate(10deg);
+      }
+      50% {
+        transform: rotate(-10deg);
+      }
+      75% {
+        transform: rotate(7deg);
+      }
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(15px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* Responsive */
+    @media (max-width: 900px) {
+      .error-page {
+        flex-direction: column;
+        padding: 2rem 2.5rem;
+      }
+
+      .illustration {
+        max-height: 280px;
+      }
+
+      .error-code {
+        font-size: 6rem;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Background curved wave -->
+  <div class="bg-curve" aria-hidden="true">
+    <svg viewBox="0 0 1440 800" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <linearGradient id="gradient" x1="0" y1="0" x2="1" y2="1">
+          <stop offset="0%" stop-color="var(--brand)" />
+          <stop offset="100%" stop-color="var(--brand-dark)" />
+        </linearGradient>
+      </defs>
+      <path
+        d="M0,320 C320,420 560,220 900,320 C1240,420 1440,220 1440,220 L1440,800 L0,800 Z"
+      ></path>
+    </svg>
+  </div>
+
+  <div class="container error-page" role="main" aria-labelledby="error-title" aria-describedby="error-desc">
+    <div class="text-content">
+      <h1 id="error-title" class="error-code">404</h1>
+      <p class="message">Page Not Found</p>
+      <p id="error-desc" class="error-description ">
+        Sorry, the page you are looking for doesn’t exist or has been moved.
+      </p>
+      <a href="/" class="btn-home" aria-label="Go to homepage">Go to Homepage</a>
+    </div>
+
+    <img src="https://cdn.dribbble.com/users/285475/screenshots/2083086/dribbble_1.gif" alt="404 illustration" class="illustration" />
+  </div>
+</body>
+
+</html>
