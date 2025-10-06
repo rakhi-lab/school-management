@@ -1,10 +1,16 @@
-// Header hero section
-window.addEventListener('scroll', () => {
-  const scroll = window.scrollY;
-  document.querySelectorAll('.floating-card').forEach((el, index) => {
-    el.style.transform = `translateY(${scroll*0.03*(index+1)}px)`;
+// navbar
+  window.addEventListener('scroll', function () {
+    const nav = document.getElementById('mainNav');
+    nav.classList.toggle('shrink', window.scrollY > 10);
   });
-});
+
+// Header hero section
+// window.addEventListener('scroll', () => {
+//   const scroll = window.scrollY;
+//   document.querySelectorAll('.floating-card').forEach((el, index) => {
+//     el.style.transform = `translateY(${scroll*0.03*(index+1)}px)`;
+//   });
+// });
 
 // Initialize AOS
 AOS.init({

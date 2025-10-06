@@ -43,6 +43,7 @@ h1,h2,h3,h4,.brand-font{
 /* ==============================
    Navbar Default Styling
 ============================== */
+/* Base navbar styles */
 .navbar {
   background: #fff;
   padding: 18px 0;
@@ -58,17 +59,55 @@ h1,h2,h3,h4,.brand-font{
 
 .brand-subtitle {
   font-size: 0.85rem;
+  margin-top: 4px;
+  display: block;
+  color: #333;
 }
 
-/* ==============================
-   Shrink Navbar on Scroll
-============================== */
+/* Shrink on scroll (if JS is used) */
 .navbar.shrink {
   padding: 6px 0;
 }
-
 .navbar.shrink .navbar-brand img {
   max-height: 55px;
+}
+
+/* Navbar links */
+.nav-link {
+  color: #333;
+  font-weight: 500;
+}
+.nav-link:hover, .nav-link.active {
+  color: #007bff;
+}
+
+/* Dropdown styling */
+.dropdown-menu {
+  border-radius: 0.4rem;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+  font-size: 0.95rem;
+}
+
+/* Call Us button */
+.btn-brand {
+  background-color: #007bff;
+  color: #fff;
+  border-radius: 30px;
+}
+.btn-brand:hover {
+  background-color: #0056b3;
+}
+
+/* Responsive spacing tweaks */
+@media (max-width: 991.98px) {
+  .navbar-nav {
+    gap: 1rem;
+    padding-top: 1rem;
+  }
+  .btn-brand {
+    display: inline-block;
+    width: 100%;
+  }
 }
 
 /* ==============================
@@ -778,7 +817,7 @@ section{scroll-margin-top:90px}
 .footer-overlay {
   position: absolute;
   top: 0; left: 0; right: 0; bottom: 0;
-  background: rgba(0, 0, 0, 0.6);
+  background: rgba(0, 0, 0, 0.9);
   z-index: 0;
 }
 
