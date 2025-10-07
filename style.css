@@ -809,30 +809,49 @@ section {
 }
 
 /* tesimonial features */
-.testimonial-card {
-  background: var(--accent);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  border-bottom:5px solid  var(--btn-red);
-  transition: all 0.3s ease-in-out;
+/* Client Feedback Cards */
+.client-feedback-section {
+  background-color:var(--bg-light);
 }
 
-.testimonial-card:hover {
+.feature-feedback-card {
+  background-color: var(--accent); /* Light card background */
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+  border-bottom: 5px solid var(--btn-red); /* red bottom border */
+}
+
+.feature-feedback-card:hover {
   transform: translateY(-5px);
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
-    border-bottom:5px solid  var(--brand);
-    border-right:5px solid  var(--btn-red);
-background: var(--brand-dark);
+  border-bottom: 5px solid var(--btn-red); /* brand color */
+  border-right: 5px solid var(--brand); /* red accent */
+  background-color: var(--brand-dark); /* brand-dark background on hover */
+  color: #f3f4f6; /* text color on hover */
 }
 
-.testimonial-card p {
+.feature-feedback-card p {
   font-style: italic;
   font-size: 1rem;
+  transition: color 0.3s ease;
 }
 
-.testimonial-card small {
-  font-size: 0.85rem;
-  color: #f59e0b; 
+.feature-feedback-card:hover p {
+  color: #f3f4f6;
 }
+
+.feature-feedback-card small {
+  font-size: 0.85rem;
+  color: var(--brand); /* star color */
+}
+
+/* Responsive adjustments */
+@media (max-width: 576px) {
+  .feature-feedback-card {
+    padding: 15px;
+  }
+}
+
+
 
 /*Feature FAQ */
 .faq-section {

@@ -1,16 +1,16 @@
 
-// Navbar shrink on scroll
-window.addEventListener("scroll", function() {
-  const navbar = document.querySelector(".navbar");
-  if (window.scrollY > 50) {
-    navbar.classList.add("shrink");
-  } else {
-    navbar.classList.remove("shrink");
-  }
-});
+// // Navbar shrink on scroll
+// window.addEventListener("scroll", function() {
+//   const navbar = document.querySelector(".navbar");
+//   if (window.scrollY > 50) {
+//     navbar.classList.add("shrink");
+//   } else {
+//     navbar.classList.remove("shrink");
+//   }
+// });
 
 // Initialize AOS animations
-AOS.init({ duration: 1000, once: true });
+// AOS.init({ duration: 1000, once: true });
 
 
 
@@ -23,11 +23,11 @@ window.addEventListener('scroll', () => {
 });
 
 // Initialize AOS
-AOS.init({
-  duration: 1000,
-  easing: 'ease-in-out',
-  once: true
-});
+// AOS.init({
+//   duration: 1000,
+//   easing: 'ease-in-out',
+//   once: true
+// });
 
 // GSAP Animations
 document.addEventListener('DOMContentLoaded', () => {
@@ -56,7 +56,6 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
-  
   
 // blog swiper
 const blogSwiper = new Swiper(".blog-swiper", {
@@ -239,4 +238,4 @@ document.addEventListener("DOMContentLoaded", function () {
     },
   });
 });
-  
+
