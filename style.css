@@ -806,6 +806,9 @@ section {
     height: 60px;
     font-size: 22px;
   }
+  .feature-hero-text h1 {
+  font-size: 2rem;
+}
 }
 
 /* tesimonial features */
