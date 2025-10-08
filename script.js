@@ -1,17 +1,13 @@
-
-// // Navbar shrink on scroll
-// window.addEventListener("scroll", function() {
-//   const navbar = document.querySelector(".navbar");
-//   if (window.scrollY > 50) {
-//     navbar.classList.add("shrink");
-//   } else {
-//     navbar.classList.remove("shrink");
-//   }
-// });
-
-// Initialize AOS animations
-// AOS.init({ duration: 1000, once: true });
-
+// navbar
+// Shrink navbar on scroll
+window.addEventListener('scroll', function() {
+  const navbar = document.querySelector('.navbar');
+  if (window.scrollY > 50) {
+    navbar.classList.add('shrink');
+  } else {
+    navbar.classList.remove('shrink');
+  }
+});
 
 
 // Header hero section
@@ -26,7 +22,8 @@ window.addEventListener('scroll', () => {
 // AOS.init({
 //   duration: 1000,
 //   easing: 'ease-in-out',
-//   once: true
+//   once: true,
+//   mirror:true
 // });
 
 // GSAP Animations
