@@ -1,17 +1,19 @@
-// navbar
-window.addEventListener('scroll', function() {
+
+
+document.addEventListener('DOMContentLoaded', function() {
   const navbar = document.querySelector('.navbar');
   const logo = document.querySelector('.brand-logo');
 
-  if (window.scrollY > 10) { // shrink on small scroll
-    navbar.classList.add('shrink');
-    logo.classList.add('shrink');
-  } else {
-    navbar.classList.remove('shrink');
-    logo.classList.remove('shrink');
-  }
+  window.addEventListener('scroll', function() {
+    if (window.scrollY > 10) {
+      navbar.classList.add('shrink');
+      logo.classList.add('shrink');
+    } else {
+      navbar.classList.remove('shrink');
+      logo.classList.remove('shrink');
+    }
+  });
 });
-
 
 
 // Header hero section
