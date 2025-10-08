@@ -3223,7 +3223,11 @@ aspect-ratio: 16/10;
   }
 }
 
-/* ---------------------- */
+/* ====================== */
+
+/* pro-features */
+/* ====================== */
+
 .pro-features {
   padding: 100px 20px;
   background: linear-gradient(135deg, #f9f9ff, #eef3ff);
@@ -3307,6 +3311,11 @@ aspect-ratio: 16/10;
   text-align: left;
   box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+  /* display: flex;             
+  flex-direction: column;     
+  justify-content: space-between;
+   max-height: 150px;      */
 }
 
 .feature-card:hover {
