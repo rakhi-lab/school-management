@@ -107,8 +107,6 @@ document.querySelectorAll(".feature-categories ul li").forEach(tab => {
   }, 40);
   
 
-
-
   // youtube section
 /*
   Auto X-axis scroll script:
