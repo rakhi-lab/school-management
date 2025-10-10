@@ -2101,7 +2101,7 @@ aspect-ratio: 16/10;
 /* Horizontal track */
 .track {
   display: flex;
-  gap: var(--gap);
+   gap: 20px;
   align-items: center;
   will-change: transform;
   /* don't allow wrapping */
