@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Demo Admin Cards</title>
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+  <style>
+    /* ================== GENERAL STYLES ================== */
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      font-family: 'Fira Sans', sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      min-height: 100vh;
+      background-color: #F0F8E1;
+      padding: 2rem;
+      gap: 2rem;
+      flex-wrap: wrap;
+    }
+
+    h1, h2, h3, h4, h5 {
+      font-weight: 800;
+      margin: 0 0 0.5rem 0;
+    }
+
+    /* ================== CARDS GRID ================== */
+    .cards-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+      width: 100%;
+      max-width: 1300px;
+    }
+
+    /* ================== HOVER CARD STYLES ================== */
+    .card-hover {
+      width: 100%;
+      height: 500px;
+      position: relative;
+      overflow: hidden;
+      box-shadow: 0 0 32px -10px rgba(0,0,0,0.08);
+      border-radius: 15px;
+    }
+
+    .card-hover:hover img {
+      transform: scale(1.05);
+      transition: 0.35s cubic-bezier(.1,.72,.4,.97);
+    }
+
+    .card-hover__content {
+      width: 100%;
+      text-align: center;
+      background-color: #86B971;
+      padding: 0 60px 50px;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      transform: translateY(0);
+      transition: all 0.35s cubic-bezier(.1,.72,.4,.97);
+      z-index: 1;
+    }
+
+    .card-hover:hover .card-hover__content {
+      background-color: #DEE8C2;
+      transform: translateY(-100%);
+      padding: 50px 60px;
+    }
+
+    .card-hover__title {
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
+      color: #1F1D42;
+    }
+
+    .card-hover__text {
+      font-size: 0.85rem;
+      line-height: 1.4;
+      color: #1F1D42;
+    }
+
+    .card-hover__link {
+      position: absolute;
+      bottom: 1rem;
+      left: 50%;
+      transform: translate(-50%, 0);
+      display: flex;
+      align-items: center;
+      text-decoration: none;
+      color: #2d7f0b;
+      opacity: 0;
+      padding: 10px;
+      transition: all 0.35s;
+      font-weight: 600;
+    }
+
+    .card-hover:hover .card-hover__link {
+      opacity: 1;
+    }
+
+    .card-hover__link svg {
+      width: 18px;
+      margin-left: 5px;
+      transition: transform 0.3s;
+    }
+
+    .card-hover__link:hover svg {
+      transform: translateX(4px);
+    }
+
+    .card-hover__extra {
+      height: 50%;
+      position: absolute;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      width: 100%;
+      font-size: 1.5rem;
+      text-align: center;
+      background-color: #86B971;
+      bottom: 0;
+      z-index: 0;
+      color: #DEE8C2;
+      transform: translateY(100%);
+      transition: transform 0.35s;
+    }
+
+    .card-hover:hover .card-hover__extra {
+      transform: translateY(0);
+    }
+
+    .card-hover img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      z-index: -1;
+      transform: scale(1.2);
+      transition: 0.35s cubic-bezier(.1,.72,.4,.97);
+    }
+
+  </style>
+</head>
+<body>
+
+  <div class="cards-container">
+
+    <!-- Repeat this card 8 times with same content -->
+    <div class="card-hover">
+      <div class="card-hover__content">
+        <h3 class="card-hover__title">Super Admin</h3>
+        <p class="card-hover__text">
+          <strong>Username:</strong> admin<br>
+          <strong>Password:</strong> 123456
+        </p>
+        <a href="https://demo.theschool-management.com" target="_blank" class="card-hover__link">
+          <span>Try Demo</span>
+          <svg fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
+          </svg>
+        </a>
+      </div>
+      <div class="card-hover__extra">
+        <h4>Try Demo Now!</h4>
+      </div>
+      <img src="https://images.unsplash.com/photo-1586511925558-a4c6376fe65f?ixlib=rb-4.0.3&auto=format&fit=crop&w=687&q=60" alt="">
+    </div>
+
+    <div class="card-hover">
+      <div class="card-hover__content">
+        <h3 class="card-hover__title">Admin 2</h3>
+        <p class="card-hover__text">
+          <strong>Username:</strong> admin<br>
+          <strong>Password:</strong> 123456
+        </p>
+        <a href="#" class="card-hover__link">
+          <span>Try Demo</span>
+          <svg fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
+          </svg>
+        </a>
+      </div>
+      <div class="card-hover__extra">
+        <h4>Try Demo Now!</h4>
+      </div>
+      <img src="https://images.unsplash.com/photo-1586511925558-a4c6376fe65f?ixlib=rb-4.0.3&auto=format&fit=crop&w=687&q=60" alt="">
+    </div>
+
+    <div class="card-hover">
+      <div class="card-hover__content">
+        <h3 class="card-hover__title">Admin 3</h3>
+        <p class="card-hover__text">
+          <strong>Username:</strong> admin<br>
+          <strong>Password:</strong> 123456
+        </p>
+        <a href="#" class="card-hover__link">
+          <span>Try Demo</span>
+          <svg fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
+          </svg>
+        </a>
+      </div>
+      <div class="card-hover__extra">
+        <h4>Try Demo Now!</h4>
+      </div>
+      <img src="https://images.unsplash.com/photo-1586511925558-a4c6376fe65f?ixlib=rb-4.0.3&auto=format&fit=crop&w=687&q=60" alt="">
+    </div>
+
+    <div class="card-hover">
+      <div class="card-hover__content">
+        <h3 class="card-hover__title">Admin 4</h3>
+        <p class="card-hover__text">
+          <strong>Username:</strong> admin<br>
+          <strong>Password:</strong> 123456
+        </p>
+        <a href="#" class="card-hover__link">
+          <span>Try Demo</span>
+          <svg fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
+          </svg>
+        </a>
+      </div>
+      <div class="card-hover__extra">
+        <h4>Try Demo Now!</h4>
+      </div>
+      <img src="https://images.unsplash.com/photo-1586511925558-a4c6376fe65f?ixlib=rb-4.0.3&auto=format&fit=crop&w=687&q=60" alt="">
+    </div>
+
+    <div class="card-hover">
+      <div class="card-hover__content">
+        <h3 class="card-hover__title">Admin 5</h3>
+        <p class="card-hover__text">
+          <strong>Username:</strong> admin<br>
+          <strong>Password:</strong> 123456
+        </p>
+        <a href="#" class="card-hover__link">
+          <span>Try Demo</span>
+          <svg fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
+          </svg>
+        </a>
+      </div>
+      <div class="card-hover__extra">
+        <h4>Try Demo Now!</h4>
+      </div>
+      <img src="https://images.unsplash.com/photo-1586511925558-a4c6376fe65f?ixlib=rb-4.0.3&auto=format&fit=crop&w=687&q=60" alt="">
+    </div>
+
+    <div class="card-hover">
+      <div class="card-hover__content">
+        <h3 class="card-hover__title">Admin 6</h3>
+        <p class="card-hover__text">
+          <strong>Username:</strong> admin<br>
+          <strong>Password:</strong> 123456
+        </p>
+        <a href="#" class="card-hover__link">
+          <span>Try Demo</span>
+          <svg fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
+          </svg>
+        </a>
+      </div>
+      <div class="card-hover__extra">
+        <h4>Try Demo Now!</h4>
+      </div>
+      <img src="https://images.unsplash.com/photo-1586511925558-a4c6376fe65f?ixlib=rb-4.0.3&auto=format&fit=crop&w=687&q=60" alt="">
+    </div>
+
+    <div class="card-hover">
+      <div class="card-hover__content">
+        <h3 class="card-hover__title">Admin 7</h3>
+        <p class="card-hover__text">
+          <strong>Username:</strong> admin<br>
+          <strong>Password:</strong> 123456
+        </p>
+        <a href="#" class="card-hover__link">
+          <span>Try Demo</span>
+          <svg fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
+          </svg>
+        </a>
+      </div>
+      <div class="card-hover__extra">
+        <h4>Try Demo Now!</h4>
+      </div>
+      <img src="https://images.unsplash.com/photo-1586511925558-a4c6376fe65f?ixlib=rb-4.0.3&auto=format&fit=crop&w=687&q=60" alt="">
+    </div>
+
+    <div class="card-hover">
+      <div class="card-hover__content">
+        <h3 class="card-hover__title">Admin 8</h3>
+        <p class="card-hover__text">
+          <strong>Username:</strong> admin<br>
+          <strong>Password:</strong> 123456
+        </p>
+        <a href="#" class="card-hover__link">
+          <span>Try Demo</span>
+          <svg fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
+          </svg>
+        </a>
+      </div>
+      <div class="card-hover__extra">
+        <h4>Try Demo Now!</h4>
+      </div>
+      <img src="https://images.unsplash.com/photo-1586511925558-a4c6376fe65f?ixlib=rb-4.0.3&auto=format&fit=crop&w=687&q=60" alt="">
+    </div>
+
+  </div>
+</body>
+</html>
