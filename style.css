@@ -1449,6 +1449,7 @@ color: var(--bg-light);
   color: #fff;
   transition: all 0.3s ease;
 margin-bottom: 0;
+display: flex;
 }
 
 .btn-gradient:hover {
@@ -1460,6 +1461,7 @@ margin-bottom: 0;
 /* Card hover lift */
 .pricing-card {
   transition: all 0.4s ease;
+  
 }
 
 .pricing-card:hover {
