@@ -1,18 +1,25 @@
 
+// navbar
+// document.addEventListener('DOMContentLoaded', function() {
+//   const navbar = document.querySelector('.navbar');
+//   const logo = document.querySelector('.brand-logo');
 
-document.addEventListener('DOMContentLoaded', function() {
-  const navbar = document.querySelector('.navbar');
-  const logo = document.querySelector('.brand-logo');
+//   window.addEventListener('scroll', function() {
+//     if (window.scrollY > 10) {
+//       navbar.classList.add('shrink');
+//       logo.classList.add('shrink');
+//     } else {
+//       navbar.classList.remove('shrink');
+//       logo.classList.remove('shrink');
+//     }
+//   });
+// });
 
-  window.addEventListener('scroll', function() {
-    if (window.scrollY > 10) {
-      navbar.classList.add('shrink');
-      logo.classList.add('shrink');
-    } else {
-      navbar.classList.remove('shrink');
-      logo.classList.remove('shrink');
-    }
-  });
+$(document).ready(function(){
+  $('.bottomnav-right a').click(function(){
+    $('.bottomnav-right a').removeClass("active");
+    $(this).addClass("active");
+});
 });
 
 
@@ -24,6 +31,22 @@ window.addEventListener('scroll', () => {
   });
 });
 
+// Drop Down
+
+function toggleMenu() {
+  document.getElementById('menu').classList.toggle('active');
+}
+
+// Dropdown toggle for mobile view
+document.querySelectorAll('.dropbtn').forEach(btn => {
+  btn.addEventListener('click', function(e) {
+    if (window.innerWidth <= 991) {
+      e.preventDefault();
+      const dropdown = this.parentElement;
+      dropdown.classList.toggle('active');
+    }
+  });
+});
 
 // GSAP Animations
 document.addEventListener('DOMContentLoaded', () => {
@@ -107,36 +130,21 @@ document.querySelectorAll(".feature-categories ul li").forEach(tab => {
   }, 40);
   
 
-  // youtube section
-/*
-  Auto X-axis scroll script:
-  - Clones track children so combined width >= 2x viewport making seamless loop possible.
-  - Uses requestAnimationFrame for smooth continuous scroll.
-  - Pauses on hover/focus or when 'paused' toggled.
-  - Adjust SPEED_PX_PER_SEC with range input.
-*/
 
+
+  // youtube section
 const viewport = document.getElementById('viewport');
 const track = document.getElementById('track');
-const toggleBtn = document.getElementById('toggleBtn');
-const speedRange = document.getElementById('speedRange');
-const scrollLeftBtn = document.getElementById('scrollLeft');
-const scrollRightBtn = document.getElementById('scrollRight');
 
 let paused = false;
-let SPEED_PX_PER_SEC = parseFloat(speedRange.value); // px per second
+const SPEED_PX_PER_SEC = 30; // px per second
 let lastTimestamp = null;
 
-// make initial clones to ensure track width >= viewport width * 2
+// Clone track children for seamless loop
 function ensureClones() {
-  // remove previously cloned marker if any
-  const originalChildren = Array.from(track.children);
-  // simple approach: duplicate all original children once
-  // but avoid repeating too many times
-  const currentWidth = track.scrollWidth;
+  const originalChildren = Array.from(track.children).filter(c => !c.classList.contains('cloned'));
   const viewportW = viewport.clientWidth;
-  if (currentWidth < viewportW * 2) {
-    // clone original children once
+  while (track.scrollWidth < viewportW * 2) {
     originalChildren.forEach(node => {
       const clone = node.cloneNode(true);
       clone.classList.add('cloned');
@@ -145,24 +153,17 @@ function ensureClones() {
   }
 }
 ensureClones();
+window.addEventListener('resize', ensureClones);
 
-// If window resizes, ensure clones still cover
-window.addEventListener('resize', () => {
-  ensureClones();
-});
-
-function step(timestamp){
-  if (lastTimestamp === null) lastTimestamp = timestamp;
-  const delta = (timestamp - lastTimestamp) / 1000; // seconds
+// Animation loop
+function step(timestamp) {
+  if (!lastTimestamp) lastTimestamp = timestamp;
+  const delta = (timestamp - lastTimestamp) / 1000;
   lastTimestamp = timestamp;
 
   if (!paused) {
-    const movePx = SPEED_PX_PER_SEC * delta;
-    viewport.scrollLeft += movePx;
+    viewport.scrollLeft += SPEED_PX_PER_SEC * delta;
 
-    // When we've scrolled past half of the track (original set), wrap back
-    // Find the width of the first set of items (we assume original items set is the first N children until clones)
-    // Simpler: when scrollLeft >= track.scrollWidth / 2 -> subtract track.scrollWidth / 2
     const half = track.scrollWidth / 2;
     if (viewport.scrollLeft >= half) {
       viewport.scrollLeft -= half;
@@ -173,37 +174,17 @@ function step(timestamp){
 }
 requestAnimationFrame(step);
 
-// Hover/focus to pause
-viewport.addEventListener('mouseenter', ()=> paused = true);
-viewport.addEventListener('mouseleave', ()=> paused = false);
-viewport.addEventListener('focusin', ()=> paused = true);
-viewport.addEventListener('focusout', ()=> paused = false);
-
-// Toggle button
-toggleBtn.addEventListener('click', () => {
-  paused = !paused;
-  toggleBtn.textContent = paused ? 'Play' : 'Pause';
+// Pause on hover over any video card
+document.querySelectorAll('.video-item').forEach(card => {
+  card.addEventListener('mouseenter', () => paused = true);
+  card.addEventListener('mouseleave', () => paused = false);
 });
 
-// Speed control
-speedRange.addEventListener('input', e => {
-  SPEED_PX_PER_SEC = parseFloat(e.target.value);
-});
-
-// small manual scroll buttons
-scrollLeftBtn.addEventListener('click', () => {
-  viewport.scrollLeft = Math.max(0, viewport.scrollLeft - 300);
-});
-scrollRightBtn.addEventListener('click', () => {
-  viewport.scrollLeft = viewport.scrollLeft + 300;
-});
-
-// Accessibility: pause on keyboard interactions (space/enter on buttons handled by default)
+// Pause when tab is hidden
 document.addEventListener('visibilitychange', () => {
-  // pause when tab not visible to reduce CPU
   paused = document.hidden;
-  toggleBtn.textContent = paused ? 'Play' : 'Pause';
 });
+
 
 
 

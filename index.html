@@ -40,13 +40,14 @@
 <body>
 
 
-<nav class="navbar navbar-expand-lg shadow-lg" data-aos="fade-down" >
+<!-- <nav class="navbar navbar-expand-lg shadow-lg" data-aos="fade-down" >
   <div class="container">
      <a class="navbar-brand d-flex flex-column align-items-start" href="#home">
       <img src="https://theschool-management.com/wp-content/uploads/2020/07/cropped-school-logo.png" 
            alt="Logo" 
            style="width:120px; height:100px; object-fit:contain;">
     </a>
+    
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
       aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
@@ -94,11 +95,63 @@
       </ul>
     </div>
   </div>
+</nav> -->
+
+<nav>
+  <!-- FontAwesome -->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css"
+    integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/"
+    crossorigin="anonymous">
+
+  <!-- Top Bar -->
+  <div class="topnav">
+    <div class="topnav-right">
+      <a><i class="fas fa-envelope"></i> weblizar@mail.com</a>
+      <a><i class="fas fa-phone-square"></i> +91 99503 48952</a>
+      <!-- Social Links -->
+      <a href="https://www.facebook.com/theschoolmanagement" target="_blank"><i class="fab fa-facebook-f"></i></a>
+      <a href="https://linkedin.com" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+      <a href="https://instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+    </div>
+  </div>
+
+  <!-- Bottom Navbar -->
+  <div class="bottomnav">
+    <div class="logo">
+      <img src="./assets/school-logo.png" alt="Logo">
+    </div>
+
+    <!-- Mobile Menu Toggle -->
+    <div class="menu-toggle" onclick="toggleMenu()">
+      <i class="fas fa-bars"></i>
+    </div>
+
+    <div class="bottomnav-right" id="menu">
+      <a href="#home" class="active">Home</a>
+      <a href="./about-us.html">About Us</a>
+      <a href="./features.html">Features</a>
+      <a href="./demo.html">Demo</a>
+      <a href="./blog.html">Blog</a>
+
+      <!-- Dropdown -->
+      <div class="dropdown">
+        <button class="dropbtn">Help & Support <i class="fas fa-angle-down"></i></button>
+        <div class="dropdown-content">
+          <a href="#">Student Records</a>
+          <a href="#">Teacher Management</a>
+          <a href="#">Attendance</a>
+          <a href="#">Exams</a>
+        </div>
+      </div>
+
+      <button class="common-btn">Buy Now ($49)</button>
+    </div>
+  </div>
 </nav>
 
-
   <!-- HERO -->
-<header id="home" class="hero-premium d-flex align-items-center" data-aos="fade-up" data-duration="1000">
+<header id="home" class="hero-premium d-flex align-items-center" 
+data-aos="fade-up" data-duration="1000">
   <!-- Background blobs -->
   <div class="blob blob-1"></div>
   <div class="blob blob-2"></div>
@@ -121,7 +174,7 @@
           </p>
           <div class="hero-buttons d-flex gap-3 flex-wrap justify-content-center justify-content-lg-start">
             <a href="#contact" class="btn btn-light btn-lg fw-semibold hover-glow">
-              <i class="fa-solid fa-rocket me-2"></i>Start your journey
+              <i class="fa-solid fa-rocket me-2"></i>Explore Now
             </a>
             <a href="#features" class="btn btn-outline-light btn-lg fw-semibold hover-glow">
               <i class="fa-regular fa-circle-play me-2"></i>See features
@@ -146,7 +199,6 @@
     </div>
   </div>
 </header>
-
 
  <!-- UNIQUE -->
 <section id="unique" class="unique-section py-6 py-5" data-aos="fade-up" >
@@ -448,95 +500,115 @@
           <li data-tab="student"><i class="fa fa-users"></i> Students</li>
           <li data-tab="payment"><i class="fa fa-credit-card"></i> Payment</li>
           <li data-tab="sms"><i class="fa fa-envelope"></i> SMS Templete</li>
-          <li data-tab="settings"><i class="fa fa-cog"></i> Settings</li>
           <li data-tab="core"><i class="fa fa-star"></i> Core Modules</li>
+          <li data-tab="settings"><i class="fa fa-cog"></i> Settings</li>
         </ul>
       </div>
 
       <!-- Right Features -->
       <div class="feature-details" >
         <!-- Academic Tab -->
-
 <div class="tab-content active" id="academic">
 
+  <!-- Class & Section Management -->
   <div class="feature-card">
     <i class="fa fa-university"></i>
     <h4>Manage Class Sections</h4>
     <p>Create and manage multiple classes and sections efficiently.</p>
   </div>
 
+  <!-- Medium Setup -->
   <div class="feature-card">
     <i class="fa fa-layer-group"></i>
     <h4>Manage Medium</h4>
     <p>Set up different mediums (English, Hindi, etc.) for classes and subjects.</p>
   </div>
 
+  <!-- Student Categorization -->
   <div class="feature-card">
     <i class="fa fa-user-graduate"></i>
     <h4>Manage Student Type</h4>
     <p>Classify students by categories like Regular, Scholarship, or Special.</p>
   </div>
 
+  <!-- Subject Management -->
   <div class="feature-card">
     <i class="fa fa-book"></i>
     <h4>Subjects</h4>
     <p>Add and organize subjects for each class with detailed syllabus.</p>
   </div>
 
+  <!-- Class Timetable -->
   <div class="feature-card">
     <i class="fa fa-calendar-alt"></i>
     <h4>Class Timetable</h4>
     <p>Generate and manage daily or weekly class schedules seamlessly.</p>
   </div>
 
+  <!-- Staff Timetable -->
   <div class="feature-card">
     <i class="fa fa-user-clock"></i>
     <h4>Staff Time Table</h4>
     <p>Organize staff schedules and manage teaching assignments.</p>
   </div>
 
+  <!-- Exam & Results -->
+  <div class="feature-card">
+    <i class="fa fa-clipboard-check"></i>
+    <h4>Exams & Results</h4>
+    <p>Schedule exams, enter marks, and generate detailed student performance reports.</p>
+  </div>
+
+  <!-- Attendance Tracking -->
   <div class="feature-card">
     <i class="fa-solid fa-person-chalkboard"></i>
     <h4>Attendance</h4>
     <p>Track student daily attendance efficiently with automated reports.</p>
   </div>
 
+  <!-- Leave Management -->
   <div class="feature-card">
     <i class="fa fa-user-minus"></i>
     <h4>Student Leaves</h4>
     <p>Manage leave requests and track absenteeism for each student.</p>
   </div>
 
+  <!-- Study Materials -->
   <div class="feature-card">
     <i class="fa fa-file-text"></i>
     <h4>Study Materials</h4>
     <p>Upload, organize, and distribute study resources directly to students.</p>
   </div>
 
+  <!-- Homework Management -->
   <div class="feature-card">
     <i class="fa fa-pencil-alt"></i>
     <h4>Homework</h4>
     <p>Assign and track homework submissions for all classes and subjects.</p>
   </div>
 
+  <!-- Live Classes -->
   <div class="feature-card">
     <i class="fa fa-video-camera"></i>
     <h4>Live Classes</h4>
     <p>Create unlimited online sessions for students and teachers to connect remotely.</p>
   </div>
 
+  <!-- Staff Rating -->
   <div class="feature-card">
     <i class="fa fa-star"></i>
     <h4>Staff Rating</h4>
     <p>Evaluate and provide feedback for staff performance.</p>
   </div>
 
+  <!-- Student Birthdays -->
   <div class="feature-card">
     <i class="fa fa-birthday-cake"></i>
     <h4>Student Birthdays</h4>
     <p>Track and celebrate student birthdays within the school system.</p>
   </div>
 
+  <!-- Noticeboard -->
   <div class="feature-card">
     <i class="fa fa-bullhorn"></i>
     <h4>Noticeboard</h4>
@@ -544,6 +616,8 @@
   </div>
 
 </div>
+
+
 
 
         <!-- Admin Tab -->
@@ -639,6 +713,7 @@
         <!-- Student Tab -->
 
 <div class="tab-content" id="student">
+  <!-- Existing Cards -->
   <div class="feature-card">
     <i class="fa fa-id-card"></i>
     <h4>Student Profiles</h4>
@@ -661,6 +736,12 @@
     <i class="fa fa-id-badge"></i>
     <h4>ID Cards</h4>
     <p>Generate and print customized student ID cards with QR codes.</p>
+  </div>
+
+    <div class="feature-card">
+    <i class="fa fa-graduation-cap"></i>
+    <h4>Online Exams</h4>
+    <p>Attempt tests online with instant grading, detailed reports, and secure submissions.</p>
   </div>
 
   <div class="feature-card">
@@ -686,22 +767,102 @@
     <h4>Assignments</h4>
     <p>Upload, assign, and track student submissions with grading support.</p>
   </div>
+
+  <!-- New Cards -->
+  <div class="feature-card">
+    <i class="fa fa-tachometer-alt"></i>
+    <h4>Dashboard</h4>
+    <p>Comprehensive student dashboard displaying key academic and personal information.</p>
+  </div>
+
+  <div class="feature-card">
+    <i class="fa fa-file-invoice-dollar"></i>
+    <h4>Fee Invoices</h4>
+    <p>View, download, and pay all fee invoices directly from the student panel.</p>
+  </div>
+
+  <div class="feature-card">
+    <i class="fa fa-coins"></i>
+    <h4>Fee Structure</h4>
+    <p>Check detailed breakdown of class-wise and session-wise fee structures.</p>
+  </div>
+
+  <div class="feature-card">
+    <i class="fa fa-book-reader"></i>
+    <h4>Study Materials</h4>
+    <p>Access study notes, e-books, and resources shared by teachers.</p>
+  </div>
+
+  <div class="feature-card">
+    <i class="fa fa-tasks"></i>
+    <h4>Homework</h4>
+    <p>View assigned homework, submit work online, and track completion.</p>
+  </div>
+
+  <div class="feature-card">
+    <i class="fa fa-bullhorn"></i>
+    <h4>Noticeboard</h4>
+    <p>Stay updated with important announcements and school events.</p>
+  </div>
+
+  <div class="feature-card">
+    <i class="fa fa-calendar-alt"></i>
+    <h4>Class Time Table</h4>
+    <p>Check daily and weekly schedules for classes and exams.</p>
+  </div>
+
+  <div class="feature-card">
+    <i class="fa fa-book"></i>
+    <h4>Books Issued</h4>
+    <p>Track books borrowed from the library with due date reminders.</p>
+  </div>
+
+  <div class="feature-card">
+    <i class="fa fa-clock"></i>
+    <h4>Exams Time Table</h4>
+    <p>View upcoming exam schedules, subjects, and seat numbers.</p>
+  </div>
+
+  <div class="feature-card">
+    <i class="fa fa-ticket-alt"></i>
+    <h4>Exam Admit Card</h4>
+    <p>Download digital exam admit cards instantly from the student panel.</p>
+  </div>
+
+  <div class="feature-card">
+    <i class="fa fa-chart-line"></i>
+    <h4>Exam Results</h4>
+    <p>Access marks, grades, and performance analysis for all exams.</p>
+  </div>
+
+  <div class="feature-card">
+    <i class="fa fa-calendar-check"></i>
+    <h4>Attendance</h4>
+    <p>Track daily attendance records with absence notifications.</p>
+  </div>
+
+  <div class="feature-card">
+    <i class="fa fa-envelope-open"></i>
+    <h4>Leave Request</h4>
+    <p>Submit and monitor leave requests with approval status updates.</p>
+  </div>
+
+  <div class="feature-card">
+    <i class="fa fa-life-ring"></i>
+    <h4>Tickets</h4>
+    <p>Raise support tickets and get timely assistance from admin or staff.</p>
+  </div>
+
+  <div class="feature-card">
+    <i class="fa fa-cog"></i>
+    <h4>Account Settings</h4>
+    <p>Update password, profile picture, and personal details securely.</p>
+  </div>
 </div>
 
 
         <!-- Payment Tab -->
 <div class="tab-content" id="payment">
-  <div class="feature-card">
-    <i class="fa fa-credit-card"></i>
-    <h4>Online Payments</h4>
-    <p>Integrate with multiple secure global payment gateways.</p>
-  </div>
-
-  <div class="feature-card">
-    <i class="fa-solid fa-money-check-dollar"></i>
-    <h4>Fee Management</h4>
-    <p>Automated fee collection, tracking, and smart reminders.</p>
-  </div>
 
   <div class="feature-card">
     <i class="fa-brands fa-cc-stripe"></i>
@@ -730,7 +891,7 @@
   <div class="feature-card">
     <i class="fa fa-globe"></i>
     <h4>Pesapal Payment Gateway</h4>
-    <p>Regional payment solution for East & Central Africa (Kenya, Malawi, Rwanda, Tanzania, Uganda, Zambia, Zimbabwe etc) with multi-currency support.</p>
+    <p>Regional payment solution for East & Central Africa with multi-currency support.</p>
   </div>
 
   <div class="feature-card">
@@ -783,12 +944,18 @@
 
   <div class="feature-card">
     <i class="fa fa-hand-holding-usd"></i>
-
     <h4>Card Payment Method (In-person)</h4>
     <p>Accept in-person payments using POS or card swipe machines.</p>
   </div>
-</div>
 
+  <!-- ✅ New Card Added -->
+  <div class="feature-card">
+    <i class="fa fa-qrcode"></i>
+    <h4>QR Code Payment</h4>
+    <p>Allow students or parents to scan QR codes for instant and secure payments.</p>
+  </div>
+
+</div>
 
         <!-- SMS Tab -->
 <div class="tab-content" id="sms">
@@ -906,21 +1073,105 @@
   <div class="feature-card"><i class="fa fa-image"></i><h4>Cards Backgrounds</h4><p>Customize ID cards and background templates easily.</p></div>
   <div class="feature-card"><i class="fa fa-bell"></i><h4>Firebase Notification</h4><p>Send instant push notifications via Firebase integration.</p></div>
   <div class="feature-card"><i class="fa fa-database"></i><h4>Logging</h4><p>Monitor system logs and track user activities for security.</p></div>
-  <div class="feature-card"><i class="fa fa-chalkboard-teacher"></i><h4>Lessons</h4><p>Organize and manage lesson plans for every class and subject.</p></div>
+ 
+</div>
+        <!-- Core Modules Tab -->
+       <div class="tab-content" id="core">
+
+  <div class="feature-card">
+    <i class="fa-solid fa-user-plus"></i>
+    <h4>Registration & Admissions</h4>
+    <p>Inquiries, follow-ups, email/SMS integration, and swift admissions.</p>
+  </div>
+
+  <div class="feature-card">
+    <i class="fa-solid fa-school-flag"></i>
+    <h4>Operations</h4>
+    <p>Classrooms, course tracker, transport, and attendance management.</p>
+  </div>
+
+  <div class="feature-card">
+    <i class="fa-solid fa-bolt"></i>
+    <h4>Automation</h4>
+    <p>Email/SMS panel, auto lead assignment, scheduled reports, and more.</p>
+  </div>
+
+  <div class="feature-card">
+    <i class="fa-solid fa-users"></i>
+    <h4>Student & Parents</h4>
+    <p>Dedicated panel for students and parents to track academics.</p>
+  </div>
+
+  <div class="feature-card">
+    <i class="fa-solid fa-book-open-reader"></i>
+    <h4>Library</h4>
+    <p>Manage books, issue/return, generate library cards, and more.</p>
+  </div>
+
+  <div class="feature-card">
+    <i class="fa-solid fa-chalkboard-user"></i>
+    <h4>Teachers</h4>
+    <p>Manage attendance, assignments, grading, and academic reports.</p>
+  </div>
+
+  <div class="feature-card">
+    <i class="fa-solid fa-headset"></i>
+    <h4>Support</h4>
+    <p>Help desk, ticket system, and communication with school staff.</p>
+  </div>
+
+  <!-- ✅ New Cards Below -->
+
+  <div class="feature-card">
+    <i class="fa-solid fa-chart-line"></i>
+    <h4>Analytics & Reports</h4>
+    <p>Powerful insights through detailed academic and financial analytics.</p>
+  </div>
+
+  <div class="feature-card">
+    <i class="fa-solid fa-user-shield"></i>
+    <h4>Role-Based Access Control</h4>
+    <p>Secure login with customized permissions for admins, teachers, and parents.</p>
+  </div>
+
+  <div class="feature-card">
+    <i class="fa-solid fa-calendar-check"></i>
+    <h4>Attendance & Scheduling</h4>
+    <p>Automated attendance, timetable management, and instant notifications.</p>
+  </div>
+
+  <div class="feature-card">
+    <i class="fa-solid fa-file-signature"></i>
+    <h4>Examinations & Results</h4>
+    <p>Set up exams, grading patterns, and generate performance reports easily.</p>
+  </div>
+
+  <div class="feature-card">
+    <i class="fa-solid fa-bus"></i>
+    <h4>Transport Management</h4>
+    <p>Assign routes, track vehicles, and ensure student transport safety.</p>
+  </div>
+
+  <div class="feature-card">
+    <i class="fa-solid fa-bed"></i>
+    <h4>Hostel Management</h4>
+    <p>Manage hostel rooms, fees, attendance, and accommodation details.</p>
+  </div>
+
+  <div class="feature-card">
+    <i class="fa-solid fa-bullhorn"></i>
+    <h4>Notice Board</h4>
+    <p>Publish school announcements and updates instantly to all panels.</p>
+  </div>
+
+  <div class="feature-card">
+    <i class="fa-solid fa-cloud-arrow-up"></i>
+    <h4>Data Backup & Security</h4>
+    <p>Automatic backups and SSL protection to safeguard institutional data.</p>
+  </div>
+
 </div>
 
-
-        <!-- Core Modules Tab -->
-        <div class="tab-content" id="core">
-          <div class="feature-card"><i class="fa-solid fa-user-plus"></i><h4>Registration & Admissions</h4><p>Inquiries, follow-ups, email/SMS integration, and swift admissions.</p></div>
-          <div class="feature-card"><i class="fa-solid fa-school-flag"></i><h4>Operations</h4><p>Classrooms, course tracker, transport, and attendance management.</p></div>
-          <div class="feature-card"><i class="fa-solid fa-sack-dollar"></i><h4>Finance</h4><p>Fee management, reminders, employee salaries, and financial reports.</p></div>
-          <div class="feature-card"><i class="fa-solid fa-bolt"></i><h4>Automation</h4><p>Email/SMS panel, auto lead assignment, scheduled reports, and more.</p></div>
-          <div class="feature-card"><i class="fa-solid fa-users"></i><h4>Student & Parents</h4><p>Dedicated panel for students and parents to track academics.</p></div>
-          <div class="feature-card"><i class="fa-solid fa-book-open-reader"></i><h4>Library</h4><p>Manage books, issue/return, generate library cards, and more.</p></div>
-          <div class="feature-card"><i class="fa-solid fa-chalkboard-user"></i><h4>Teachers</h4><p>Manage attendance, assignments, grading, and academic reports.</p></div>
-          <div class="feature-card"><i class="fa-solid fa-headset"></i><h4>Support</h4><p>Help desk, ticket system, and communication with school staff.</p></div>
-        </div>
       </div>
     </div>
   </div>
@@ -954,13 +1205,14 @@
 
 <!-- Pricing Cards -->
 <div class="row g-4">
+  
   <!-- Free Plan -->
   <div class="col-12 col-md-6 col-xl-3" data-aos="zoom-in">
     <div class="card h-100 pricing-card shadow-lg rounded-4 border-0 position-relative">
-      <div class="card-header text-center fw-bold bg-gradient-to-r from-green-400 to-teal-500 rounded-top-4 glowing-header">Basic Plugin</div>
-      <div class="card-body text-start">
-        <p class="mb-3 display-6 fw-bold"><span class="price">$49</span> <span class="text-muted fs-6">/Yearly</span></p>
-        <ul class="list-unstyled small text-muted d-grid gap-2 mb-4">
+      <div class="card-header text-center fw-bold bg-gradient-to-r from-green-400 to-teal-500 rounded-top-4 glowing-header bg-warning">$49</div>
+      <div class="card-body text-center">
+        <p class="mb-3 display-6 fw-bold"><span class="price">SM</span> <span class="text-muted fs-6">Plugin</span></p>
+        <ul class="list-unstyled small text-muted d-grid gap-2 mb-4 text-start">
           <li>Inquiry Management</li>
           <li>Admission process management</li>
           <li>Exam report & admit card</li>
@@ -970,60 +1222,62 @@
           <li>Reports and Analytics</li>
           <li>Much more…</li>
         </ul>
+
+        <hr>
+        $49 Price
+        <hr>
+
         <a class="btn btn-gradient w-100 fw-bold" href="#contact">Get a Demo</a>
       </div>
     </div>
   </div>
 
   <!-- Basic Plan -->
-  <div class="col-12 col-md-6 col-xl-3" data-aos="zoom-in" data-aos-delay="200">
+  <div class="col-12 col-md-6 col-xl-3 " data-aos="zoom-in" data-aos-delay="200">
     <div class="card h-100 pricing-card shadow-xl rounded-4 border-0 position-relative">
-      <div class="card-header text-center fw-bold bg-gradient-to-r from-purple-500 to-pink-500 rounded-top-4 glowing-header">Android & iOS Apps</div>
-      <div class="card-body text-start">
-        <p class="mb-3 display-6 fw-bold"><span class="price">$89</span> <span class="text-muted fs-6">/Yearly</span></p>
-        <ul class="list-unstyled small text-muted d-grid gap-2 mb-4">
+      <div class="card-header text-center fw-bold bg-gradient-to-r from-purple-500 to-pink-500 rounded-top-4 glowing-header bg-warning">$85</div>
+      <div class="card-body ">
+        <p class="mb-3 display-6 fw-bold text-center"><span class="price">Android</span><span class="text-muted fs-6"> App</span></p>
+        <ul class="list-unstyled small text-start text-muted d-grid gap-2 mb-4">
           <li>Responsive Layout</li>
           <li>Course Tracker</li>
           <li>Utilities – DB Backup</li>
           <li>Student Panel</li>
           <li>Student Transfer</li>
         </ul>
-        <a class="btn btn-gradient w-100 fw-bold" href="#contact">Get a Quote</a>
-      </div>
-    </div>
-  </div>
+        <hr>
+<h6 class="text-center">Price $39</h6>
+<hr>
 
-  <!-- Medium Plan -->
-  <div class="col-12 col-md-6 col-xl-3" data-aos="zoom-in" data-aos-delay="300">
-    <div class="card h-100 pricing-card shadow-2xl rounded-4 border-0 position-relative">
-      <div class="card-header text-center fw-bold bg-gradient-to-r from-orange-500 to-red-500 rounded-top-4 glowing-header">Uploading Both</div>
-      <div class="card-body text-start">
-        <p class="mb-3 display-6 fw-bold"><span class="price">$100</span> <span class="text-muted fs-6">/Yearly</span></p>
-        <ul class="list-unstyled small text-muted d-grid gap-2 mb-4">
-          <li>Everything in Medium</li>
-          <li>Automation Suite</li>
-          <li>Priority Support</li>
-          <li>Custom Reports</li>
+<h2 class="text-center"><i class="fa fa-plus"></i></h2>
+        <p class="mb-3 display-6 fw-bold text-center"><span class="price">IOs</span> <span class="text-muted fs-6 text-center">App</span></p>
+         <ul class="list-unstyled small text-muted d-grid gap-2 mb-4">
+          <li>Responsive Layout</li>
+          <li>Course Tracker</li>
+          <li>Utilities – DB Backup</li>
+          <li>Student Panel</li>
+          <li>Student Transfer</li>
         </ul>
-        <a class="btn btn-gradient w-100 fw-bold" href="#contact">Get a Quote</a>
+<hr>
+<h6 class="text-center">Price $49</h6>
+<hr>
+        <a class="btn btn-gradient w-100 fw-bold mb-0" href="#contact">Get a Quote</a>
       </div>
     </div>
   </div>
 
-<!-- plugin + App -->
-<!-- Free Plan / New Combined Offer -->
 <div class="col-12 col-md-6 col-xl-3" data-aos="zoom-in">
   <div class="card h-100 pricing-card shadow-lg rounded-4 border-0 position-relative">
     
     <!-- Card Header -->
-    <div class="card-header text-center fw-bold bg-gradient-to-r from-green-400 to-teal-500 rounded-top-4 glowing-header">
-      School Management + Android & iOS App
+    <div class="card-header text-center fw-bold bg-gradient-to-r from-green-400 to-teal-500 rounded-top-4 glowing-header bg-warning">
+   $129
     </div>
 
     <!-- Card Body with New Content -->
     <div class="card-body text-start">
       <p class="mb-3 display-6 fw-bold">
-        <span class="price">$129</span> 
+        <span class="price">School Management + Android & iOS App </span> 
         <span class="text-muted fs-6">/Yearly</span>
       </p>
       <p class="small text-muted mb-4">
@@ -1044,6 +1298,27 @@
     
   </div>
 </div>
+
+
+  <!-- Medium Plan -->
+  <div class="col-12 col-md-6 col-xl-3" data-aos="zoom-in" data-aos-delay="300">
+    <div class="card h-100 pricing-card shadow-2xl rounded-4 border-0 position-relative">
+      <div class="card-header text-center fw-bold bg-gradient-to-r from-orange-500 to-red-500 rounded-top-4 glowing-header">$100</div>
+      <div class="card-body text-start">
+        <p class="mb-3 display-6 fw-bold"><span class="price">Uploading Both</span> <span class="text-muted fs-6">App</span></p>
+        <ul class="list-unstyled small text-muted d-grid gap-2 mb-4">
+          <li>Everything in Medium</li>
+          <li>Automation Suite</li>
+          <li>Priority Support</li>
+          <li>Custom Reports</li>
+        </ul>
+        <a class="btn btn-gradient w-100 fw-bold" href="#contact">Get a Quote</a>
+      </div>
+    </div>
+  </div>
+
+<!-- plugin + App -->
+
 
 <div class="col-12 col-md-6 col-xl-3" data-aos="zoom-in" data-aos-delay="400">
   <div class="card h-100 pricing-card shadow-xl rounded-4 border-0 position-relative">
@@ -1176,85 +1451,54 @@
   </div>
 </section>
 
-<!-- youtube section -->
- <section class="youtube-section py-5" id="youtube" data-aos="fade-up" >
-  <!-- Floating shapes -->
-  <div class="yt-shape shape1"></div>
-  <div class="yt-shape shape2"></div>
-  <div class="yt-shape shape3"></div>
-
-  <div class="container position-relative">
-    <!-- Section Heading -->
-    <div class="text-center mb-5">
-      <i class="fa-solid fa-laptop-code section-heading-bg-icon"></i>
-      <h2 class="section-title" data-aos="fade-up">
-        🎬 Explore Our <span class="highlight"> The School Management Channel</span>
-      </h2>
-         <h4>Complete video tutorials to demonstrate school management features.</h4>
-      <p class="section-sub" data-aos="fade-up" data-aos-delay="100">
-          School Management is a WordPress plugin to manage multiple schools and their entities such as
-        classes, sections, students, exams, ID cards, admit cards, teachers, staff, fees, invoices,
-        income, expense, noticeboard, study materials and much more. You can take live classes with Zoom.
-      </p>
-    </div>
-
+<section class="app-section text-center" data-aos="fade-up" >
   
-
-
-  <div class="carousel-wrap" data-aos="zoom-in" >
-
-  <div class="viewport" id="viewport">
-  <div class="track" id="track">
-    <div class="video-item">
-      <iframe src="https://www.youtube.com/embed/IyzuLbtEbSU?autoplay=1&mute=1" title="yt1" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-    </div>
-    <div class="video-item">
-      <iframe src="https://www.youtube.com/embed/IyzuLbtEbSU?autoplay=1&mute=1" title="yt2" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-    </div>
-    <div class="video-item">
-      <iframe src="https://www.youtube.com/embed/k8zF_ZUR_Tk?autoplay=1&mute=1" title="yt3" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-    </div>
-    <div class="video-item">
-      <iframe src="https://www.youtube.com/embed/-agQIvYnpZ8?autoplay=1&mute=1" title="yt4" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-    </div>
-    <div class="video-item">
-      <iframe src="https://www.youtube.com/embed/pvOyOoF6zXs?autoplay=1&mute=1" title="yt5" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-    </div>
+  <!-- Floating Shapes -->
+  <div class="title-shapes" data-aos="zoom" >
+    <div class="shape-circle one"></div>
+    <div class="shape-circle two"></div>
+    <div class="shape-blob"></div>
   </div>
-</div>
 
+  <div class="container position-relative" data-aos="zoom-in" >
+    <!-- App Title -->
+    <h1>
+      The School Management <br>
+      <span>📱 Mobile App</span>
+    </h1>
+    <p>Stay connected to your school — Anytime. Anywhere. On any device.</p>
+    <div class="badge-new">Now available on Android & iOS</div>
 
+    <!-- App Features -->
+    <div class="row mt-5 align-items-center justify-content-center">
 
-    <div class="controls">
-      <button id="toggleBtn">Pause</button>
-      <label style="display:flex;align-items:center;gap:8px;">
-        Speed
-        <input id="speedRange" type="range" min="20" max="600" value="120">
-      </label>
-      <button id="scrollLeft">◀</button>
-      <button id="scrollRight">▶</button>
+      <!-- QR Codes -->
+      <div class="col-md-4 qr">
+        <h5>📷 Scan to Download</h5>
+        <img src="./assets/img-scannar/frame.png" alt="QR Android">
+        <img src="./assets/img-scannar/App_Scanner.png" alt="QR iOS">
+      </div>
+
+      <!-- Device Mockup -->
+      <div class="col-md-4 mockup">
+        <img src="https://theschool-management.com/wp-content/themes/theschool-2020/assets/images/phone-img.png" alt="Mobile Mockup">
+      </div>
+
+      <!-- Store Buttons -->
+      <div class="col-md-4 store-buttons">
+        <h5>⬇️ Download from</h5>
+        <a href="https://play.google.com/store/apps/details?id=com.intechnoschool" target="_blank">
+          <img src="https://theschool-management.com/wp-content/themes/theschool-2020/assets/images/playstore.png" alt="Google Play Store">
+        </a>
+        <a href="https://apps.apple.com/app/idYOUR_APP_ID" target="_blank">
+          <img src="https://theschool-management.com/wp-content/themes/theschool-2020/assets/images/appstore.png" alt="Apple App Store">
+        </a>
+      </div>
+
     </div>
-
-    <!-- <div class="note">Tip: cloning is used to create an infinite seamless scroll. If you use many heavy iframes, consider lazy-loading or using thumbnail links to lighten load.</div>
-  </div> -->
-
-    
-    <!-- <div class="text-center mt-4">
-      <a href="#features" class="btn btn-light btn-lg">Explore Features</a>
-    </div> -->
-
-
-    <!-- <div class="yt-title">
-      <h3>Watch Video Tutorial</h3>
-      <h4>Complete video tutorials to demonstrate school management features.</h4>
-      <p>
-        School Management is a WordPress plugin to manage multiple schools and their entities such as
-        classes, sections, students, exams, ID cards, admit cards, teachers, staff, fees, invoices,
-        income, expense, noticeboard, study materials and much more. You can take live classes with Zoom.
-      </p>
-    </div> -->
   </div>
 </section>
+
 
 <!-- Testimonial Section-->
 <section class="creative-testimonial--slider" data-aos="fade-up" >
@@ -1325,114 +1569,46 @@
   <!-- Testimonial Section end-->
 
   
-  <!-- <section class="purchase-pro">
-  <div class="overlay"></div>
-  <div class="purchase-container">
-    <h2><span>The School Management</span> Plugin</h2>
-    <p>
-      Power up your WordPress with our advanced Education & Learning Management System.  
-      Easy to use, fast, and trusted by schools worldwide.
-    </p>
-    <a href="https://theschool-management.com/buy-now" target="_blank" class="purchase-btn">
-      <i class="fa fa-shopping-cart"></i> Purchase Now – $49
-    </a>
-  </div>
-</section> -->
+<!-- youtube section -->
+ <section class="youtube-section py-5" id="youtube" data-aos="fade-up" >
+  <!-- Floating shapes -->
+  <div class="yt-shape shape1"></div>
+  <div class="yt-shape shape2"></div>
+  <div class="yt-shape shape3"></div>
 
-  
-<section class="notification-section" data-aos="fade-up" >
-  <div class="container" data-aos="zoom-in" >
-    <h2 class="notification-title">📩 Stay Connected with Notifications</h2>
+  <div class="container position-relative">
+    <!-- Section Heading -->
+    <div class="text-center mb-5">
+      <i class="fa-solid fa-laptop-code section-heading-bg-icon"></i>
+      <h2 class="section-title" data-aos="fade-up">
+        🎬 Explore Our <span class="highlight"> The School Management Channel</span>
+      </h2>
+         <h4>Complete video tutorials to demonstrate school management features.</h4>
+      <p class="section-sub" data-aos="fade-up" data-aos-delay="100">
+          School Management is a WordPress plugin to manage multiple schools and their entities such as
+        classes, sections, students, exams, ID cards, admit cards, teachers, staff, fees, invoices,
+        income, expense, noticeboard, study materials and much more. You can take live classes with Zoom.
+      </p>
+    </div>
 
-    <div class="card-wrapper">
-
-      <!-- Email Notification Card -->
-      <div class="notify-card">
-        <img src="https://cdn-icons-png.flaticon.com/512/561/561127.png" alt="Email Notification">
-        <h5>Email Notifications</h5>
-        <p>Automatic notifications via email carrier</p>
-
-        <div class="typing-indicator">
-          <svg viewBox="0 0 50 10" width="50">
-            <circle cx="5" cy="5" r="5"/>
-            <circle cx="25" cy="5" r="5"/>
-            <circle cx="45" cy="5" r="5"/>
-          </svg>
-        </div>
-
-        <div class="lottie-confirmation" id="email-lottie"></div>
-      </div>
-
-      
-      <!-- SMS Notification Card -->
-      <div class="notify-card" data-aos="zoom-in" >
-        <img src="https://cdn-icons-png.flaticon.com/512/2950/2950699.png" alt="SMS Notification">
-        <h5>SMS Notifications</h5>
-        <p>Automatic notifications via SMS carrier</p>
-
-        <div class="typing-indicator">
-          <svg viewBox="0 0 50 10" width="50">
-            <circle cx="5" cy="5" r="5"/>
-            <circle cx="25" cy="5" r="5"/>
-            <circle cx="45" cy="5" r="5"/>
-          </svg>
-        </div>
-
-        
-        <div class="lottie-confirmation" id="sms-lottie"></div>
-      </div>
-
+<div class="carousel-wrap">
+  <div class="viewport" id="viewport">
+    <div class="track" id="track">
+     <div class="video-item">
+  <iframe src="https://www.youtube.com/embed/9M1Ljg6VH-A?list=PLN2Qe4QP21X7NFShVTrexX0TcnFP5HuGh" allowfullscreen></iframe>
+</div>
+<div class="video-item">
+  <iframe src="https://www.youtube.com/embed/KONHruM8IsY?list=PLN2Qe4QP21X7NFShVTrexX0TcnFP5HuGh" allowfullscreen></iframe>
+</div>
+<div class="video-item">
+  <iframe src="https://www.youtube.com/embed/Mz8QlLuBJm4?list=PLN2Qe4QP21X7NFShVTrexX0TcnFP5HuGh" allowfullscreen></iframe>
+</div>
+<div class="video-item">
+  <iframe src="https://www.youtube.com/embed/KONHruM8IsY" allowfullscreen></iframe>
+</div>
     </div>
   </div>
-</section>
-
-
-<section class="app-section text-center" data-aos="fade-up" >
-  
-  <!-- Floating Shapes -->
-  <div class="title-shapes" data-aos="zoom" >
-    <div class="shape-circle one"></div>
-    <div class="shape-circle two"></div>
-    <div class="shape-blob"></div>
-  </div>
-
-  <div class="container position-relative" data-aos="zoom-in" >
-    <!-- App Title -->
-    <h1>
-      The School Management <br>
-      <span>📱 Mobile App</span>
-    </h1>
-    <p>Stay connected to your school — Anytime. Anywhere. On any device.</p>
-    <div class="badge-new">Now available on Android & iOS</div>
-
-    <!-- App Features -->
-    <div class="row mt-5 align-items-center justify-content-center">
-
-      <!-- QR Codes -->
-      <div class="col-md-4 qr">
-        <h5>📷 Scan to Download</h5>
-        <img src="./assets/img-scannar/frame.png" alt="QR Android">
-        <img src="./assets/img-scannar/App_Scanner.png" alt="QR iOS">
-      </div>
-
-      <!-- Device Mockup -->
-      <div class="col-md-4 mockup">
-        <img src="https://theschool-management.com/wp-content/themes/theschool-2020/assets/images/phone-img.png" alt="Mobile Mockup">
-      </div>
-
-      <!-- Store Buttons -->
-      <div class="col-md-4 store-buttons">
-        <h5>⬇️ Download from</h5>
-        <a href="https://play.google.com/store/apps/details?id=com.intechnoschool" target="_blank">
-          <img src="https://theschool-management.com/wp-content/themes/theschool-2020/assets/images/playstore.png" alt="Google Play Store">
-        </a>
-        <a href="https://apps.apple.com/app/idYOUR_APP_ID" target="_blank">
-          <img src="https://theschool-management.com/wp-content/themes/theschool-2020/assets/images/appstore.png" alt="Apple App Store">
-        </a>
-      </div>
-
-    </div>
-  </div>
+</div>
 </section>
 
 
