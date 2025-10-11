@@ -509,7 +509,7 @@ nav{
 }
 
 /* Responsive styles */
-@media (max-width: 991px) {
+/* @media (max-width: 991px) {
   .menu-toggle {
     display: block;
   }
@@ -527,10 +527,12 @@ nav{
     padding: 1rem;
   }
 
+  
   .bottomnav-right.show {
-    display: flex;
+        display: flex !important;
   }
 
+  
   .bottomnav-right ul {
     flex-direction: column;
     width: 100%;
@@ -559,7 +561,7 @@ nav{
     background: #f9f9f9;
     box-shadow: none;
     display: none;
-    
+    text-align:left;
   }
 
   .dropdown:hover .dropdown-content {
@@ -570,7 +572,6 @@ nav{
     display: block;
   }
 
-  /* Optional: Smooth dropdown icon */
   .dropdown .dropbtn i {
     transition: transform 0.3s ease;
   }
@@ -579,11 +580,108 @@ nav{
     transform: rotate(180deg);
   }
 
-  /* Optional: Animate mobile menu */
   .bottomnav-right {
     transition: all 0.3s ease-in-out;
   }
+} */
+
+@media (max-width: 991px) {
+  .menu-toggle {
+    display: block;
+    font-size: 24px;
+    cursor: pointer;
+    z-index: 1001;
+    position: absolute;
+    top: 30px;
+    right: 15px;
+    color: var(--brand-dark);
+  }
+
+  /* Hide menu by default */
+  .bottomnav-right {
+    display: none;
+    flex-direction: column;
+    align-items: flex-start;
+    background: #fff;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    width: 100%;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    padding: 1rem;
+    transform-origin: top;
+    transition: all 0.4s ease;
+  }
+
+  /* Show mobile menu */
+  .bottomnav-right.show {
+    display: flex !important;
+    animation: slideDownMenu 0.4s ease forwards;
+  }
+
+  /* Smooth slide for mobile menu */
+  @keyframes slideDownMenu {
+    from {
+      opacity: 0;
+      transform: translateY(-15px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  /* Mobile list layout */
+  .bottomnav-right ul {
+    flex-direction: column;
+    width: 100%;
+    gap: 0;
+  }
+
+  .bottomnav-right ul li {
+    width: 100%;
+  }
+
+  .bottomnav-right ul li a,
+  .bottomnav-right ul li .dropbtn {
+    width: 100%;
+    display: block;
+    padding: 10px 15px;
+    text-align: left;
+  }
+
+  .dropdown-content li a i {
+    margin-right: 8px;
+    color: var(--brand-dark);
+  }
+
+  /* Dropdown animation base */
+  .dropdown-content {
+    position: static;
+    overflow: hidden;
+    max-height: 0;
+    opacity: 0;
+    background: #f9f9f9;
+    box-shadow: none;
+    transition: all 0.4s ease;
+  }
+
+  /* Dropdown open */
+  .dropdown.active .dropdown-content {
+    max-height: 500px; /* adjust if more links */
+    opacity: 1;
+  }
+
+  /* Rotate dropdown arrow */
+  .dropdown .dropbtn i {
+    transition: transform 0.3s ease;
+  }
+
+  .dropdown.active .dropbtn i {
+    transform: rotate(180deg);
+  }
 }
+
 
 
 /* ==============================
@@ -1620,6 +1718,148 @@ display: flex;
   }
 }
 
+/* Offer Card */
+/* Top Offer Strip */
+.offer-strip {
+  width: 100%;
+  background: #ffcc00;
+  color: #000;
+  text-align: center;
+  padding: 10px 0;
+  font-weight: 500;
+  font-size: 14px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+.offer-strip a {
+  color: #000;
+  font-weight: 700;
+  text-decoration: none;
+}
+.offer-strip a:hover {
+  text-decoration: underline;
+}
+
+/* Card Styling */
+.offer-card {
+  position: relative;
+  background: linear-gradient(135deg, #0c1022, #1a2238);
+  color: #fff;
+  border-radius: 20px;
+  box-shadow: 0 15px 40px rgba(0,0,0,0.5);
+  padding: 30px 20px 60px;
+  text-align: center;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+.offer-card:hover {
+  transform: scale(1.03) rotate(-1deg);
+  box-shadow: 0 25px 50px rgba(0,0,0,0.6);
+}
+
+/* Ribbon */
+.offer-card .ribbon {
+  position: absolute;
+  top: 15px;
+  right: -35px;
+  width: 110px;
+  height: 35px;
+  background: linear-gradient(45deg,#f9d423,#ff4e50);
+  color: #000;
+  font-weight: 700;
+  text-transform: uppercase;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform: rotate(45deg);
+  box-shadow: 0 3px 6px rgba(0,0,0,0.2);
+  z-index: 2;
+}
+
+/* Icon */
+.offer-card .offer-icon {
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  width: 45px;
+  height: 45px;
+  background: #f9d423;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.3);
+  z-index: 2;
+  animation: bounce 1.5s infinite;
+}
+.offer-card .offer-icon svg {
+  width: 22px;
+  height: 22px;
+  fill: #000;
+}
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-5px); }
+}
+
+/* Product Image */
+.offer-card .product-img {
+  position: absolute;
+  bottom: 15px;
+  right: 15px;
+  width: 80px;
+  z-index: 1;
+}
+
+/* Gradient Heading */
+.offer-card h2 {
+  font-size: 1.8rem;
+  font-weight: 700;
+  background: linear-gradient(45deg,#f9d423,#ff4e50);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 10px;
+  margin-top: 40px;
+}
+
+/* Card Description */
+.offer-card p {
+  color: #ccc;
+  font-size: 0.95rem;
+  margin-bottom: 25px;
+}
+
+/* Button */
+.offer-btn {
+  background: linear-gradient(45deg,#f9d423,#ff4e50);
+  color: #000;
+  font-weight: 600;
+  text-decoration: none;
+  padding: 10px 25px;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  position: relative;
+  z-index: 2;
+}
+.offer-btn:hover {
+  transform: scale(1.1);
+  box-shadow: 0 10px 25px rgba(249,212,35,0.5);
+}
+
+/* Section Heading */
+.section-heading {
+  text-align: center;
+  color: #fff;
+   margin-top: 60px; 
+  padding-top: 60px; 
+}
+.section-heading h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+}
 
 
 /* --- Designer Premium Footer --- */

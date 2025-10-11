@@ -1,20 +1,75 @@
 
 // navbar
 
+  //   function toggleMenu() {
+  //   const menu = document.getElementById('menu');
+  //   menu.classList.toggle('show');
+  // }
+
+  // document.addEventListener('click', function (e) {
+  //   const menu = document.getElementById('menu');
+  //   const toggle = document.querySelector('.menu-toggle');
+  //   if (!menu.contains(e.target) && !toggle.contains(e.target)) {
+  //     menu.classList.remove('show');
+  //   }
+  // });
+
+  // Toggle mobile menu
   function toggleMenu() {
     const menu = document.getElementById('menu');
     menu.classList.toggle('show');
   }
 
-  // Optional: Close dropdown on outside click (mobile)
+  // Handle dropdown toggle (mobile)
   document.addEventListener('click', function (e) {
-    const menu = document.getElementById('menu');
     const toggle = document.querySelector('.menu-toggle');
+    const menu = document.getElementById('menu');
+    const dropdownBtn = e.target.closest('.dropbtn');
+    const dropdown = e.target.closest('.dropdown');
+
+    // Toggle menu when hamburger clicked
+    if (e.target === toggle || toggle.contains(e.target)) {
+      toggleMenu();
+      return;
+    }
+
+    // Toggle dropdown on mobile
+    if (dropdownBtn && window.innerWidth <= 991) {
+      e.preventDefault();
+      dropdown.classList.toggle('active');
+      return;
+    }
+
+    // Close menu and dropdowns if clicked outside
     if (!menu.contains(e.target) && !toggle.contains(e.target)) {
       menu.classList.remove('show');
+      document.querySelectorAll('.dropdown').forEach(d => d.classList.remove('active'));
     }
   });
 
+  // Optional: Close menu when clicking outside (mobile)
+  document.addEventListener('click', function (e) {
+    const menu = document.getElementById('menu');
+    const toggle = document.querySelector('.menu-toggle');
+    const dropdown = e.target.closest('.dropdown');
+
+    if (!menu.contains(e.target) && !toggle.contains(e.target)) {
+      menu.classList.remove('show');
+    }
+
+    // Close all dropdowns if clicked outside them
+    if (!dropdown) {
+      document.querySelectorAll('.dropdown').forEach(d => d.classList.remove('active'));
+    }
+  });
+
+  // Optional: Auto close dropdowns if window resized to desktop
+  window.addEventListener('resize', () => {
+    if (window.innerWidth > 991) {
+      document.querySelectorAll('.dropdown').forEach(d => d.classList.remove('active'));
+      document.getElementById('menu').classList.remove('show');
+    }
+  });
 
 
 // Header hero section
