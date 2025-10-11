@@ -40,63 +40,6 @@
 <body>
 
 
-<!-- <nav class="navbar navbar-expand-lg shadow-lg" data-aos="fade-down" >
-  <div class="container">
-     <a class="navbar-brand d-flex flex-column align-items-start" href="#home">
-      <img src="https://theschool-management.com/wp-content/uploads/2020/07/cropped-school-logo.png" 
-           alt="Logo" 
-           style="width:120px; height:100px; object-fit:contain;">
-    </a>
-    
-
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
-      aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-
-    </button>
-
-    <div class="collapse navbar-collapse" id="navbarNavDropdown">
-      <ul class="navbar-nav ms-auto"> 
-        <li class="nav-item active">
-          <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="./about-us.html">About-Us</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="./features.html">Features</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="./demo.html">Demo</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="./blog.html">Blog</a>
-        </li>
-      
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown"
-            aria-haspopup="true" aria-expanded="false">
-            Help & Support
-          </a>
-          <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-            <a class="dropdown-item" href="./404.html">SMS Plugin Forum</a>
-            <a class="dropdown-item" href="https://weblizar.com/documentation/school-management/">SMS Plugin documentation</a>
-            <a class="dropdown-item" href="https://www.youtube.com/watch?v=s26aJJDucfc&feature=youtu.be">Translation with Loco Translate Plugin</a>
-            <a class="dropdown-item" href="https://www.youtube.com/watch?v=hgy98UG_8Vc&t=25s">Translate SMS Plugin  with Poedit</a>
-          </div>
-        </li>
-          <li class="nav-item">
-          <a class="nav-link common-btn fw-bold text-white" href="https://weblizar.com/plugins/school-management">Buy Now ($49)</a>
-        </li>
-        <li class="nav-item">
-  <a class="nav-link common-btn fw-bold text-white" href="tel:+919950348952">Call Now</a>
-</li>
-
-      </ul>
-    </div>
-  </div>
-</nav> -->
-
 <nav>
   <!-- FontAwesome -->
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css"
@@ -126,29 +69,37 @@
       <i class="fas fa-bars"></i>
     </div>
 
+    <!-- Navigation Menu -->
     <div class="bottomnav-right" id="menu">
-      <a href="#home" class="active">Home</a>
-      <a href="./about-us.html">About Us</a>
-      <a href="./features.html">Features</a>
-      <a href="./demo.html">Demo</a>
-      <a href="./blog.html">Blog</a>
+      <ul style="display: flex; gap: 1rem; list-style: none; margin: 0; padding: 0; align-items: center;">
+        <li><a href="#home" class="active">Home</a></li>
+        <li><a href="./about-us.html">About Us</a></li>
+        <li><a href="./features.html">Features</a></li>
+        <li><a href="./demo.html">Demo</a></li>
+        <li><a href="./blog.html">Blog</a></li>
 
-      <!-- Dropdown -->
-      <div class="dropdown">
-        <button class="dropbtn">Help & Support <i class="fas fa-angle-down"></i></button>
-        <div class="dropdown-content">
-          <a href="#">Student Records</a>
-          <a href="#">Teacher Management</a>
-          <a href="#">Attendance</a>
-          <a href="#">Exams</a>
-        </div>
-      </div>
+        <!-- Dropdown in li -->
+     <li class="dropdown" onclick="this.classList.toggle('active')">
+  <button class="dropbtn">Help & Support <i class="fas fa-angle-down"></i></button>
+  <ul class="dropdown-content" style="list-style: none;">
+    <li><a href="./404.html">SMS Plugin Forum</a></li>
+    <li><a href="https://weblizar.com/documentation/school-management/">SMS Plugin documentation</a></li>
+    <li><a href="https://www.youtube.com/watch?v=s26aJJDucfc&feature=youtu.be">Translation with Loco Translate Plugin</a></li>
+    <li><a href="https://www.youtube.com/watch?v=hgy98UG_8Vc&t=25s">Translate SMS Plugin  with Poedit</a></li>
+  </ul>
+</li>
 
-      <a href="https://weblizar.com/members/signup/school-management" target="_blank" rel="noopener noreferrer"><button class="common-btn text-white">Buy Now ($49)</button></a>
+
+        <li>
+          <a href="https://weblizar.com/members/signup/school-management" target="_blank" rel="noopener noreferrer">
+            <button class="common-btn text-white">Buy Now ($49)</button>
+          </a>
+        </li>
+      </ul>
     </div>
-    
   </div>
 </nav>
+
 
   <!-- HERO -->
 <header id="home" class="hero-premium d-flex align-items-center" 
@@ -1884,9 +1835,7 @@ data-aos="fade-up" data-duration="1000">
       <div class="col-12 col-md-6 col-lg-3">
         <h4>Weblizar</h4>
         <p>
-          Weblizar is a leading IT company based in Rajasthan, India. We
-          specialize in web development, digital marketing, and software
-          solutions tailored for global clients.
+    Weblizar is a flagship product by Intechno, a Rajasthan-based IT company. It offers web development, digital marketing, and software solutions for global clients.
         </p>
         <div class="d-flex gap-3">
           <a href="https://www.facebook.com/theschoolmanagement" class="text-light"><i class="fab fa-facebook-f"></i></a>
@@ -1949,7 +1898,7 @@ data-aos="fade-up" data-duration="1000">
     <!-- Footer Bottom -->
     <div class="row mt-4 pt-4 border-top border-secondary">
       <div class="col-12 text-center small">
-        &copy; 2025 <strong>Weblizar</strong> | 
+        &copy; 2025 <strong>Intechno Pvt Ltd</strong> | 
         <a href="#" class="text-light text-decoration-none">Privacy Policy</a> | 
         <a href="#" class="text-light text-decoration-none">Terms of Service</a>
       </div>

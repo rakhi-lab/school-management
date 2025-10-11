@@ -235,90 +235,6 @@ body.dark-mode strong {
    Navbar Default Styling
 ============================== */
 
-/* .brand-logo {
-  width: 120px;
-  height: 100px;
-  object-fit: contain;
-  transition: all 0.3s ease;
-}
-
-.brand-logo.shrink {
-  width: 30px;
-  height: 20px;
-  transform: scale(0.9);
-}
-
-.navbar {
-  background: rgba(255, 255, 255, 0.9);
-  transition: all 0.3s ease;
-  backdrop-filter: blur(10px);
-  z-index: 10;
-  padding: 1.2rem 0;
-  position: fixed;
-  width: 100%;
-  top: 0;
-}
-
-.navbar.shrink {
-  padding: 0.2rem 0 !important;
-  background: rgba(255, 255, 255, 0.3);
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-}
-
-.navbar .nav-link {
-  position: relative;
-  color: var(--btn);
-  margin:10px;
-  padding: 10px 20px;
-  font-size: 1rem;
-  transition: color 0.3s ease, font-size 0.3s ease, padding 0.3s ease;
-}
-
-.navbar.shrink .nav-link {
-  font-size: 0.9rem;
-  padding: 6px 12px;
-}
-
-.navbar .nav-link::after {
-  content: '';
-  position: absolute;
-  width: 0%;
-  height: 2px;
-  bottom: 0;
-  left: 0;
-  background-color: var(--btn-red);
-  border-radius: 2px;
-  transition: width 0.3s ease;
-}
-
-.navbar .nav-link:hover::after {
-  width: 100%;
-}
-
-.navbar .nav-link:hover {
-  color: var(--brand-dark);
-}
-
-.navbar .btn {
-  transition: transform 0.3s, box-shadow 0.3s, background 0.3s;
-}
-
-.navbar .btn:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-  background: linear-gradient(135deg, #ff4b5c, #ff7a59);
-}
-
-.dropdown-item{
-  color:var(--bg-light);
-  border: var(--radius);
-}
-
-.dropdown-item{
-  background: var(--brand-dark);
-  border: 1px solid var(--bg-light);
-
-} */
 nav{
   background-color: white;
     position: fixed;
@@ -333,10 +249,11 @@ nav{
   top: 0;
 }
 .bottomnav{
-    overflow: hidden;
     top: 0;
     width: 100%;
     background: white;
+     position: relative;
+    z-index: 100; 
   }
 
 .topnav a, .bottomnav a {
@@ -414,7 +331,8 @@ nav{
   margin: 0 auto;
   padding:5px;
     position: relative; 
-  z-index: 10;
+      overflow: visible; 
+  z-index: 1;
 }
 
 .bottomnav-right > a {
@@ -496,6 +414,7 @@ nav{
 /* Dropdown Container *//* Dropdown Base */
 .dropdown {
   position: relative;
+    z-index: 999;
 }
 
 .dropbtn {
@@ -532,10 +451,10 @@ nav{
   border-radius: 6px;
   box-shadow: 0 4px 10px rgba(0,0,0,0.15);
   /* overflow: hidden; */
-  z-index: 999;
+   z-index: 1000;
 }
 
-.dropdown-content a {
+.dropdown-content li a {
   display: block;
   padding: 10px 15px;
   color: var(--brand-dark);
@@ -544,7 +463,7 @@ nav{
   transition: background 0.3s ease;
 }
 
-.dropdown-content a:hover {
+.dropdown-content li a:hover {
   /* background: var(--brand-dark);
   color: var(--bg-light); */
 }
@@ -575,6 +494,94 @@ nav{
 
   .dropbtn i {
     margin-left: auto;
+  }
+}
+
+.menu-toggle {
+  display: none;
+  font-size: 24px;
+  cursor: pointer;
+  z-index: 1001;
+  position: absolute;
+  top: 30px;
+  right: 15px;
+  color: var(--brand-dark);
+}
+
+/* Responsive styles */
+@media (max-width: 991px) {
+  .menu-toggle {
+    display: block;
+  }
+
+  .bottomnav-right {
+    display: none;
+    flex-direction: column;
+    align-items: flex-start;
+    background: #fff;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    width: 100%;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    padding: 1rem;
+  }
+
+  .bottomnav-right.show {
+    display: flex;
+  }
+
+  .bottomnav-right ul {
+    flex-direction: column;
+    width: 100%;
+    gap: 0;
+  }
+
+  .bottomnav-right ul li {
+    width: 100%;
+  }
+
+  .bottomnav-right ul li a,
+  .bottomnav-right ul li .dropbtn {
+    width: 100%;
+    display: block;
+    padding: 10px 15px;
+    text-align: left;
+  }
+
+.dropdown-content li a i {
+  margin-right: 8px;
+  color: var(--brand-dark);
+
+}
+  .dropdown-content {
+    position: static;
+    background: #f9f9f9;
+    box-shadow: none;
+    display: none;
+    
+  }
+
+  .dropdown:hover .dropdown-content {
+    display: none;
+  }
+
+  .dropdown.active .dropdown-content {
+    display: block;
+  }
+
+  /* Optional: Smooth dropdown icon */
+  .dropdown .dropbtn i {
+    transition: transform 0.3s ease;
+  }
+
+  .dropdown.active .dropbtn i {
+    transform: rotate(180deg);
+  }
+
+  /* Optional: Animate mobile menu */
+  .bottomnav-right {
+    transition: all 0.3s ease-in-out;
   }
 }
 

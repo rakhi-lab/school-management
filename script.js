@@ -1,26 +1,20 @@
 
 // navbar
-// document.addEventListener('DOMContentLoaded', function() {
-//   const navbar = document.querySelector('.navbar');
-//   const logo = document.querySelector('.brand-logo');
 
-//   window.addEventListener('scroll', function() {
-//     if (window.scrollY > 10) {
-//       navbar.classList.add('shrink');
-//       logo.classList.add('shrink');
-//     } else {
-//       navbar.classList.remove('shrink');
-//       logo.classList.remove('shrink');
-//     }
-//   });
-// });
+  function toggleMenu() {
+    const menu = document.getElementById('menu');
+    menu.classList.toggle('show');
+  }
 
-$(document).ready(function(){
-  $('.bottomnav-right a').click(function(){
-    $('.bottomnav-right a').removeClass("active");
-    $(this).addClass("active");
-});
-});
+  // Optional: Close dropdown on outside click (mobile)
+  document.addEventListener('click', function (e) {
+    const menu = document.getElementById('menu');
+    const toggle = document.querySelector('.menu-toggle');
+    if (!menu.contains(e.target) && !toggle.contains(e.target)) {
+      menu.classList.remove('show');
+    }
+  });
+
 
 
 // Header hero section
